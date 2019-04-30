@@ -13,3 +13,131 @@
  *= require_tree .
  *= require_self
  */
+
+ #nav-bar {
+    height: 48px;
+    background-color: rgba(45,45,45,0.98);
+    color: #fff;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    /* font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+ }
+
+ #nav-list {
+    display: flex;
+    margin: 0 20px 0 20px;
+ }
+
+ #nav-list img { 
+    width: 18px;
+ }
+
+ #sub-nav-bar {
+    height: 52px;
+    /* font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+    position: relative;
+ }
+
+ #sub-nav-list {
+    height: inherit;
+    line-height: 2.8;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom: 1px solid lightgray;
+
+ }
+
+ .left-sub-nav {
+     margin-left: 100px;
+ }
+
+ .left-sub-nav h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+
+ }
+
+ .right-sub-nav {
+     margin-right: 100px;
+     display: flex;
+ }
+
+ .right-sub-nav li {
+    margin-left: 18px;
+ }
+
+ .right-sub-nav .nav-link {
+     font-size: 12px;
+     text-decoration: none;
+     color: #333;
+ }
+
+ .right-sub-nav .nav-link:hover {
+     color: #0070c9;
+ }
+
+ .right-sub-nav .nav-button {
+    background-color: #ff2f56;
+    color: white; 
+    border: 0px;
+    padding: 3px 11px 3px 11px;
+    border-radius: 12px;
+    font: 12px;
+    line-height: 1.5;
+ }
+
+ .right-sub-nav .nav-button:hover {
+    color:  rgba(220,220,220, .6);
+    cursor: pointer;
+ }
+
+ #splash {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+ }
+
+ #splash-content {
+     width: 600px;
+      margin: auto;
+ }
+
+ #splash-content img {
+     width: 80px;
+ }
+
+ #splash-content h1 {
+     font-size: 72px;
+     font-weight: 600;
+ }
+
+ #splash-content button {
+     background-color: #ff2f56;
+     color: white;
+     font-size: 17px;
+     width: 250px;
+     height: 36px;
+     font-weight: 600;
+     border: none;
+     border-radius: 5px;
+     margin-top: 40px;
+ }
+
+ #splash-content button:hover {
+    color:  rgba(220,220,220, .6);
+    cursor: pointer;
+ }
+
+ .signup-link {
+     color: white;
+     text-decoration: none;
+ }
+
+ .homepage-link {
+     color: #333;
+     text-decoration: none;
+ }

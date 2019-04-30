@@ -2,16 +2,18 @@ import React from 'react';
 import LoginFormContainer from './LoginFormContainer';
 import SignupFormContainer from './SignupFormContainer';
 import GreetingContainer from './GreetingContainer';
+import NavigationBar from './NavigationBar';
+import SubNavigationBar from './SubNavigationBar';
+import Splash from './Splash';
 import { Route } from 'react-router-dom';
 
 const App = () => (
     <div>
         <header>
-            <h1>Welcome to Orange Music</h1>
-            <GreetingContainer />
+            <NavigationBar />
+            <SubNavigationBar />
         </header>
-        <Route path="/login" component={LoginFormContainer} />
-        <Route path="/signup" component={SignupFormContainer} />
+        <Route exact path="/" component={Splash} />
     </div>
 )
 
