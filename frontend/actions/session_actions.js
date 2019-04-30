@@ -18,7 +18,7 @@ export const receiveErrors = errors => ({
     errors
 });
 
-export const createNewUser = formUser => dispatch => (
+export const signup = formUser => dispatch => (
     SessionAPIUtil.signup(formUser).then(user => dispatch(receiveCurrentUser(user)))
 );
 

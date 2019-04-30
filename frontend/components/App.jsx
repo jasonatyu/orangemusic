@@ -1,8 +1,17 @@
 import React from 'react';
+import LoginFormContainer from './LoginFormContainer';
+import SignupFormContainer from './SignupFormContainer';
+import GreetingContainer from './GreetingContainer';
+import { Route } from 'react-router-dom';
 
 const App = () => (
     <div>
-        <h1>Orange Music React</h1>
+        <header>
+            <h1>Welcome to Orange Music</h1>
+            <GreetingContainer />
+        </header>
+        <Route path="/login" component={LoginFormContainer} />
+        <Route path="/signup" component={SignupFormContainer} />
     </div>
 )
 
