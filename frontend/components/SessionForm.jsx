@@ -11,7 +11,8 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.history.push("/")).catch((errors)=>console.log(errors));
+        this.props.processForm(user).then( () => this.props.history.push("/"))
+            .fail((errors) => this.props.receiveErrors(errors.responseJSON));
     }
 
     handleChange(type) {
@@ -19,13 +20,11 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        if (this.props.errors.length > 0 ) {
-            const errors = this.props.errors.map((error) => (<li>{error}</li>))
-        }
+        const errors = this.props.errors.session.map((error, idx) => (<li key={idx}>{error}</li>))
         return (
             <div>
                 <ul>
-                    { this.props.errors.length > 0 ? { errors } : "" }
+                    { errors }
                 </ul>
                 <form onSubmit={this.handleSubmit} >
                     <label>First Name:
