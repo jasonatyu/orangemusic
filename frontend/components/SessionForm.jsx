@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {email: "", password: "", firstname: "", lastname: ""};
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleGuestLogin = this.handleGuestLogin.bind(this);
     }
 
     handleSubmit(e) {
@@ -17,6 +18,13 @@ class SessionForm extends React.Component {
 
     handleChange(type) {
         return (e) => this.setState({ [type]: e.target.value });
+    }
+
+    handleGuestLogin(e) {
+        e.preventDefault();
+        const guest = { email: "tswift89@gmail.com", password: "testing" };
+        this.props.loginGuest(guest).then(() => this.props.history.push("/"))
+            .fail((errors) => this.props.receiveErrors(errors.responseJSON));
     }
 
     render() {
@@ -55,7 +63,10 @@ class SessionForm extends React.Component {
                     </section>
                     <br />
                     <div className="form-line"></div>
-                    <input type="submit" value="Submit" />
+                    <section id="form-submit">
+                        <input className="form-action" type="submit" value="Submit" />
+                        <button className="form-action" onClick={this.handleGuestLogin}>Guest Login</button>
+                    </section>
                 </form>
             </div>
         );

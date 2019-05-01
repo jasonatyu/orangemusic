@@ -51,20 +51,21 @@
      display: inline-block;
  }
 
- #session-form input[type="submit"] {
+ .form-action {
      float: right;
      background-color: #6E696C;
      color: #eee;
-     width: 80px;
+     width: 100px;
      padding: 5px 12px 5px 12px;
      border-radius: 5px;
      text-align: center;
      border: none;
      font-size: 14px;
      margin-top: 10px;
+     white-space: nowrap;
  } 
 
- #session-form input[type="submit"]:hover {
+ .form-action:hover {
      cursor: pointer;
      color: rgba(220,220,220, .6);
  }
@@ -85,4 +86,8 @@
 
  .other-session-action:hover {
      color:  #0070c9;
+ }
+
+ #form-submit input[type="submit"]  {
+    margin-left: 10px;
  }
