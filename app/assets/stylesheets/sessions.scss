@@ -43,8 +43,8 @@
 
  #session-form-input input {
      margin: 0 10px 0 10px;
-     width: 50%;
-     border: .5px solid gray;
+     width: 40%;
+     border: .1px solid gray;
      height: 18px;
      background-color: #3B3C3D;
      color: #eee;
@@ -80,6 +80,7 @@
      color: #eee;
      font-size: 14px;
      margin-right: 10px;
+     white-space: nowrap;
  }
 
  .other-session-action:hover {

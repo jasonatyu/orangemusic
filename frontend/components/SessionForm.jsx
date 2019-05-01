@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
                 <form id="session-form" onSubmit={this.handleSubmit} >
                     <section id="form-header">
                         {this.props.formType === 'signup' ? <h1>Create Orange Music ID</h1> : <h1>Sign In</h1>}
-                        {this.props.formType === 'signup' ? <Link className="other-session-action" to=" /login">Log In</Link> : <Link className="other-session-action" to="/signup">Sign Up</Link>}
+                        {this.props.formType === 'signup' ? <Link className="other-session-action" to="/login">Log In</Link> : <Link className="other-session-action" to="/signup">Sign Up</Link>}
                     </section>
                     <div class="form-line"></div>
                     <ul>
