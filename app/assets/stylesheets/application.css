@@ -50,7 +50,7 @@
     height: 100vh;
     width: 60%;
     margin: auto;
-    padding-top: 40px;
+    padding-top: 60px;
  }
 
  .splash-content img {
@@ -60,6 +60,7 @@
  .splash-content h1 {
      font-size: 72px;
      font-weight: 600;
+     margin-top: 20px;
  }
 
  .signup-button {
@@ -85,7 +86,6 @@
  }
  
 .parallax::after {
-     background-image: url('hero_medium_2x.jpg');
      content: '';
      top: 0;
      right: 0;
