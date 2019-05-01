@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
     def create 
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user.nil?
-            render json: 'Username or password incorrect', status: 422
+            render json: ["Username or password incorrect"], status: 422
         else 
             login!(@user)
             respond_to do |format|
