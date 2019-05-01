@@ -4,7 +4,6 @@
 #
 #  id              :bigint           not null, primary key
 #  email           :string           not null
-#  username        :string
 #  firstname       :string           not null
 #  lastname        :string           not null
 #  password_digest :string           not null

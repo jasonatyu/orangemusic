@@ -14,9 +14,9 @@ const App = () => (
             <NavigationBar />
             <SubNavigationBar />
         </header>
-        <Route exact path="/" component={AppWrapperContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <Route path="/" component={AppWrapperContainer} />
     </div>
 )
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_30_173316) do
+ActiveRecord::Schema.define(version: 2019_05_01_180048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,68 @@ ActiveRecord::Schema.define(version: 2019_04_30_173316) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "albums", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "year", null: false
+    t.string "category"
+    t.text "description"
+    t.integer "artist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_albums_on_artist_id"
+  end
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "follower_followings", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "following_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follower_id", "following_id"], name: "index_follower_followings_on_follower_id_and_following_id", unique: true
+  end
+
+  create_table "playlist_songs", force: :cascade do |t|
+    t.integer "playlist_id", null: false
+    t.integer "song_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id", "song_id"], name: "index_playlist_songs_on_playlist_id_and_song_id", unique: true
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "name", default: "Untitled Playlist", null: false
+    t.string "description"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_playlists_on_user_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "time", null: false
+    t.integer "artist_id", null: false
+    t.integer "album_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_songs_on_album_id"
+    t.index ["artist_id"], name: "index_songs_on_artist_id"
+  end
+
+  create_table "user_songs", force: :cascade do |t|
+    t.integer "song_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id", "user_id"], name: "index_user_songs_on_song_id_and_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
