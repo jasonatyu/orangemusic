@@ -127,6 +127,11 @@
      margin-top: 40px;
  }
 
+ #splash-content button:hover {
+     cursor: pointer;
+     color:  rgba(220,220,220, .6);
+ }
+
 .signup-link:hover {
     color:  rgba(220,220,220, .6);
     cursor: pointer;

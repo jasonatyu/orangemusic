@@ -10,7 +10,7 @@ const SubNavigationBar = () => (
             <ul className="right-sub-nav">
                 <li><a className="nav-link" href="#">Overview</a></li>
                 <li><a className="nav-link" href="#">Features</a></li>
-                <li><button className="nav-button"><Link className="signup-link" to="/signup">Try it free*</Link></button></li>
+                <li><Link className="signup-link" to="/signup"><button className="nav-button">Try it free*</button></Link></li>
             </ul>
         </ul>
     </nav>
