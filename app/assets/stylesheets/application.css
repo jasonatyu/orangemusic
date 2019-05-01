@@ -40,7 +40,7 @@
  #splash {
      height: 100vh;
      overflow-x: hidden;
-     overflow-y: auto;
+     overflow-y: scroll;
      perspective: 1px;
      text-align: center;
  }

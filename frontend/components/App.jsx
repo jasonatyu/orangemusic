@@ -4,8 +4,9 @@ import SignupFormContainer from './SignupFormContainer';
 import GreetingContainer from './GreetingContainer';
 import NavigationBar from './NavigationBar';
 import SubNavigationBar from './SubNavigationBar';
-import Splash from './Splash';
 import { Route } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../utils/route_util';
+import AppWrapperContainer from './AppWrapperContainer';
 
 const App = () => (
     <div>
@@ -13,9 +14,9 @@ const App = () => (
             <NavigationBar />
             <SubNavigationBar />
         </header>
-        <Route exact path="/" component={Splash} />
-        <Route path="/signup" component={SignupFormContainer} />
-        <Route path="/login" component={LoginFormContainer} />
+        <Route exact path="/" component={AppWrapperContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
     </div>
 )
 

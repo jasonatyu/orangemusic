@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
                         {this.props.formType === 'signup' ? <h1>Create Orange Music ID</h1> : <h1>Sign In</h1>}
                         {this.props.formType === 'signup' ? <Link className="other-session-action" to="/login">Log In</Link> : <Link className="other-session-action" to="/signup">Sign Up</Link>}
                     </section>
-                    <div class="form-line"></div>
+                    <div className="form-line"></div>
                     <ul>
                         {errors}
                     </ul>
@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
                         <input type="password" onChange={this.handleChange('password')} value={this.state.password} />
                     </section>
                     <br />
-                    <div class="form-line"></div>
+                    <div className="form-line"></div>
                     <input type="submit" value="Submit" />
                 </form>
             </div>
