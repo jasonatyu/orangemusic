@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
                 <form id="session-form" onSubmit={this.handleSubmit} >
                     <section id="form-header">
                         {this.props.formType === 'signup' ? <h1>Create Orange Music ID</h1> : <h1>Sign In</h1>}
-                        {this.props.formType === 'signup' ? <Link className="other-session-action" to="/login">Log In</Link> : <Link className="other-session-action" to="/signup">Sign Up</Link>}
+                        {this.props.formType === 'signup' ? <Link className="other-session-action" to=" /login">Log In</Link> : <Link className="other-session-action" to="/signup">Sign Up</Link>}
                     </section>
                     <div class="form-line"></div>
                     <ul>
@@ -36,24 +36,22 @@ class SessionForm extends React.Component {
                     <section id="session-form-input">
                         { this.props.formType === 'signup' ? (
                         <div>
-                        <label>First Name
-                            <input type="text" onChange={this.handleChange('firstname')} value={this.state.firstname} />
-                        </label>
-                        <label>Last Name
-                            <input type="text" onChange={this.handleChange('lastname')} value={this.state.lastname} />
-                        </label>
+                        <label>First Name </label>
+                        <input type="text" onChange={this.handleChange('firstname')} value={this.state.firstname} />
+                        <br/>
+                        <br />
+                        <label>Last Name </label>
+                        <input type="text" onChange={this.handleChange('lastname')} value={this.state.lastname} />
                         <br />
                         <br />
                         </div>
                         ) : "" }
-                        <label>Email 
-                            <input type="text" onChange={this.handleChange('email')} value={this.state.email} />
-                        </label>
+                        <label>Email </label>
+                        <input type="text" onChange={this.handleChange('email')} value={this.state.email} />
                         <br />
                         <br />
-                        <label>Password 
-                            <input type="password" onChange={this.handleChange('password')} value={this.state.password} />
-                        </label>
+                        <label>Password </label>
+                        <input type="password" onChange={this.handleChange('password')} value={this.state.password} />
                     </section>
                     <br />
                     <div class="form-line"></div>

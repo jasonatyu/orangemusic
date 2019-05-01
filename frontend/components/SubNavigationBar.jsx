@@ -7,6 +7,7 @@ const SubNavigationBar = () => (
             <ul className="left-sub-nav">
                 <h1><Link className="homepage-link" to="/">Orange Music</Link></h1>
             </ul>
+            <section id="center-sub-nav"></section>
             <ul className="right-sub-nav">
                 <li><a className="nav-link" href="#">Overview</a></li>
                 <li><a className="nav-link" href="#">Features</a></li>
