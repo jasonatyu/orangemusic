@@ -1,3 +1,8 @@
+
+#sub-nav-bar {
+    position: sticky;
+}
+
 #sub-nav-list {
     height: inherit;
     line-height: 2.8;
