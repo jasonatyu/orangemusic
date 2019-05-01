@@ -14,6 +14,8 @@ const App = () => (
             <SubNavigationBar />
         </header>
         <Route exact path="/" component={Splash} />
+        <Route path="/signup" component={SignupFormContainer} />
+        <Route path="/login" component={LoginFormContainer} />
     </div>
 )
 

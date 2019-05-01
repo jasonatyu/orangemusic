@@ -127,7 +127,7 @@
      margin-top: 40px;
  }
 
- #splash-content button:hover {
+.signup-link:hover {
     color:  rgba(220,220,220, .6);
     cursor: pointer;
  }
@@ -140,4 +140,79 @@
  .homepage-link {
      color: #333;
      text-decoration: none;
+ }
+
+ #session-form-div {
+     background-color: #1E1F22;
+     color: #eee;
+     height: 800px;
+ }
+
+ #session-form-div h1  {
+     font-size: 28px;
+     font-weight: 300;
+ }
+
+ #session-form {
+     width: 900px;
+     margin: auto;
+     padding-top: 50px;
+ }
+
+ .form-line {
+     border: .5px solid lightgray;
+     margin: 20px 0 20px 0;
+ }
+
+ #session-form-input {
+     width: 700px;
+     margin: auto;
+     position: relative;
+ }
+
+ #session-form-input label {
+    padding: 10px;
+    color: #DDDEDE;
+    font-size: 14px;
+ }
+
+ #session-form-input input {
+     margin: 0 10px 0 10px;
+     width: 210px;
+     border: .5px solid gray;
+     height: 18px;
+     background-color: #3B3C3D;
+     color: #eee;
+
+ }
+
+ #session-form input[type="submit"] {
+     float: right;
+     background-color: #6E696C;
+     color: #eee;
+     width: 80px;
+     padding: 5px 12px 5px 12px;
+     border-radius: 5px;
+     text-align: center;
+     border: none;
+     font-size: 14px;
+     margin-top: 10px;
+ } 
+
+ #session-form input[type="submit"]:hover {
+     cursor: pointer;
+     color: rgba(220,220,220, .6);
+ }
+
+ #form-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .other-session-action {
+     text-decoration: none;
+     color: #eee;
+     font-size: 14px;
+     margin-right: 10px;
  }

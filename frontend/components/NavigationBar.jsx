@@ -1,10 +1,11 @@
 import React from 'react';
 import orangeIcon from 'assets/images/orange-32.png'; 
+import { Link } from 'react-router-dom';
 
 const NavigationBar = () => (
     <nav id="nav-bar">
         <ul id="nav-list">
-            <li><img src={orangeIcon} alt="orange-music-icon" /></li>
+            <li><Link to="/"><img src={orangeIcon} alt="orange-music-icon" /></Link></li>
         </ul>
     </nav>
 )
