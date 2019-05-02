@@ -1,10 +1,10 @@
 import React from 'react';
-import LoginFormContainer from './LoginFormContainer';
-import SignupFormContainer from './SignupFormContainer';
-import NavigationBar from './NavigationBar';
+import LoginFormContainer from './session/LoginFormContainer';
+import SignupFormContainer from './session/SignupFormContainer';
+import NavigationBar from './navigation/NavigationBar';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
-import AppWrapperContainer from './AppWrapperContainer';
+import AppWrapperContainer from './app_wrapper/AppWrapperContainer';
 
 const App = () => (
     <div>

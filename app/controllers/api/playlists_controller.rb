@@ -2,11 +2,9 @@ class Api::PlaylistsController < ApplicationController
 
     def index 
         if params[:user_id]
-            if params[:user_id] && params[:user_id].to_i == current_user.id 
+            if params[:user_id].to_i == current_user.id 
                 @playlists = current_user.playlists
             else
-                # todo: users should only be able to see their 
-                # own playlists and playlists of users they follow?
                 render json: ["You don't have permission to see this user's playlists"], status: 422
             end 
         else 
