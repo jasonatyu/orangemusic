@@ -34,6 +34,7 @@
      font-weight: 600;
      border: none;
      border-radius: 5px;
+     margin-top: 40px;
  }
 
  .signup-button:hover {
@@ -77,22 +78,26 @@
     color: white;
     height: 100vh;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-evenly;
+    // align-items: center;
     position: relative;
-    padding: 20px 0 20px 0;
+    margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+    margin-right: 0;
  }
 
  .features h1 {
      font-size: 56px;
      font-weight: 500;
+     line-height: 2.5;
  }
 
  .features h2 {
      font-size: 32px;
      font-weight: 500;
+     line-height: 2.5;
  }
 
  .features-parallax::after {
