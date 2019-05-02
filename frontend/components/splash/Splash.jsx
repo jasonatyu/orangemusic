@@ -1,6 +1,7 @@
 import React from 'react';
 import musicIcon from 'assets/images/music_icon.png';
 import { Link } from 'react-router-dom';
+import SubNavigationBar from '../navigation/SubNavigationBar';
 
 const Splash = () => (
     <div id="splash">

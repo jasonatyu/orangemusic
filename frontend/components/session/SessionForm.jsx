@@ -9,6 +9,10 @@ class SessionForm extends React.Component {
         this.handleGuestLogin = this.handleGuestLogin.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
