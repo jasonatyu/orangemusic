@@ -6,7 +6,7 @@
  }
 
  #session-form-div h1  {
-     font-size: 28px;
+     font-size: 24px;
      font-weight: 300;
      white-space: nowrap;
  }
@@ -84,8 +84,8 @@
      color:  #0070c9;
  }
 
- #form-submit input[type="submit"]  {
-    margin-left: 10px;
+ .form-action  {
+    margin-left: 15px;
  }
 
  .session-errors {
