@@ -24,3 +24,7 @@ export const fetchArtist = artistId => dispatch => (
 export const fetchArtists = () => dispatch => (
     ArtistAPIUtil.fetchArtists().then((artists) => dispatch(receiveArtists(artists)))
 );
+
+export const fetchUserArtists = userId => dispatch => (
+    ArtistAPIUtil.fetchUserArtists(userId).then((artists) => dispatch(receiveArtists(artists)))
+);

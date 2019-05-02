@@ -1,7 +1,15 @@
 class Api::ArtistsController < ApplicationController
 
     def index 
-        @artists = Artist.all 
+        if params[:user_id] 
+            if params[:user_id].to_i == current_user.id
+                @artists = current_user.artists
+            else 
+                render json: ["You don't have permission to see this user's artists"], status: 422
+            end
+        else
+            @artists = Artist.all 
+        end
     end
 
     def show 

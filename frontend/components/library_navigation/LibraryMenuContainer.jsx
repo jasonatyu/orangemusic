@@ -3,13 +3,11 @@ import LibraryMenu from './LibraryMenu';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-
     };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-
     };
 };
 

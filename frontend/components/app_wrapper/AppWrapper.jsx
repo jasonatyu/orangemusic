@@ -12,14 +12,9 @@ const AppWrapper = ({ loggedIn }) => {
     if (loggedIn) {
         return (
             <>
-                <header>
-                    <AuthMainNavBar />
-                    <AuthSubNavBar />
-                </header>
-                <LibraryMenu />
-                <GreetingContainer />
-                {/* <Loader isLoading={false} />
-                <GreetingContainer /> */}
+            <GreetingContainer />   
+            <AuthMainNavBar />
+            <AuthSubNavBar /> 
             </>
         )
     } else {

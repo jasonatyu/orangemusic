@@ -1,3 +1,9 @@
+export const fetchUserArtists = (userId) => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/users/${userId}/artists`
+    })
+);
 
 //todo: add search params
 export const fetchArtists = () => (
@@ -6,6 +12,7 @@ export const fetchArtists = () => (
         url: '/api/artists'
     })
 );
+
 
 export const fetchArtist = (artistId) => (
     $.ajax({

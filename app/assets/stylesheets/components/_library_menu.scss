@@ -1,15 +1,16 @@
 #library-menu {
-    width: 150px;
+    width: 190px;
     background-color: #282A2D;
     color: lightgray;
     font-size: 13px;
     height: 90vh;
-    padding: 20px;
+    float: left;
 }
 
 #library-menu h1 {
-    margin-bottom: 10px;
     color: lightgray;
+    padding: 10px;
+    font-size: 11px;
 }
 
 #library-menu ul {
@@ -17,10 +18,12 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 100%;
 }
 
 #library-menu li {
     line-height: 2;
+    width: 100%;
 }
 
 #library-menu li:hover {
@@ -28,3 +31,19 @@
     color: #eee;
 }
 
+.library-menu-item {
+    text-decoration: none;
+    color: white;
+    line-height: 2;
+    display: block;
+    padding-left: 20px;
+    width: calc(100% - 20px);
+}
+
+.is-library-active {
+    background-color: rgb(0,112,201);
+}
+
+.library-menu-item:hover {
+    color: lightgray;
+}

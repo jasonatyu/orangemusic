@@ -23,6 +23,14 @@ class User < ApplicationRecord
     through: :user_songs,
     source: :song
 
+    has_many :albums,
+    through: :songs,
+    source: :album
+
+    has_many :artists,
+    through: :songs, 
+    source: :artist
+
     has_many :playlists
 
     has_many :follower_followings, dependent: :destroy, inverse_of: :follower

@@ -19,6 +19,10 @@
     margin-top: 5px;
 }
 
+#auth-sub-nav-list .nav-link:hover {
+    color: lightgray;
+} 
+
 .is-active {
     background-color: #0883FE;
     border-radius: 3px;

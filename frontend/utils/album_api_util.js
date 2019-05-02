@@ -1,3 +1,10 @@
+export const fetchUserAlbums = (userId) => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/users/${userId}/albums`
+    })
+);
+
 //todo: add search params
 export const fetchAlbums = () => (
     $.ajax({
