@@ -1,0 +1,30 @@
+#library-menu {
+    width: 150px;
+    background-color: #282A2D;
+    color: lightgray;
+    font-size: 13px;
+    height: 90vh;
+    padding: 20px;
+}
+
+#library-menu h1 {
+    margin-bottom: 10px;
+    color: lightgray;
+}
+
+#library-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#library-menu li {
+    line-height: 2;
+}
+
+#library-menu li:hover {
+    cursor: pointer;
+    color: #eee;
+}
+
