@@ -5,6 +5,8 @@ import Root from './components/root';
 import * as UserAPIUtil from './utils/user_api_util';
 import * as SongAPIUtil from './utils/song_api_util';
 import * as PlaylistAPIUtil from './utils/playlist_api_util';
+import * as AlbumAPIUtil from './utils/album_api_util';
+import * as ArtistAPIUtil from './utils/artist_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -24,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.UserAPIUtil = UserAPIUtil;
     window.SongAPIUtil = SongAPIUtil;
     window.PlaylistAPIUtil = PlaylistAPIUtil;
+    window.AlbumAPIUtil = AlbumAPIUtil;
+    window.ArtistAPIUtil = ArtistAPIUtil;
     window.dispatch = store.dispatch;
     window.getState = store.getState;
     ReactDOM.render(<Root store={store} />, root);

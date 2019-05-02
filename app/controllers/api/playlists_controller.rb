@@ -1,8 +1,14 @@
 class Api::PlaylistsController < ApplicationController
 
     def index 
-        if params[:user_id] && params[:user_id] == current_user.id 
-            @playlists = Playlist.where(user_id: current_user.id)
+        if params[:user_id]
+            if params[:user_id] && params[:user_id].to_i == current_user.id 
+                @playlists = current_user.playlists
+            else
+                # todo: users should only be able to see their 
+                # own playlists and playlists of users they follow?
+                render json: ["You don't have permission to see this user's playlists"], status: 422
+            end 
         else 
             @playlists = Playlist.all 
         end
@@ -14,11 +20,15 @@ class Api::PlaylistsController < ApplicationController
 
     def create 
         @playlist = Playlist.new(playlist_params)
-        @playlist.user_id = current_user.id 
-        if @playlist.save 
-            render 'api/playlists/show.json'
+        if current_user
+            @playlist.user_id = current_user.id 
+            if @playlist.save 
+                render 'api/playlists/show.json'
+            else 
+                render json: @playlist.errors.full_messages, status: 422
+            end
         else 
-            render json: @playlist.errors.full_messages, status: 422
+            render json: ["You must be logged in to create a new playlist"], status: 422
         end
     end
 
@@ -32,7 +42,7 @@ class Api::PlaylistsController < ApplicationController
                 render json: @playlist.errors.full_messages, status: 422
             end
         else 
-            render 'api/playlists/show.json'
+            render json: ["You don't have permission to update this playlist"], status: 422
         end
     end
 
@@ -42,7 +52,7 @@ class Api::PlaylistsController < ApplicationController
             @playlist.destroy
             render json: {}, status: 200
         else
-            render 'api/playlists/show.json'
+            render json: ["You don't have permission to delete this playlist"], status: 422
         end 
     end
 

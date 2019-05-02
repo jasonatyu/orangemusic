@@ -1,14 +1,14 @@
 export const fetchUserSongs = (userId) => (
     $.ajax({
         method: 'GET',
-        url: `/api/${userId}/songs`
+        url: `/api/users/${userId}/songs`
     })
 );
 
 export const createUserSong = (userId, songId) => (
     $.ajax({
         method: 'POST',
-        url: `/api/${userId}/songs`,
+        url: `/api/users/${userId}/songs`,
         data: { songId }
     })
 );
@@ -16,7 +16,7 @@ export const createUserSong = (userId, songId) => (
 export const deleteUserSong = (userID, songId) => (
     $.ajax({
         method: 'DELETE',
-        url: `/api/${userId}/songs/${songId}`
+        url: `/api/users/${userId}/songs/${songId}`
     })
 );
 
@@ -38,7 +38,7 @@ export const fetchSong = (songId) => (
 export const createPlaylistSong = (playlistId, songId) => (
     $.ajax({
         method: 'POST',
-        url: `/api/${playlistId}/songs`,
+        url: `/api/playlists/${playlistId}/songs`,
         data: { songId }
     })
 );
@@ -46,6 +46,6 @@ export const createPlaylistSong = (playlistId, songId) => (
 export const deletePlaylistSong = (playlistId, songId) => (
     $.ajax({
         method: 'DELETE',
-        url: `/api/${playlistId}/songs/${songId}`
+        url: `/api/playlists/${playlistId}/songs/${songId}`
     })
 );
