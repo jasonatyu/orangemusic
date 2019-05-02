@@ -12,6 +12,7 @@
 class PlaylistSong < ApplicationRecord
     validates :song_id, uniqueness: { scope: :playlist_id }
 
-    belongs_to :playlist 
-    belongs_to :song 
+    belongs_to :playlist
+    belongs_to :song
+    
 end

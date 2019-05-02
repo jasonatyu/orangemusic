@@ -14,8 +14,11 @@ class Playlist < ApplicationRecord
     validates :name, :user_id, presence: true 
 
     belongs_to :user 
-    has_many :songs 
 
     has_many :playlist_songs, dependent: :destroy, inverse_of: :playlist
+
+    has_many :songs,
+    through: :playlist_songs,
+    source: :song
 
 end

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:show, :create] do 
-      resources :songs, only: [:show, :create, :destroy]
+    resources :users, only: [:show, :create, :index] do 
+      resources :songs, only: [:index, :create, :destroy]
       resources :playlists, only: [:index]
     end
     resource :session, only: [:create, :destroy]
@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     end
     resources :albums, only: [:index, :show]
     resources :artists, only: [:index, :show]
-  end
-  
+  end 
+
 end

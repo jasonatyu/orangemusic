@@ -18,6 +18,11 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6, allow_nil: true }
 
     has_many :user_songs, dependent: :destroy, inverse_of: :user
+
+    has_many :songs,
+    through: :user_songs,
+    source: :song
+
     has_many :follower_followings, dependent: :destroy, inverse_of: :follower
     has_many :follower_followings, dependent: :destroy, inverse_of: :following
 
