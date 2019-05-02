@@ -21,7 +21,7 @@
  .splash-content h1 {
      font-size: 72px;
      font-weight: 600;
-     margin-top: 20px;
+     margin-top: 10px;
      margin-bottom: 60px;
  }
 
@@ -34,7 +34,6 @@
      font-weight: 600;
      border: none;
      border-radius: 5px;
-     margin-top: 20px;
  }
 
  .signup-button:hover {
@@ -44,10 +43,13 @@
 
  .hero {
     position: relative;
-    height: 100vh;
+    height: 120vh;
  }
  
 .parallax::after {
+     background-image: url('screenshot_2.png');
+     background-repeat: no-repeat;
+     background-size: 100%;
      content: '';
      top: 0;
      right: 0;
@@ -55,7 +57,7 @@
      bottom: 0;
      position: absolute;
      transform: translateZ(-1px) scale(2);
-     background-size: 100%;
+    //  background-size: 100%;
      z-index: -1;
  }
 
