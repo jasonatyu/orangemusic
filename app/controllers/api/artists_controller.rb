@@ -10,6 +10,6 @@ class Api::ArtistsController < ApplicationController
 
     private
     def artist_params
-        params.require(:artist).permit(:name, :description, song_ids: [], album_ids: [])
+        params.require(:artist).permit(:name, :description)
     end
 end

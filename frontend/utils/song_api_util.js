@@ -9,11 +9,11 @@ export const createUserSong = (userId, songId) => (
     $.ajax({
         method: 'POST',
         url: `/api/users/${userId}/songs`,
-        data: { songId }
+        data: { song_id: songId }
     })
 );
 
-export const deleteUserSong = (userID, songId) => (
+export const deleteUserSong = (userId, songId) => (
     $.ajax({
         method: 'DELETE',
         url: `/api/users/${userId}/songs/${songId}`
@@ -39,7 +39,7 @@ export const createPlaylistSong = (playlistId, songId) => (
     $.ajax({
         method: 'POST',
         url: `/api/playlists/${playlistId}/songs`,
-        data: { songId }
+        data: { song_id: songId }
     })
 );
 
