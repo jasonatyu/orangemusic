@@ -41,9 +41,9 @@ class SessionForm extends React.Component {
                         {this.props.formType === 'signup' ? <Link className="other-session-action" to="/login">Log In</Link> : <Link className="other-session-action" to="/signup">Sign Up</Link>}
                     </section>
                     <div className="form-line"></div>
-                    { errors.length > 0 ? <ul className="session-errors">
+                    {errors.length > 0 ? <ul className="session-errors">
                         {errors}
-                    </ul> : "" }
+                    </ul> : ""}
                     <br />
                     <section id="session-form-input">
                         { this.props.formType === 'signup' ? (
