@@ -1,4 +1,27 @@
 
+#nav-bar {
+    height: 48px;
+    background-color: rgba(45,45,45,0.98);
+    color: #fff;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+ }
+
+ #nav-list {
+    display: flex;
+    margin: 0 20px 0 20px;
+ }
+
+ #nav-list img { 
+    width: 18px;
+ }
+
+ #sub-nav-bar {
+    height: 52px;
+    position: relative;
+ }
+ 
 #sub-nav-bar {
     position: sticky;
 }

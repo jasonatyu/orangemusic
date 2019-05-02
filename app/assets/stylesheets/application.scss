@@ -14,6 +14,20 @@
  *= require_self
  */
 
+ // CSS Reset
+@import "base/reset.scss";
+
+// Core
+@import "base/colors.scss";
+@import "base/fonts.scss";
+@import "base/layout.scss";
+
+// Grid
+@import "base/grid.scss";
+
+// Components
+@import "components/*";
+
  #nav-bar {
     height: 48px;
     background-color: rgba(45,45,45,0.98);
