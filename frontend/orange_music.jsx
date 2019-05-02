@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-    window.UserAPIUtil = UserAPIUtil;
-    window.SongAPIUtil = SongAPIUtil;
-    window.PlaylistAPIUtil = PlaylistAPIUtil;
-    window.AlbumAPIUtil = AlbumAPIUtil;
-    window.ArtistAPIUtil = ArtistAPIUtil;
-    window.dispatch = store.dispatch;
-    window.getState = store.getState;
+    // window.UserAPIUtil = UserAPIUtil;
+    // window.SongAPIUtil = SongAPIUtil;
+    // window.PlaylistAPIUtil = PlaylistAPIUtil;
+    // window.AlbumAPIUtil = AlbumAPIUtil;
+    // window.ArtistAPIUtil = ArtistAPIUtil;
+    // window.dispatch = store.dispatch;
+    // window.getState = store.getState;
     ReactDOM.render(<Root store={store} />, root);
 });
