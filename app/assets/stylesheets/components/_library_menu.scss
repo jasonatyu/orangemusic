@@ -31,6 +31,11 @@
     color: #eee;
 }
 
+.library-menu-item-div {
+    width: 100%;
+    position: relative;
+}
+
 .library-menu-item {
     text-decoration: none;
     color: white;
@@ -38,6 +43,7 @@
     display: block;
     padding-left: 20px;
     width: calc(100% - 20px);
+    position: relative;
 }
 
 .is-library-active {

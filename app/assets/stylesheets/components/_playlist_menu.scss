@@ -1,0 +1,22 @@
+.settings-menu {
+    background-color: #282A2D;
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    border-radius: 2px; 
+    width: 110px;
+    border: 1px solid rgba(255,255,255,.25);
+}
+
+.playlist-menu-list li {
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    text-align: center;
+}
+
+.playlist-menu-list li:last-child {
+    border-bottom: none;
+}
+
+.playlist-menu-list li:hover {
+    background-color: rgb(0,112,201);
+}

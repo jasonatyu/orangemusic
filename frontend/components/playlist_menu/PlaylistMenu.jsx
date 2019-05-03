@@ -1,9 +1,10 @@
 import React from 'react';
 
 const PlaylistMenu = () => (
-    <nav class='settings-menu'>
-        <ul class='playlist-menu-list'>
-            <li>New Playlist</li>
+    <nav className='settings-menu'>
+        <ul className='playlist-menu-list'>
+            <li>Show Playlist</li>
+            <li>Delete Playlist</li>
         </ul>
     </nav>
 );
