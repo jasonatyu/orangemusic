@@ -14,6 +14,7 @@ import AlbumIndexContainer from '../albums/AlbumIndexContainer';
 import LibraryMenuContainer from '../library_navigation/LibraryMenuContainer';
 import CreatePlaylistContainer from '../playlists/CreatePlaylistContainer';
 import EditPlaylistContainer from '../playlists/EditPlaylistContainer';
+import PlaylistIndexDetailContainer from '../playlists/PlaylistIndexDetailContainer'
 
 const AppWrapper = ({ loggedIn }) => {
     if (loggedIn) {
@@ -23,7 +24,7 @@ const AppWrapper = ({ loggedIn }) => {
                 <AuthMainNavBar />
                 <AuthSubNavBar /> 
                 <Route path={["/library", "/"]} component={LibraryMenuContainer} /> 
-                <ProtectedRoute path="/library/playlists" component={PlaylistIndexContainer} />
+                <ProtectedRoute path="/library/playlists" component={PlaylistIndexDetailContainer} />
                 <ProtectedRoute path="/library/songs" component={SongIndexContainer} />
                 <ProtectedRoute path="/library/artists" component={ArtistIndexContainer} />
                 <ProtectedRoute path="/library/albums" component={AlbumIndexContainer} />

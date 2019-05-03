@@ -33,6 +33,7 @@
     font-size: 12px;
     font-weight: 500;
     margin-left: 20px;
+    width: 200px;
 }
 
 .playlist-description::placeholder {
@@ -49,6 +50,7 @@
 
 .playlist-form input[type="submit"]:hover {
     cursor: pointer;
+    color: lightgray;
 }
 
 .form-line {
