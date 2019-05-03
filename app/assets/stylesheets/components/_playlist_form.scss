@@ -1,0 +1,58 @@
+.playlist-form {
+    background-color: #1F2022;
+    color: #eee;
+    padding: 30px;
+    width: 80vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.playlist-form img {
+    float: left;
+}
+
+.playlist-name {
+    background-color: #1F2022;
+    color: #eee;
+    border: none;
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.playlist-name::placeholder {
+    color: #eee;
+}
+
+.playlist-description {
+    background-color: #1F2022;
+    color: lightgrey;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.playlist-description::placeholder {
+    color: lightgrey;
+}
+
+.playlist-form input[type="submit"] {
+    border: none; 
+    color: rgb(0,112,201);
+    font-size: 16px;
+    background-color: #1F2022;
+    margin-left: auto;
+}
+
+.playlist-form input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.form-line {
+    border: 1px 1px solid rgba(255,255,255,.25);
+}
+
+

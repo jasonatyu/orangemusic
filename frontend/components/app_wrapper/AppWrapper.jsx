@@ -12,19 +12,23 @@ import SongIndexContainer from '../songs/SongIndexContainer';
 import ArtistIndexContainer from '../artists/ArtistIndexContainer';
 import AlbumIndexContainer from '../albums/AlbumIndexContainer';
 import LibraryMenuContainer from '../library_navigation/LibraryMenuContainer';
+import CreatePlaylistContainer from '../playlists/CreatePlaylistContainer';
+import EditPlaylistContainer from '../playlists/EditPlaylistContainer';
 
 const AppWrapper = ({ loggedIn }) => {
     if (loggedIn) {
         return (
             <>
-            <GreetingContainer />   
-            <AuthMainNavBar />
-            <AuthSubNavBar /> 
-            <Route path={["/library", "/"]} component={LibraryMenuContainer} /> 
-            <ProtectedRoute path="/library/playlists" component={PlaylistIndexContainer} />
-            <ProtectedRoute path="/library/songs" component={SongIndexContainer} />
-            <ProtectedRoute path="/library/artists" component={ArtistIndexContainer} />
-            <ProtectedRoute path="/library/albums" component={AlbumIndexContainer} />
+                <GreetingContainer />   
+                <AuthMainNavBar />
+                <AuthSubNavBar /> 
+                <Route path={["/library", "/"]} component={LibraryMenuContainer} /> 
+                <ProtectedRoute path="/library/playlists" component={PlaylistIndexContainer} />
+                <ProtectedRoute path="/library/songs" component={SongIndexContainer} />
+                <ProtectedRoute path="/library/artists" component={ArtistIndexContainer} />
+                <ProtectedRoute path="/library/albums" component={AlbumIndexContainer} />
+                <ProtectedRoute path="/playlists/new" component={CreatePlaylistContainer} />
+                <ProtectedRoute path="/playlists/:playlistId" component={EditPlaylistContainer} />
             </>
         )
     } else {
