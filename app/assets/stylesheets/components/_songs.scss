@@ -1,0 +1,38 @@
+.song-table {
+    width: 80vw;
+    text-align: center;
+}
+
+tr {
+    color: white;
+    font-size: 13px;
+    height: 24px;
+    line-height: 2;
+}
+
+th {
+    height: 20px;
+    background-color: #1F2022;
+    font-size: 11px;
+    line-height: 2;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,.25);
+    border-top: none;
+}
+
+.song-table-body tr:nth-child(odd) {
+    background-color: #1D2022;
+}
+
+.song-table-body tr:nth-child(even) {
+    background-color: #292B2D;
+}
+
+.selected {
+    background-color: rgb(0,112,201) !important;
+}
+
+.song-table-body tr:hover {
+    color: lightgray;
+    cursor: pointer;
+}

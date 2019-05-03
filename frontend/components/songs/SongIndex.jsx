@@ -13,9 +13,19 @@ class SongIndex extends React.Component {
     render() {
         const songs = this.props.songs.map((song) => <SongIndexItem key={song.id} song={song} deleteUserSong={this.deleteUserSong} />)
         return (
-            <ul>
-                { songs }
-            </ul>
+            <table className='song-table'>
+                <thead className='song-table-header'>
+                    <tr className='song-row'>
+                        <th>Title</th>
+                        <th>Time</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                    </tr>
+                </thead>
+                <tbody className='song-table-body'>
+                    {songs}
+                </tbody>
+            </table>
         );
     }
 }

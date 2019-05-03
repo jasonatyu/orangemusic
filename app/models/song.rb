@@ -24,4 +24,6 @@ class Song < ApplicationRecord
     has_many :users,
     through: :user_songs,
     source: :user
+
+    has_one_attached :song
 end

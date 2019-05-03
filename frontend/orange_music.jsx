@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // window.UserAPIUtil = UserAPIUtil;
     // window.SongAPIUtil = SongAPIUtil;
-    // window.PlaylistAPIUtil = PlaylistAPIUtil;
+    window.PlaylistAPIUtil = PlaylistAPIUtil;
     // window.AlbumAPIUtil = AlbumAPIUtil;
     // window.ArtistAPIUtil = ArtistAPIUtil;
     // window.dispatch = store.dispatch;
