@@ -27,8 +27,10 @@ const AppWrapper = ({ loggedIn }) => {
                 <ProtectedRoute path="/library/songs" component={SongIndexContainer} />
                 <ProtectedRoute path="/library/artists" component={ArtistIndexContainer} />
                 <ProtectedRoute path="/library/albums" component={AlbumIndexContainer} />
-                <ProtectedRoute exact path="/playlists/new" component={CreatePlaylistContainer} />
-                <ProtectedRoute path="/playlists/:playlistId" component={EditPlaylistContainer} />
+                <Switch>
+                    <ProtectedRoute path="/playlists/new" component={CreatePlaylistContainer} />
+                    <ProtectedRoute path="/playlists/:playlistId" component={EditPlaylistContainer} />
+                </Switch>
             </>
         )
     } else {
