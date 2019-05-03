@@ -11,7 +11,6 @@ class SongIndex extends React.Component {
     }
 
     render() {
-        console.log(this.props.songs)
         const songs = this.props.songs.map((song) => <SongIndexItem key={song.id} song={song} deleteUserSong={this.deleteUserSong} />)
         return (
             <ul>
