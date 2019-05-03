@@ -1,6 +1,5 @@
 import React from 'react';
 import LibraryMenuItem from './LibraryMenuItem';
-import PlaylistMenuItem from './PlaylistMenuItem';
 
 class LibraryMenu extends React.Component {
     
@@ -9,7 +8,7 @@ class LibraryMenu extends React.Component {
     }
 
     render() {
-        // const userPlaylists = this.props.userPlaylists.map((playlist) => <PlaylistMenuItem key={playlist.id} playlist={playlist} />)
+        const userPlaylists = this.props.userPlaylists.map((playlist) => <LibraryMenuItem key={playlist.id} item="playlist-item" playlist={playlist} />)
 
         return (
             <section id="library-menu">
@@ -24,6 +23,7 @@ class LibraryMenu extends React.Component {
                 <br />
                 <h1>Playlists</h1>
                 <ul>
+                    { userPlaylists }
                 </ul>
             </section>
         )
