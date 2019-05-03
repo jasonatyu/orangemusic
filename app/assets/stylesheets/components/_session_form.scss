@@ -96,6 +96,10 @@
      font-size: 12px;
      margin: auto;
      height: 20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
  }
 
  .session-errors li {
