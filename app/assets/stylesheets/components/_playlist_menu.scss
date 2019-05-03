@@ -1,11 +1,12 @@
 .settings-menu {
     background-color: #282A2D;
     position: absolute;
-    top: 0px;
-    left: 50px;
+    top: 10px;
+    left: 70px;
     border-radius: 2px; 
-    width: 110px;
+    width: 170px;
     border: 1px solid rgba(255,255,255,.25);
+    z-index: 1;
 }
 
 .playlist-menu-list li {

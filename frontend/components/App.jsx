@@ -13,10 +13,9 @@ const App = () => (
             <NavigationBar />
         </header>
         <Switch>
-            <AuthRoute path="/signup" component={SignupFormContainer} />
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <Route exact path="/" component={AppWrapperContainer} />
-            <Redirect to="/" />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <Route path="/" component={AppWrapperContainer} />
         </Switch>
     </div>
 )
