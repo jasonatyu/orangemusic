@@ -1,9 +1,10 @@
  #splash {
      height: 100vh;
      overflow-x: hidden;
-     overflow-y: scroll;
+     overflow-y: auto;
      perspective: 1px;
      text-align: center;
+     position:relative; 
  }
 
  .splash-content {
@@ -43,13 +44,14 @@
 
  .hero {
     position: relative;
-    height: 120vh;
+    height: 100vh;
  }
  
 .parallax::after {
      background-image: image-url('screenshot_2.png');
      background-repeat: no-repeat;
      background-size: 100%;
+     overflow-y: hidden;
      content: '';
      top: 0;
      right: 0;
@@ -78,14 +80,16 @@
 
  .features {
     color: white;
-    height: 80vh;
+    height: 90vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    padding: 30px 0 30px 0;
+    padding: 50px 10px 50px 10px;
+    overflow-y: hidden;
+
  }
 
  .features h1 {
@@ -110,6 +114,6 @@
      bottom: 0;
      position: absolute;
      transform: translateZ(-1px) scale(2.2);
-     background-size: 100%;
      z-index: -1;
+     overflow-y: hidden;
  }

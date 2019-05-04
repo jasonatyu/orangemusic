@@ -7,7 +7,6 @@ import AuthMainNavBar from '../auth_navigation/AuthMainNavBar';
 import Loader from '../loader/Loader';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { ProtectedRoute } from '../../utils/route_util';
-import PlaylistIndexContainer from '../playlists/PlaylistIndexContainer';
 import SongIndexContainer from '../songs/SongIndexContainer';
 import ArtistIndexContainer from '../artists/ArtistIndexContainer';
 import AlbumIndexContainer from '../albums/AlbumIndexContainer';
@@ -20,7 +19,6 @@ const AppWrapper = ({ loggedIn }) => {
     if (loggedIn) {
         return (
             <>
-                <GreetingContainer />   
                 <AuthMainNavBar />
                 <AuthSubNavBar /> 
                 <Route path={["/library", "/"]} component={LibraryMenuContainer} /> 
@@ -32,12 +30,13 @@ const AppWrapper = ({ loggedIn }) => {
                     <ProtectedRoute path="/playlists/new" component={CreatePlaylistContainer} />
                     <ProtectedRoute path="/playlists/:playlistId" component={EditPlaylistContainer} />
                 </Switch>
+                <GreetingContainer />   
+
             </>
         )
     } else {
         return (
             <>
-                <SubNavigationBar />
                 <Splash />
             </>
         )

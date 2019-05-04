@@ -7,10 +7,8 @@ import { updatePlaylist, fetchPlaylist } from '../../actions/playlist_actions';
 const mapStateToProps = (state, ownProps) => {
     const defaultPlaylist = { name: "", description: "" };
     const playlist = state.entities.playlists[ownProps.match.params.playlistId] || defaultPlaylist;
-    const playlistSongIds = playlist.song_ids || [];
-    const playlistSongs = playlistSongIds.map((songId) => state.entities.songs[songId]);
     const formType = "Edit Playlist";
-    return { playlist, formType, playlistSongs };
+    return { playlist, formType };
 };
 
 const mapDispatchToProps = dispatch => {

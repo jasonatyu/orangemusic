@@ -1,8 +1,10 @@
 .user-playlists {
     background-color: #1E1F22;
     width: 80vw;
+    height: 80vh;
     float: right;
     padding: 20px 0 20px 0;
+    overflow: auto;
 }
 
 .playlist-list {

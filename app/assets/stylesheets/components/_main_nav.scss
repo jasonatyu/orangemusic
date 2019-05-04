@@ -19,12 +19,12 @@
 
  #sub-nav-bar {
     height: 52px;
-    position: relative;
- }
- 
-#sub-nav-bar {
     position: sticky;
-}
+    top: 0px;
+    background-color: white;
+    z-index: 10;
+ }
+
 
 #sub-nav-list {
     height: inherit;

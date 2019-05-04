@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavigationBar from '../navigation/NavigationBar';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -34,6 +35,8 @@ class SessionForm extends React.Component {
     render() {
         const errors = this.props.errors.session.map((error, idx) => (<li key={idx}>{error}</li>))
         return (
+            <>
+            <NavigationBar />
             <div id="session-form-div">
                 <form id="session-form" onSubmit={this.handleSubmit} >
                     <section id="form-header">
@@ -64,6 +67,9 @@ class SessionForm extends React.Component {
                         <br />
                         <label>Password </label>
                         <input type="password" onChange={this.handleChange('password')} value={this.state.password} />
+                        <br />
+                        {this.props.formType === 'signup' ? 
+                            (<label>By clicking Submit, you acknowledge that you agree to the <span>Orange Media Services Terms and Conditions</span> and the <span>Orange Cloud Terms and Conditions</span>.</label>) : ""}
                     </section>
                     <br />
                     <div className="form-line"></div>
@@ -73,6 +79,7 @@ class SessionForm extends React.Component {
                     </section>
                 </form>
             </div>
+            </>
         );
     }
 }

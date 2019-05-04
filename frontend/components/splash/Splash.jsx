@@ -1,11 +1,15 @@
 import React from 'react';
-import musicIcon from 'assets/images/music_icon.png';
 import { Link } from 'react-router-dom';
+import FooterBar from '../navigation/FooterBar';
+import NavigationBar from '../navigation/NavigationBar';
 import SubNavigationBar from '../navigation/SubNavigationBar';
 
 const Splash = () => (
     <div id="splash">
+        <NavigationBar />
+        <SubNavigationBar />
         <section className="splash-content">
+            <img src="https://www.apple.com/v/apple-music/j/images/overview/icon_itunes_small_2x.png" width="40" />
             <h1>Lose yourself in 50 million songs.</h1>
             <Link className="signup-link" to="/signup"><button className="signup-button">Try it free</button></Link>
         </section>
@@ -19,6 +23,7 @@ const Splash = () => (
             <h2>Listen across all of your devices.</h2>
             <Link className="signup-link" to="/signup"><button className="signup-button">Try it free</button></Link>
         </section>
+        <FooterBar />
     </div>
 );
 

@@ -18,7 +18,7 @@ class LibraryMenuItem extends React.Component{
             item === 'playlist-item' ?
                 (<div className="library-menu-item-div">
                     <NavLink className='library-menu-item' onContextMenu={(e) => { e.preventDefault(); this.props.openMenu('playlist')}} activeClassName='is-library-active' to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink>
-                   <Menu playlistId={playlist.id}/> </div>)
+                   <Menu /> </div>)
                 : <NavLink className='library-menu-item' activeClassName='is-library-active' to={`/library/${item.toLowerCase()}`}>{item}</NavLink> 
         )
     }
