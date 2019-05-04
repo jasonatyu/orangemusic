@@ -88,8 +88,7 @@
     align-items: center;
     position: relative;
     padding: 50px 10px 50px 10px;
-    overflow-y: hidden;
-
+    overflow: hidden;
  }
 
  .features h1 {
@@ -115,5 +114,4 @@
      position: absolute;
      transform: translateZ(-1px) scale(2.2);
      z-index: -1;
-     overflow-y: hidden;
  }
