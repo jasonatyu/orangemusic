@@ -1,13 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class PlaylistMenu extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { displayMenu: true} ;
         this.handleClick = this.handleClick.bind(this);
     }
-
 
     handleClick(type) {
        return (e) => {
@@ -18,26 +15,18 @@ class PlaylistMenu extends React.Component {
            } else if (type === 'delete') {
                this.props.deletePlaylist(this.props.playlistId).then(() => this.props.history.push("/library"));
            }
-           this.props.handleOptionClick(e);
        };
     }
 
     render() {
         return (
-           this.state.displayMenu ? (
             <nav id='settings-menu'>
-                {this.props.type === 'create-playlist' ?
-                    (
-                        <ul className='playlist-menu-list'>
-                            <li onClick={this.handleClick('create')}>New Playlist</li>
-                        </ul>
-                    ) : (
-                        <ul className='playlist-menu-list'>
-                            <li onClick={this.handleClick('show')}>Show Playlist</li>
-                            <li onClick={this.handleClick('delete')}>Delete Playlist</li>
-                        </ul>
-                    )}
-            </nav> ) : ""
+                <ul className='playlist-menu-list'>
+                    <li onClick={this.handleClick('create')}>New Playlist</li>
+                    <li onClick={this.handleClick('show')}>Show Playlist</li>
+                    <li onClick={this.handleClick('delete')}>Delete Playlist</li>
+                </ul>
+            </nav> 
         )
     }
 }

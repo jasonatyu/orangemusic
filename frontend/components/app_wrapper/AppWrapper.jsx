@@ -14,7 +14,7 @@ import AlbumIndexContainer from '../albums/AlbumIndexContainer';
 import LibraryMenuContainer from '../library_navigation/LibraryMenuContainer';
 import CreatePlaylistContainer from '../playlists/CreatePlaylistContainer';
 import EditPlaylistContainer from '../playlists/EditPlaylistContainer';
-import PlaylistIndexDetailContainer from '../playlists/PlaylistIndexDetailContainer'
+import PlaylistIndexDetailContainer from '../playlists/PlaylistIndexDetailContainer';
 
 const AppWrapper = ({ loggedIn }) => {
     if (loggedIn) {

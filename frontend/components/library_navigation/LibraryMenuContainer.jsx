@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import LibraryMenu from './LibraryMenu';
 import { fetchUserPlaylists } from '../../actions/playlist_actions';
+import { openMenu } from '../../actions/menu_actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId))
+        fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
+        openMenu: (menu) => dispatch(openMenu(menu))
     };
 };
 

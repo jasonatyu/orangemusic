@@ -1,29 +1,15 @@
 import React from 'react';
 import LibraryMenuItemContainer from './LibraryMenuItemContainer';
-import PlaylistMenuContainer from '../playlist_menu/PlaylistMenuContainer';
+import Menu from '../menu/Menu';
 
 class LibraryMenu extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { displayMenu: false };
-        this.handleMenuClick = this.handleMenuClick.bind(this);
-        this.handleClick = this.handleClick.bind(this);
-
     }
     
     componentDidMount() {
         this.props.fetchUserPlaylists(this.props.currentUserId);
     }
-
-    handleClick() {
-        this.setState({ displayMenu: false });
-    }
-
-    handleMenuClick(e) {
-        e.preventDefault();
-        this.setState({ displayMenu: !this.state.displayMenu });
-    }
-
 
     render() {
         const userPlaylists = this.props.userPlaylists.map((playlist) => <LibraryMenuItemContainer key={playlist.id} item="playlist-item" playlist={playlist} />)
@@ -40,8 +26,8 @@ class LibraryMenu extends React.Component {
                 <br />
                 <br />
                 <div className='menu-header'>
-                    <h1 onClick={this.handleClick} onContextMenu={this.handleMenuClick}>Playlists</h1>
-                    {this.state.displayMenu ? <PlaylistMenuContainer type="create-playlist" handleOptionClick = {this.handleMenuClick} /> : ""} 
+                    <Menu />
+                    <h1 onContextMenu={(e) => { e.preventDefault(); this.props.openMenu('playlist')}}>Playlists</h1>
                 </div>
                 <ul>
                     { userPlaylists }

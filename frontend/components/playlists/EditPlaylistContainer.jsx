@@ -7,8 +7,10 @@ import { updatePlaylist, fetchPlaylist } from '../../actions/playlist_actions';
 const mapStateToProps = (state, ownProps) => {
     const defaultPlaylist = { name: "", description: "" };
     const playlist = state.entities.playlists[ownProps.match.params.playlistId] || defaultPlaylist;
+    const playlistSongIds = playlist.song_ids || [];
+    const playlistSongs = playlistSongIds.map((songId) => state.entities.songs[songId]);
     const formType = "Edit Playlist";
-    return { playlist, formType };
+    return { playlist, formType, playlistSongs };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -32,11 +34,14 @@ class EditPlaylistForm extends React.Component {
     render() {
         const { submitAction, formType, playlist } = this.props;
         return (
-            <PlaylistForm
-                key={playlist.id}
-                submitAction={submitAction}
-                formType={formType}
-                playlist={playlist} />
+            <div>
+                <PlaylistForm
+                    key={playlist.id}
+                    submitAction={submitAction}
+                    formType={formType}
+                    playlist={playlist} />
+            </div>
+
         );
     }
 }

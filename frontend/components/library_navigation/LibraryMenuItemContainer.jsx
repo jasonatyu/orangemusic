@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import LibraryMenuItem from './LibraryMenuItem';
+import { openMenu } from '../../actions/menu_actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -9,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        openMenu: (menu) => dispatch(openMenu(menu))
     };
 };
 

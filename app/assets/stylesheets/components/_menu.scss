@@ -1,0 +1,22 @@
+.menu-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: transparent;
+  z-index: 10;
+}
+
+.menu-child {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: lightgray;
+  font-size: 12px;
+}
+
+.menu-child:hover {
+  cursor: pointer;
+}
+
