@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import PlaylistForm from './PlaylistForm';
 import { updatePlaylist, fetchPlaylist } from '../../actions/playlist_actions';
+import PlaylistDetailContainer from './PlaylistDetailContainer';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -38,6 +39,7 @@ class EditPlaylistForm extends React.Component {
                     submitAction={submitAction}
                     formType={formType}
                     playlist={playlist} />
+                <PlaylistDetailContainer />
             </div>
 
         );

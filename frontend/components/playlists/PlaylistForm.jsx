@@ -10,8 +10,6 @@ class PlaylistForm extends React.Component {
 
     componentDidMount() {
         //todo: need to make sure the user's songs are loaded??
-        console.log(this.props.playlistSongs);
-
     }
 
     handleSubmit(e) {

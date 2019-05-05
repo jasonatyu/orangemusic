@@ -22,12 +22,21 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
     )} />
 );
 
-//redirect if path not /, /browse/, /library
 
+const Valid = ({ component: Component, path, loggedIn, exact, match, location }) => {
+    return <Route path={path} exact={exact} render={(props) => (
+       (path === "/" && match.isExact) || ["browse", "playlists", "library"].includes(location.pathname.split('/')[1]) ? (
+            <Component {...props} />
+        ) : (
+                <Redirect to="/" />
+            )
+    )} />
+        };
 
 const mapStateToProps = state => {
     return { loggedIn: Boolean(state.session.id) };
 };
 
+export const ValidRoute = withRouter(connect(mapStateToProps, null)(Valid));
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));
