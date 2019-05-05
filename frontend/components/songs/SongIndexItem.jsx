@@ -23,10 +23,11 @@ class SongIndexItem extends React.Component {
         const { song } = this.props;
         return (
             <tr onClick={this.handleClick}>
-                <td>{song.title}</td>
-                <td>{this.secondsToMinutes(song.time)}</td>
-                <td>{song.artist}</td>
-                <td>{song.album}</td>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png" width="40"/></td>
+                <td className='content'><p>{song.title}</p><p className='song-album'>{song.album}</p></td>
+                <td className='content'>{song.artist}</td>
+                <td className='content'>{song.year}</td>
+                <td className='content'>{this.secondsToMinutes(song.time)}</td>
             </tr>
         )
     }

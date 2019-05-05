@@ -16,10 +16,11 @@ class SongIndex extends React.Component {
             <table className='song-table'>
                 <thead className='song-table-header'>
                     <tr className='song-row'>
+                        <th></th>
                         <th>Title</th>
-                        <th>Time</th>
                         <th>Artist</th>
-                        <th>Album</th>
+                        <th>Year</th>
+                        <th>Time</th>
                     </tr>
                 </thead>
                 <tbody className='song-table-body'>

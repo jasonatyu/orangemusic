@@ -1,13 +1,25 @@
 .song-table {
     width: 80vw;
     text-align: center;
+    background-color: #1D2022;
+}
+
+img {
+    border-radius: 2px;
 }
 
 tr {
     color: white;
     font-size: 13px;
     height: 24px;
-    line-height: 2;
+}
+
+td {
+    vertical-align: top;
+}
+
+td img {
+    padding-top: 3px;
 }
 
 th {
@@ -20,19 +32,39 @@ th {
     border-top: none;
 }
 
-.song-table-body tr:nth-child(odd) {
-    background-color: #1D2022;
+th:first-child {
+    border-left: none;
 }
 
-.song-table-body tr:nth-child(even) {
-    background-color: #292B2D;
+th:last-child {
+    border-right: none;
+}
+
+.content {
+    padding-top: 10px;
 }
 
 .selected {
-    background-color: rgb(0,112,201) !important;
+    background-color: rgb(0,112,201);
 }
 
 .song-table-body tr:hover {
     color: lightgray;
     cursor: pointer;
+}
+
+.song-album {
+    color: gray;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.content {
+    color: lightgray;
+    font-size: 12px;
+}
+
+tr:hover {
+    color: gray;
+    opacity: .8;
 }
