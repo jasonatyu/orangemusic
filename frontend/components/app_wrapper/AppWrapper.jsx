@@ -14,6 +14,7 @@ import LibraryMenuContainer from '../library_navigation/LibraryMenuContainer';
 import CreatePlaylistContainer from '../playlists/CreatePlaylistContainer';
 import EditPlaylistContainer from '../playlists/EditPlaylistContainer';
 import PlaylistIndexDetailContainer from '../playlists/PlaylistIndexDetailContainer';
+import AlbumShowContainer from '../albums/AlbumShowContainer';
 
 const AppWrapper = ({ loggedIn }) => {
     if (loggedIn) {
@@ -26,12 +27,12 @@ const AppWrapper = ({ loggedIn }) => {
                 <ProtectedRoute path="/library/songs" component={SongIndexContainer} />
                 <ProtectedRoute path="/library/artists" component={ArtistIndexContainer} />
                 <ProtectedRoute path="/library/albums" component={AlbumIndexContainer} />
+                <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
                 <Switch>
                     <ProtectedRoute path="/playlists/new" component={CreatePlaylistContainer} />
                     <ProtectedRoute path="/playlists/:playlistId" component={EditPlaylistContainer} />
                 </Switch>
                 <GreetingContainer />   
-
             </>
         )
     } else {

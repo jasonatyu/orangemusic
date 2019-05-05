@@ -1,0 +1,42 @@
+.album-info {
+    background-color: #1E1F22;
+    color: #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.album-image {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+h2 {
+    color: rgb(0,112,201);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+h3 {
+    color: gray;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.album-detail {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+}
+
+.album-detail .song-table {
+    border-top: 1px solid rgba(255,255,255,.25);
+    margin-top: 15px;
+}

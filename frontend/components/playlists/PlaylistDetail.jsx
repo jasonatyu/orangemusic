@@ -1,21 +1,24 @@
 import React from 'react';
-import PlaylistDetailItem from './PlaylistDetailItem';
+import SongIndexItem from '../songs/SongIndexItem';
 
 class PlaylistDetail extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    componentDidMount() {
-        console.log(this.props.playlistSongs);
-    }
-
     render() {
-        const playlistSongs = this.props.playlistSongs.map((song) => <PlaylistDetailItem />)
+        let songs; 
+        if (this.props.playlistSongs) {
+            songs = this.props.playlistSongs.map((song) => <SongIndexItem key={song.id} song={song} />)
+        }
         return (
-            <ul>
-                {playlistSongs }
-            </ul>
+            <div className='songs-display'>
+                <table className='song-table'>
+                    <tbody className='song-table-body'>
+                        {songs}
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }

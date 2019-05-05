@@ -13,8 +13,8 @@ class PlaylistIndex extends React.Component {
     render() {
         const playlists = this.props.playlists.map((playlist) => <PlaylistIndexDetailItem key={playlist.id} playlist={playlist}/>)
         return (
-            <div className='user-playlists'>
-                <ul className='playlist-list'>
+            <div className='user-library'>
+                <ul className='library-list'>
                     {playlists}
                 </ul>
             </div>

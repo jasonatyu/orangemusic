@@ -1,5 +1,9 @@
+.songs-display {
+    display: flex;
+}
+
 .song-table {
-    width: 80vw;
+    width: 100%;
     text-align: center;
     background-color: #1D2022;
 }
@@ -28,8 +32,7 @@ th {
     font-size: 11px;
     line-height: 2;
     font-weight: 500;
-    border: 1px solid rgba(255,255,255,.25);
-    border-top: none;
+    border-bottom: 1px solid rgba(255,255,255,.25);
 }
 
 th:first-child {
@@ -42,6 +45,7 @@ th:last-child {
 
 .content {
     padding-top: 10px;
+    border-bottom: 1px solid rgba(255,255,255,.25);
 }
 
 .selected {
@@ -68,3 +72,16 @@ tr:hover {
     color: gray;
     opacity: .8;
 } 
+
+.display-album {
+    height: 35px;
+    padding-top: 5px;
+}
+
+.display-album td:first-child {
+    text-align: left;
+}
+
+.album-detail .song-row th:first-child {
+    text-align: left;
+}

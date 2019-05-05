@@ -3,7 +3,7 @@ class Api::AlbumsController < ApplicationController
     def index 
         if params[:user_id] 
             if params[:user_id].to_i == current_user.id
-                @albums = current_user.albums
+                @albums = current_user.albums.includes(:songs)
             else 
                 render json: ["You don't have permission to see this user's albums"], status: 422
             end

@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ArtistIndexItem = ({artist}) => (
-    <li>
-        {artist.name}
-        {artist.description}
+    <li className='artist-index-item'>
+        <img src={artist.photoUrl} />
+        <p>{artist.name}</p>
     </li>
 );
 

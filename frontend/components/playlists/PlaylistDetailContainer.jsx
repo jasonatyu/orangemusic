@@ -4,9 +4,7 @@ import PlaylistDetail from './PlaylistDetail';
 
 const mapStateToProps = (state, ownProps) => {
     const playlist = state.entities.playlists[ownProps.match.params.playlistId] || [];
-    const playlistSongIds = playlist.song_ids || [];
-    const playlistSongs = playlistSongIds.map((songId) => state.entities.songs[songId]);
-    console.log(playlistSongs);
+    const playlistSongs = playlist.songs;
     return { playlistSongs };
 };
 

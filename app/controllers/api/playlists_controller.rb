@@ -3,7 +3,7 @@ class Api::PlaylistsController < ApplicationController
     def index 
         if params[:user_id]
             if params[:user_id].to_i == current_user.id 
-                @playlists = current_user.playlists
+                @playlists = current_user.playlists.includes(:songs)
             else
                 render json: ["You don't have permission to see this user's playlists"], status: 422
             end 
@@ -13,7 +13,7 @@ class Api::PlaylistsController < ApplicationController
     end
 
     def show 
-        @playlist = Playlist.find_by(id: params[:id])
+        @playlist = Playlist.includes(:songs).find_by(id: params[:id])
     end
 
     def create 

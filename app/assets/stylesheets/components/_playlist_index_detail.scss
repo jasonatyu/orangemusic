@@ -1,4 +1,4 @@
-.user-playlists {
+.user-library {
     background-color: #1E1F22;
     width: 80vw;
     height: 80vh;
@@ -7,13 +7,13 @@
     overflow: auto;
 }
 
-.playlist-list {
+.library-list {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
-.playlist-list li {
+.library-list li {
     color: #eee; 
     position: relative;
     top: 0;
@@ -21,18 +21,18 @@
     margin: 5px;
 }
 
-.playlist-list li img {
+.library-list li img {
     margin: 5px 0 5px 0;
     border-radius: 3px;
 }
 
-.playlist-list h2 {
+.library-list h2 {
     font-size: 12px; 
     font-weight: 400;
     line-height: 1.5;
 }
 
-.playlist-list p {
+.library-list p {
     font-size: 11px; 
     font-weight: 400;
     color: gray;
@@ -40,7 +40,7 @@
     margin-bottom: 10px;
 }
 
-.playlist-list li:hover {
+.library-list li:hover {
     opacity: .8;
     top: -5px;
 }

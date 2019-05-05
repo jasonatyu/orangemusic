@@ -25,7 +25,7 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
 
 const Valid = ({ component: Component, path, loggedIn, exact, match, location }) => {
     return <Route path={path} exact={exact} render={(props) => (
-       (path === "/" && match.isExact) || ["browse", "playlists", "library", "for-you"].includes(location.pathname.split('/')[1]) && loggedIn ? (
+       (path === "/" && match.isExact) || ["browse", "playlists", "library", "for-you", "albums", "artists"].includes(location.pathname.split('/')[1]) && loggedIn ? (
             <Component {...props} />
         ) : (
                 <Redirect to="/" />

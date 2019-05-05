@@ -7,15 +7,17 @@ class AlbumIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUserAlbums(this.props.currentUserId)
+        this.props.fetchUserAlbums(this.props.currentUserId);
     }
 
     render() {
         const albums = this.props.albums.map((album) => <AlbumIndexItem key={album.id} album={album} />)
         return (
-            <ul>
-                { albums }
-            </ul>
+            <div className='user-library'>
+                <ul className='library-list'>
+                    { albums }
+                </ul>
+            </div>
         )
     }
 }
