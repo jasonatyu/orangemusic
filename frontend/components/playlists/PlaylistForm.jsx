@@ -30,7 +30,7 @@ class PlaylistForm extends React.Component {
             <div>
                 <form className='playlist-form' onSubmit={this.handleSubmit}>
                     <section>
-                        <img src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://image.flaticon.com/icons/svg/148/148721.svg"} width="60" height="60" />
+                        <img src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://images.unsplash.com/photo-1485170536212-67180b105ff6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"} width="60" height="60" />
                         <input className='playlist-name' type="text" onChange={this.handleChange("name")} value={this.state.name} placeholder="Untitled Playlist" />
                         <br />
                         <input className='playlist-description' type="text" onChange={this.handleChange("description")} value={this.state.description} placeholder="Description" />
