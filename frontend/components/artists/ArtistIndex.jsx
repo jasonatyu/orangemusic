@@ -1,5 +1,8 @@
 import React from 'react';
 import ArtistIndexItem from './ArtistIndexItem';
+import ArtistDetailContainer from './ArtistDetailContainer';
+import { Route } from 'react-router-dom';
+
 
 class ArtistIndex extends React.Component {
     constructor(props) {
@@ -17,6 +20,7 @@ class ArtistIndex extends React.Component {
                 <ul className='artist-index'>
                     { artists }
                 </ul>
+                <Route path="/library/artists/:artistId" component={ArtistDetailContainer} />
             </div>
         );
     }

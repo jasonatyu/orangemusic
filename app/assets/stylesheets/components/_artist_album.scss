@@ -1,0 +1,44 @@
+.artist-album {
+    padding: 20px;
+}
+.artist-detail {
+    width: 100%;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.artist-detail h1 {
+    font-size: 24px;
+    line-height: 2.5;
+    border-bottom:  1px solid rgba(255,255,255,.25);
+    color: #eee;
+    position: sticky;
+    top: 0;
+}
+
+.album-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.album-sub-info h2 {
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+.album-sub-info h3 {
+    color: gray;
+    font-weight: 500;
+}
+
+.album-sub-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    margin: 0 5px 10px 0;
+}
+
+.album-sub-info {
+    display: flex;
+    border-bottom:  1px solid rgba(255,255,255,.25);
+}

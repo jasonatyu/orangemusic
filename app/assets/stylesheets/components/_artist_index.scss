@@ -1,11 +1,14 @@
 .artist-library {
     background-color: #1E1F22;
-    width: 50vw;
+    display: flex;
 }
 
 .artist-index {
     color: #eee;
     font-size: 13px;
+    min-width: 25vw;
+    margin-right: 30px;
+    overflow-y: scroll;
 }
 
 .artist-index-item img {
@@ -16,14 +19,21 @@
 }
 
 .artist-index-item {
+    text-decoration: none;
+}
+
+.artist-index-item li {
     padding: 5px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border-bottom: 1px solid rgba(255,255,255,.25);
+    border-right: 1px solid rgba(255,255,255,.25);
+    color: #eee;
+
 }
 
-.artist-index-item:hover {
+.artist-index-item li:hover {
     opacity: .8;
     cursor: pointer;
 }

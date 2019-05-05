@@ -55,6 +55,7 @@ th:last-child {
 .song-table-body tr:hover {
     color: lightgray;
     cursor: pointer;
+    opacity: .8;
 }
 
 .song-album {
@@ -67,11 +68,6 @@ th:last-child {
     color: lightgray;
     font-size: 12px;
 }
-
-tr:hover {
-    color: gray;
-    opacity: .8;
-} 
 
 .display-album {
     height: 35px;

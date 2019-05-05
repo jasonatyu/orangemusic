@@ -15,6 +15,7 @@ import CreatePlaylistContainer from '../playlists/CreatePlaylistContainer';
 import EditPlaylistContainer from '../playlists/EditPlaylistContainer';
 import PlaylistIndexDetailContainer from '../playlists/PlaylistIndexDetailContainer';
 import AlbumShowContainer from '../albums/AlbumShowContainer';
+import ArtistDetailContainer from '../artists/ArtistDetailContainer';
 
 const AppWrapper = ({ loggedIn }) => {
     if (loggedIn) {

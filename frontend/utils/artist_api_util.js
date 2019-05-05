@@ -13,7 +13,6 @@ export const fetchArtists = () => (
     })
 );
 
-
 export const fetchArtist = (artistId) => (
     $.ajax({
         method: 'GET',
