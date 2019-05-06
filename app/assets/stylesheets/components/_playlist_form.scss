@@ -1,5 +1,6 @@
 .playlist-display {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -8,12 +9,17 @@
     background-color: #1F2022;
     color: #eee;
     padding: 30px;
-    width: 80vw;
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
     border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+#playlist-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .playlist-form img {
@@ -40,7 +46,6 @@
     font-size: 12px;
     font-weight: 500;
     margin-left: 20px;
-    width: 200px;
 }
 
 .playlist-description::placeholder {
