@@ -33,6 +33,9 @@
     font-size: 22px;
     font-weight: 700;
     margin-left: 20px;
+    line-height: 1;
+    margin-bottom: 3px;
+    width: 100%;
 }
 
 .playlist-name::placeholder {
@@ -46,6 +49,7 @@
     font-size: 12px;
     font-weight: 500;
     margin-left: 20px;
+    width: 100%;
 }
 
 .playlist-description::placeholder {
