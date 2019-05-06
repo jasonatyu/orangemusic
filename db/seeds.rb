@@ -11,21 +11,21 @@ User.create(email: "tswift89@gmail.com", firstname: "Taylor", lastname: "Swift",
 User.create(email: "jason@jasonyu.co", firstname: "Jason", lastname: "Yu", password:"testing");
 
 Artist.create(name: "Taylor Swift")
-Artist.last.photo.attach(io: File.open("/Users/jasonyu/Desktop/seed/taylorswift.png"), filename: "taylorswift.png")
+Artist.last.photo.attach(io: File.open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/taylorswift.png"), filename: "taylorswift.png")
 Artist.create(name: "Avicii")
-Artist.last.photo.attach(io: File.open("/Users/jasonyu/Desktop/seed/avicii.png"), filename: "avicii.png")
+Artist.last.photo.attach(io: File.open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/avicii.png"), filename: "avicii.png")
 Artist.create(name: "Khalid")
-Artist.last.photo.attach(io: File.open("/Users/jasonyu/Desktop/seed/khalid.png"), filename: "khalid.png")
+Artist.last.photo.attach(io: File.open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/khalid.png"), filename: "khalid.png")
 
 
 Album.create(title: "1989", year: 2014, category: "Pop", artist_id: 1)
-Album.last.artwork.attach(io: File.open("/Users/jasonyu/Desktop/seed/1989.png"), filename: "1989.png")
+Album.last.artwork.attach(io: File.open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/1989.png"), filename: "1989.png")
 Album.create(title: "SOS", year: 2019, category: "Electronic", artist_id: 2)
-Album.last.artwork.attach(io: File.open("/Users/jasonyu/Desktop/seed/SOS.png"), filename: "SOS.png")
+Album.last.artwork.attach(io: File.open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/SOS.png"), filename: "SOS.png")
 Album.create(title: "Talk", year: 2019, category: "R&B", artist_id: 3)
-Album.last.artwork.attach(io: File.open("/Users/jasonyu/Desktop/seed/Talk.png"), filename: "Talk.png")
+Album.last.artwork.attach(io: File.open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/Talk.png"), filename: "Talk.png")
 Album.create(title: "Reputation", year: 2017, category: "Pop", artist_id: 1)
-Album.last.artwork.attach(io: File.open("/Users/jasonyu/Desktop/seed/reputation.png"), filename: "reputation.png")
+Album.last.artwork.attach(io: File.open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/reputation.png"), filename: "reputation.png")
 
 
 Song.create(title: "Welcome to New York", time: 302, artist_id: 1, album_id: 1)
@@ -58,8 +58,8 @@ Song.create(title: "Gorgeous", time: 284, artist_id: 1, album_id: 4)
 Song.create(title: "Getaway Car", time: 212, artist_id: 1, album_id: 4)
 
 Playlist.create(name: "Gym tunes", description: "Songs to get swoll to", user_id: 1)
-Playlist.last.photo.attach(io: File.open("/Users/jasonyu/Desktop/seed/audio.jpg"), filename: "audio.jpg")
+Playlist.last.photo.attach(io: File.open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/audio.jpg"), filename: "audio.jpg")
 Playlist.first.song_ids = [1,2,4,5,6,11,14,15,16,20];
 Playlist.create(name: "Vacation songs", description: "Songs for my next vacation", user_id: 2)
-Playlist.last.photo.attach(io: File.open("/Users/jasonyu/Desktop/seed/casette.jpg"), filename: "casette.jpg")
+Playlist.last.photo.attach(io: File.open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/casette.jpg"), filename: "casette.jpg")
 Playlist.second.song_ids = [2,4,5,6,11,12,16];
