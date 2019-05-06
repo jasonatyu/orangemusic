@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import PlaylistDetailContainer from './PlaylistDetailContainer';
+
 
 class PlaylistForm extends React.Component {
     constructor(props) {
@@ -37,6 +39,8 @@ class PlaylistForm extends React.Component {
                     </section>
                     <input type="submit" value="Done"/>
                 </form>
+                <PlaylistDetailContainer />
+
             </div>
         );
     }

@@ -7,7 +7,7 @@
     width: 170px;
     border: 1px solid rgba(255,255,255,.25);
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-    z-index: 10;
+    z-index: 100;
     color: white;
 }
 
@@ -22,4 +22,13 @@
 
 .playlist-menu-list li:hover {
     background-color: rgb(0,112,201);
+}
+
+.dismisser {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
 }

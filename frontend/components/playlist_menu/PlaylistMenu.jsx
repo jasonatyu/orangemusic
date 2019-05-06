@@ -11,10 +11,10 @@ class PlaylistMenu extends React.Component {
        return (e) => {
            if (type === 'create') {
                this.props.history.push("/playlists/new");
-           } else if (type === 'delete') {
+           } else if (type === 'edit') {
                this.props.history.push(`/playlists/${this.props.playlistId}`);
             } else if (type === 'delete') {
-               this.props.deletePlaylist(this.props.playlistId).then(() => this.props.history.push("/library"));
+               this.props.deletePlaylist(this.props.playlistId).then(() => this.props.history.push("/library/playlists"));
            }
            this.props.optionClicked(e); 
        };
@@ -22,14 +22,16 @@ class PlaylistMenu extends React.Component {
 
     render() {
         return (
-            <nav id='settings-menu'>
-                <ul className='playlist-menu-list'>
-                    <li onClick={this.handleClick('create')}>New Playlist</li>
-                    {this.props.display === 'new' ? "" : <li onClick={this.handleClick('delete')}>Edit Playlist</li>}
-                    {this.props.display === 'new' ? "" : <li onClick={this.handleClick('delete')}>Delete Playlist</li>}
-                </ul>
-                <Dismisser onClick={(e) => this.props.optionClicked(e) }/>
-            </nav> 
+            <div>
+                <nav id='settings-menu'>
+                    <ul className='playlist-menu-list'>
+                        <li onClick={this.handleClick('create')}>New Playlist</li>
+                        {this.props.display === 'new' ? "" : <li onClick={this.handleClick('edit')}>Edit Playlist</li>}
+                        {this.props.display === 'new' ? "" : <li onClick={this.handleClick('delete')}>Delete Playlist</li>}
+                    </ul>
+                </nav> 
+            <Dismisser onClick={(e) => this.props.optionClicked(e)} />
+            </div>
         )
     }
 }
