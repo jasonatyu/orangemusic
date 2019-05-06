@@ -20,16 +20,18 @@ const AppWrapper = ({ loggedIn }) => {
             <div id ='authenticated'>
                 <AuthMainNavBar />
                 <AuthSubNavContainer /> 
-                <Route path={["/library","/"]} component={LibraryMenuContainer} /> 
-                <ProtectedRoute path="/library/playlists" component={PlaylistIndexDetailContainer} />
-                <ProtectedRoute path="/library/songs" component={SongIndexContainer} />
-                <ProtectedRoute path="/library/artists" component={ArtistIndexContainer} />
-                <ProtectedRoute path="/library/albums" component={AlbumIndexContainer} />
-                <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
-                <Switch>
-                    <ProtectedRoute path="/playlists/new" component={CreatePlaylistContainer} />
-                    <ProtectedRoute path="/playlists/:playlistId" component={EditPlaylistContainer} />
-                </Switch>
+                <section id="main-app">
+                    <Route path={["/library","/"]} component={LibraryMenuContainer} /> 
+                    <ProtectedRoute path="/library/playlists" component={PlaylistIndexDetailContainer} />
+                    <ProtectedRoute path="/library/songs" component={SongIndexContainer} />
+                    <ProtectedRoute path="/library/artists" component={ArtistIndexContainer} />
+                    <ProtectedRoute path="/library/albums" component={AlbumIndexContainer} />
+                    <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
+                    <Switch>
+                        <ProtectedRoute path="/playlists/new" component={CreatePlaylistContainer} />
+                        <ProtectedRoute path="/playlists/:playlistId" component={EditPlaylistContainer} />
+                    </Switch>
+                </section>
             </div>
         )
     } else {
