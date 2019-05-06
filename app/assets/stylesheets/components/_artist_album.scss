@@ -1,8 +1,12 @@
 .artist-detail {
     width: 100%;
     position: relative;
-    height: 90vh;
+    height: 100%;
     overflow-y: scroll;
+}
+
+.artist-detail .artist-album:last-child {
+    margin-bottom: 100px;
 }
 
 .artist-album {

@@ -1,15 +1,16 @@
 .user-library {
     background-color: #1E1F22;
     width: 80vw;
-    height: 90vh;
+    height: 100%;
     float: right;
-    overflow: auto;
+    overflow: scroll;
 }
 
 .library-list {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-bottom: 100px;
 }
 
 .library-list li {

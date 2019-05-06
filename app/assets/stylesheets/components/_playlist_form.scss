@@ -1,3 +1,9 @@
+.playlist-display {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .playlist-form {
     background-color: #1F2022;
     color: #eee;

@@ -3,12 +3,12 @@
     color: #eee;
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 
 .album-image {
     padding: 10px;
     border-radius: 5px;
-    height: calc(90vh - 21px);
 }
 
 .album-detail h1 {

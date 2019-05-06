@@ -6,13 +6,11 @@ import { AuthRoute, ProtectedRoute, ValidRoute } from '../utils/route_util';
 import AppWrapperContainer from './app_wrapper/AppWrapperContainer';
 
 const App = () => (
-    <div>
-        <Switch>
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <ValidRoute path="/" component={AppWrapperContainer} />
-        </Switch>
-    </div>
+    <Switch>
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <ValidRoute path="/" component={AppWrapperContainer} />
+    </Switch>
 )
 
 export default App;

@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PlaylistDetailContainer from './PlaylistDetailContainer';
 
-
 class PlaylistForm extends React.Component {
     constructor(props) {
         super(props);
@@ -29,7 +28,7 @@ class PlaylistForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='playlist-display'>
                 <form className='playlist-form' onSubmit={this.handleSubmit}>
                     <section>
                         <img src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://images.unsplash.com/photo-1485170536212-67180b105ff6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"} width="60" height="60" />
@@ -40,7 +39,6 @@ class PlaylistForm extends React.Component {
                     <input type="submit" value="Done"/>
                 </form>
                 <PlaylistDetailContainer />
-
             </div>
         );
     }

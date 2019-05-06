@@ -1,13 +1,12 @@
-.songs-display {
+.songs-display{
     display: flex;
-    height: 90vh;
     background-color: #1D2022;
+    height: 100%;
 }
 
 .song-table {
     width: 100%;
     text-align: center;
-    overflow-y: scroll;
 }
 
 img {
@@ -96,3 +95,4 @@ th:last-child {
 .songs-body td:first-child {
     width: 25px;
 }
+
