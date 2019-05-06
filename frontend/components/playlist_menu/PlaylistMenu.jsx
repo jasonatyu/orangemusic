@@ -1,4 +1,5 @@
 import React from 'react';
+import Dismisser from '../dismisser/Dismisser'; // Dismisser for detecting a click outside of a component: https://codesandbox.io/s/yqwrvky7nj
 
 class PlaylistMenu extends React.Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class PlaylistMenu extends React.Component {
                     {this.props.display === 'new' ? "" : <li onClick={this.handleClick('delete')}>Edit Playlist</li>}
                     {this.props.display === 'new' ? "" : <li onClick={this.handleClick('delete')}>Delete Playlist</li>}
                 </ul>
+                <Dismisser onClick={(e) => this.props.optionClicked(e) }/>
             </nav> 
         )
     }
