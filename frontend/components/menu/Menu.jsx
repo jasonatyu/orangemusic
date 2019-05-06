@@ -10,7 +10,6 @@ const Menu = ({ menu, closeMenu, playlistId }) => {
     let component;
     switch (menu[0]) {
         case 'playlist':
-            component = <PlaylistMenuContainer />;
             break;
         default:
             return null;

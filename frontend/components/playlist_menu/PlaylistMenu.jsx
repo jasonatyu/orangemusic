@@ -11,8 +11,11 @@ class PlaylistMenu extends React.Component {
            if (type === 'create') {
                this.props.history.push("/playlists/new");
            } else if (type === 'delete') {
+               this.props.history.push(`/playlists/${this.props.playlistId}`);
+            } else if (type === 'delete') {
                this.props.deletePlaylist(this.props.playlistId).then(() => this.props.history.push("/library"));
            }
+           this.props.optionClicked(e); 
        };
     }
 
@@ -21,7 +24,8 @@ class PlaylistMenu extends React.Component {
             <nav id='settings-menu'>
                 <ul className='playlist-menu-list'>
                     <li onClick={this.handleClick('create')}>New Playlist</li>
-                    <li onClick={this.handleClick('delete')}>Delete Playlist</li>
+                    {this.props.display === 'new' ? "" : <li onClick={this.handleClick('delete')}>Edit Playlist</li>}
+                    {this.props.display === 'new' ? "" : <li onClick={this.handleClick('delete')}>Delete Playlist</li>}
                 </ul>
             </nav> 
         )

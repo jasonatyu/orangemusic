@@ -6,10 +6,13 @@ import PlaylistMenuContainer from '../playlist_menu/PlaylistMenuContainer';
 class LibraryMenuItem extends React.Component{
     constructor(props) {
         super(props);
+        this.state = { menuVisible : false };
+        this.handleContextMenuClick = this.handleContextMenuClick.bind(this);
     }
 
-    handleMenuClick(e) {
+    handleContextMenuClick(e) {
         e.preventDefault();
+        this.setState({ menuVisible: !this.state.menuVisible});
     }
 
     render() {
@@ -17,8 +20,8 @@ class LibraryMenuItem extends React.Component{
         return (
             item === 'playlist-item' ?
                 (<div className="library-menu-item-div">
-                    <NavLink className='library-menu-item' onContextMenu={(e) => { e.preventDefault(); this.props.openMenu('playlist')}} activeClassName='is-library-active' to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink>
-                   <Menu /> </div>)
+                    <NavLink className='library-menu-item' onContextMenu={this.handleContextMenuClick} activeClassName='is-library-active' to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink>
+                    {this.state.menuVisible ? <PlaylistMenuContainer optionClicked={this.handleContextMenuClick} playlistId={playlist.id}/> : ""} </div>)
                 : <NavLink className='library-menu-item' activeClassName='is-library-active' to={`/library/${item.toLowerCase()}`}>{item}</NavLink> 
         )
     }
