@@ -23,7 +23,7 @@ class PlaylistMenu extends React.Component {
     render() {
         return (
             <div>
-                <nav id='settings-menu'>
+                <nav id='settings-menu' onContextMenu={(e) => e.preventDefault()}>
                     <ul className='playlist-menu-list'>
                         <li onClick={this.handleClick('create')}>New Playlist</li>
                         {this.props.display === 'new' ? "" : <li onClick={this.handleClick('edit')}>Edit Playlist</li>}

@@ -23,7 +23,7 @@ class LibraryMenu extends React.Component {
         const userPlaylists = this.props.userPlaylists.map((playlist) => <LibraryMenuItemContainer key={playlist.id} item="playlist-item" playlist={playlist} />)
 
         return (
-            <section id="library-menu">
+            <section id="library-menu" onContextMenu={(e) => e.preventDefault()}>
                 <h1>Library</h1>
                 <ul>
                     <LibraryMenuItemContainer item="Playlists" />
