@@ -91,3 +91,7 @@ th:last-child {
 .album-detail .song-row th:nth-child(2){
     text-align: left;
 }
+
+.songs-body td:first-child {
+    width: 25px;
+}
