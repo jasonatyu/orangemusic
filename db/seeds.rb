@@ -24,6 +24,8 @@ Album.create(title: "SOS", year: 2019, category: "Electronic", artist_id: 2)
 Album.last.artwork.attach(io: File.open("/Users/jasonyu/Desktop/seed/SOS.png"), filename: "SOS.png")
 Album.create(title: "Talk", year: 2019, category: "R&B", artist_id: 3)
 Album.last.artwork.attach(io: File.open("/Users/jasonyu/Desktop/seed/Talk.png"), filename: "Talk.png")
+Album.create(title: "Reputation", year: 2017, category: "Pop", artist_id: 1)
+Album.last.artwork.attach(io: File.open("/Users/jasonyu/Desktop/seed/reputation.png"), filename: "reputation.png")
 
 
 Song.create(title: "Welcome to New York", time: 302, artist_id: 1, album_id: 1)
@@ -45,9 +47,19 @@ Song.create(title: "Levels", time: 223, artist_id: 2, album_id: 2)
 
 Song.create(title: "Talk (REMIX)", time: 293, artist_id: 3, album_id: 3)
 
+Song.create(title: "...Ready For It?", time: 302, artist_id: 1, album_id: 4)
+Song.create(title: "End Game", time: 283, artist_id: 1, album_id: 4)
+Song.create(title: "I Did Something Bad", time: 334, artist_id: 1, album_id: 4)
+Song.create(title: "Dont Blame Me", time: 189, artist_id: 1, album_id: 4)
+Song.create(title: "Delicate", time: 284, artist_id: 1, album_id: 4)
+Song.create(title: "Look What You Made Me Do", time: 273, artist_id: 1, album_id: 4)
+Song.create(title: "So It Goes...", time: 238, artist_id: 1, album_id: 4)
+Song.create(title: "Gorgeous", time: 284, artist_id: 1, album_id: 4)
+Song.create(title: "Getaway Car", time: 212, artist_id: 1, album_id: 4)
+
 Playlist.create(name: "Gym tunes", description: "Songs to get swoll to", user_id: 1)
 Playlist.last.photo.attach(io: File.open("/Users/jasonyu/Desktop/seed/audio.jpg"), filename: "audio.jpg")
-Playlist.first.song_ids = [1,2,4,5,6,11,14,15,16];
+Playlist.first.song_ids = [1,2,4,5,6,11,14,15,16,20];
 Playlist.create(name: "Vacation songs", description: "Songs for my next vacation", user_id: 2)
 Playlist.last.photo.attach(io: File.open("/Users/jasonyu/Desktop/seed/casette.jpg"), filename: "casette.jpg")
 Playlist.second.song_ids = [2,4,5,6,11,12,16];

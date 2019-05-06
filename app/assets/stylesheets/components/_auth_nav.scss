@@ -2,21 +2,43 @@
     height: 36px;
     background-color: #1F2022;
     border: .5px solid #565759;
+    border-left: none; 
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#logout {
+   position: absolute;
+   right: 5px;
+}
+
+#logout button {
+   color: #eee; 
+   font-size: 12px;
+   padding: 5px 8px 5px 8px;
+   background-color: #1F2022;
+   border: none;
+}
+
+#logout button:hover {
+    cursor: pointer;
+    color: #0883FE;
 }
 
 #auth-sub-nav-list {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    vertical-align: center;
+    margin-bottom: 3px;
 }
 
 #auth-sub-nav-list .nav-link {
     margin-left: 24px;
     color: #eee; 
     font-size: 12px;
-    padding: 7px 10px 7px 10px;
+    padding: 5px 8px 5px 8px;
     text-decoration: none;
-    margin-top: 5px;
 }
 
 #auth-sub-nav-list .nav-link:hover {

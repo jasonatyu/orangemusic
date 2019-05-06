@@ -26,6 +26,7 @@ class AlbumShow extends React.Component {
                         <table className='song-table'>
                             <thead className='song-table-header'>
                                 <tr className='song-row'>
+                                    <th></th>
                                     <th>Title</th>
                                     <th>Artist</th>
                                     <th>Time</th>

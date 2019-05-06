@@ -26,4 +26,5 @@ class Song < ApplicationRecord
     source: :user
 
     has_one_attached :song
+    
 end

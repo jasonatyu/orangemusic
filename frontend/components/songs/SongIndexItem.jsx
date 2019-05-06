@@ -23,13 +23,14 @@ class SongIndexItem extends React.Component {
         const { song, display, idx } = this.props;
         let title;
         if (display === 'album') {
-            title = `${idx + 1}. ${song.title}`;
+        title = `${song.title}`;
         } else {
             title = `${song.title}`;
         }
         return (
             <tr className={"songs-body" + (this.props.display === "album" ? " display-album" : "")} onClick={this.handleClick}>
-                {display === 'album' ? "" : <td><img src={song.photoUrl} width="40"/></td>}
+                {display === 'album' ? "" : <td ><img src={song.photoUrl} width="40"/></td>}
+                {display === 'album' ? <td className='content'>{idx+1}</td> : ""}
                 <td className='content'><p>{title}</p>{display === 'album' ? "" : <p className='song-album'>{song.album}</p>}</td>
                 <td className='content'>{song.artist}</td> 
                 {display === 'album' ? "" : <td className='content'>{song.year}</td> }          

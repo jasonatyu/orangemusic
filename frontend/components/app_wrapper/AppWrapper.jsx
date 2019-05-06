@@ -1,8 +1,6 @@
 import React from 'react';
 import Splash from '../splash/Splash';
-import GreetingContainer from '../greeting/GreetingContainer';
-import SubNavigationBar from '../navigation/SubNavigationBar';
-import AuthSubNavBar from '../auth_navigation/AuthSubNavBar';
+import AuthSubNavContainer from '../auth_navigation/AuthSubNavContainer';
 import AuthMainNavBar from '../auth_navigation/AuthMainNavBar';
 import Loader from '../loader/Loader';
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -15,14 +13,13 @@ import CreatePlaylistContainer from '../playlists/CreatePlaylistContainer';
 import EditPlaylistContainer from '../playlists/EditPlaylistContainer';
 import PlaylistIndexDetailContainer from '../playlists/PlaylistIndexDetailContainer';
 import AlbumShowContainer from '../albums/AlbumShowContainer';
-import ArtistDetailContainer from '../artists/ArtistDetailContainer';
 
 const AppWrapper = ({ loggedIn }) => {
     if (loggedIn) {
         return (
-            <>
+            <div id ='authenticated'>
                 <AuthMainNavBar />
-                <AuthSubNavBar /> 
+                <AuthSubNavContainer /> 
                 <Route path={["/library","/"]} component={LibraryMenuContainer} /> 
                 <ProtectedRoute path="/library/playlists" component={PlaylistIndexDetailContainer} />
                 <ProtectedRoute path="/library/songs" component={SongIndexContainer} />
@@ -33,8 +30,7 @@ const AppWrapper = ({ loggedIn }) => {
                     <ProtectedRoute path="/playlists/new" component={CreatePlaylistContainer} />
                     <ProtectedRoute path="/playlists/:playlistId" component={EditPlaylistContainer} />
                 </Switch>
-                <GreetingContainer />   
-            </>
+            </div>
         )
     } else {
         return (

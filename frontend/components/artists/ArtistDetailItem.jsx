@@ -14,7 +14,7 @@ const ArtistDetailItem = ({album}) => {
                     </section>
                 </section>
             </div>
-            <div className='songs-display'>
+            <div className='album-songs-display'>
                 <table className='song-table'>
                     <tbody className='song-table-body'>
                         {songs}

@@ -2,7 +2,8 @@
     background-color: #1E1F22;
     color: #eee;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    height: 90vh;
 }
 
 .album-image {

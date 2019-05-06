@@ -1,11 +1,13 @@
 .songs-display {
     display: flex;
+    height: 90vh;
+    background-color: #1D2022;
 }
 
 .song-table {
     width: 100%;
     text-align: center;
-    background-color: #1D2022;
+    overflow-y: scroll;
 }
 
 img {
@@ -23,7 +25,7 @@ td {
 }
 
 td img {
-    padding-top: 3px;
+    padding-top: 5px;
 }
 
 th {
@@ -79,5 +81,13 @@ th:last-child {
 }
 
 .album-detail .song-row th:first-child {
+    text-align: left;
+}
+
+.display-album td:nth-child(2) {
+    text-align: left;
+}
+
+.album-detail .song-row th:nth-child(2){
     text-align: left;
 }
