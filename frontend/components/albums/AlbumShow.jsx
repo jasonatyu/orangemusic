@@ -12,7 +12,7 @@ class AlbumShow extends React.Component {
 
     render() {
         if (this.props.album) {
-            const songs = this.props.album.songs.map((song, idx) => <SongIndexItem key={song.id} idx={idx} song={song} display='album' />);
+            const songs = this.props.albumSongs.map((song, idx) => <SongIndexItem key={song.id} idx={idx} song={song} display='album' />);
             const { album } = this.props;
             return (
                 <div className='album-info'>

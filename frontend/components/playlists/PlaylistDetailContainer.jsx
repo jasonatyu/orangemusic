@@ -3,9 +3,12 @@ import { withRouter } from 'react-router-dom';
 import PlaylistDetail from './PlaylistDetail';
 
 const mapStateToProps = (state, ownProps) => {
-    const playlist = state.entities.playlists[ownProps.match.params.playlistId] || [];
-    const playlistSongs = playlist.songs;
-    return { playlistSongs };
+    const playlist = state.entities.playlists[ownProps.match.params.playlistId];
+    if (playlist) {
+        const playlistSongs = playlist.song_ids.map((songId) => state.entities.songs[songId]);
+        return { playlistSongs };
+    }
+    return {};
 };
 
 const mapDispatchToProps = dispatch => {

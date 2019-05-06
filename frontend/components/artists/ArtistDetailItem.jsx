@@ -2,7 +2,7 @@ import React from 'react';
 import SongIndexItem from '../songs/SongIndexItem'; 
 
 const ArtistDetailItem = ({album}) => {
-    const songs = album.songs.map((song, idx) => <SongIndexItem key={song.id} idx={idx} song={song} display='album' />)
+    const songs = album.song_ids.map((song, idx) => <SongIndexItem key={song.id} idx={idx} song={song} display='album' />)
     return (
         <div className='artist-album'>
             <div className='album-info'>

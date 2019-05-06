@@ -47,7 +47,7 @@ class Api::SongsController < ApplicationController
         end
 
         if params[:playlist_id] 
-            @playlist = Playlist.find_by(id: params[:playlist_id])
+            @playlist = Playlist.find_by(id: params[:playlist_id].to_i)
             if @playlist.user_id == current_user.id 
                 @playlist.songs.delete(params[:id].to_i)
                 render json: {}, status: 200

@@ -1,5 +1,6 @@
 .songs-display {
     display: flex;
+    justify-content: center;
     background-color: #1D2022;
     height: 100%;
     width: 100%;
@@ -7,7 +8,7 @@
 }
 
 .song-table {
-    width: 100%;
+    width: 95%;
     text-align: center;
 }
 
@@ -19,15 +20,14 @@ img {
 tr {
     color: white;
     font-size: 13px;
-    height: 24px;
 }
 
 td {
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 td img {
-    padding-top: 5px;
+    padding: 5px 0 5px 0;
 }
 
 th {
@@ -48,7 +48,6 @@ th:last-child {
 }
 
 .content {
-    padding-top: 10px;
     border-bottom: 1px solid rgba(255,255,255,.25);
 }
 
@@ -98,3 +97,25 @@ th:last-child {
     width: 25px;
 }
 
+.songs-body td:last-child {
+    position: relative;
+}
+
+.show-hover {
+    visibility: hidden;
+}
+
+td:hover .show-hover {
+    color: rgb(0,112,201);
+    font-size: 14px;
+    visibility: visible;
+}
+
+td:hover .hide-hover {
+    display: none;
+}
+
+#song-menu #settings-menu {
+    right: 60px;
+    top: 12px;
+}

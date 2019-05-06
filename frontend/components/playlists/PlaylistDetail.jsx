@@ -9,7 +9,7 @@ class PlaylistDetail extends React.Component {
     render() {
         let songs; 
         if (this.props.playlistSongs) {
-            songs = this.props.playlistSongs.map((song) => <SongIndexItem key={song.id} song={song} />)
+            songs = this.props.playlistSongs.map((song) => <SongIndexItem key={song.id} song={song} display='playlist'/>)
         }
         return (
             <div className='songs-display'>

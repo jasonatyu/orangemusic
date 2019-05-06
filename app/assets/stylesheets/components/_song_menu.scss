@@ -1,0 +1,60 @@
+.song-settings-menu {
+    background-color: #282A2D;
+    position: absolute;
+    right: 70px;
+    top: 12px;
+    border-radius: 2px; 
+    width: 150px;
+    border: 1px solid rgba(255,255,255,.25);
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+    z-index: 100;
+    color: white;
+    background-color: #1F2022;
+    opacity: 1;
+}
+
+.song-menu-list li {
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    text-align: center;
+    padding: 5px;
+    background-color: #1F2022;
+    opacity: 1;
+}
+
+.song-menu-list li:last-child {
+    border-bottom: none;
+}
+
+.song-menu-list li:hover {
+    background-color: rgb(0,112,201);
+}
+
+.add-playlist-item {
+    position: relative;
+}
+
+.add-playlist-list {
+    position: absolute;
+    width: 150px;
+    left: -152px;
+    top: -1px;
+}
+
+.add-playlist-list {
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.add-playlist-list li:first-child {
+    border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+.add-playlist-list li {
+    border-bottom: none;
+}
+
+.triangle {
+    color: white;
+    float: right;
+}
