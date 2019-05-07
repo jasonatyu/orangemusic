@@ -1,10 +1,9 @@
 #library-menu {
     box-sizing: border-box;
-    width: 20%;
+    min-width: 200px;
     background-color: #282A2D;
     color: lightgray;
     font-size: 13px;
-    height: 100%;
     overflow-y: scroll;
 }
 
@@ -61,4 +60,8 @@
 
 .menu-header {
     position: relative;
+}
+
+.library-menu-item li:last-child {
+    margin-bottom: 40px;
 }
