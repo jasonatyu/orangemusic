@@ -10,12 +10,18 @@ Rails.application.routes.draw do
       resources :playlists, only: [:index]
     end
     resource :session, only: [:create, :destroy]
-    resources :songs, only: [:index, :show]
-    resources :playlists, only: [:index, :show, :create, :update, :destroy] do
+    resources :songs, only: [:show] do 
+       get "search", on: :collection
+    end
+    resources :playlists, only: [:show, :create, :update, :destroy] do
+       get "search", on: :collection
        resources :songs, only: [:create, :destroy]
     end
-    resources :albums, only: [:index, :show]
-    resources :artists, only: [:index, :show]
+    resources :albums, only: [:show] do 
+      get "search", on: :collection
+    end
+    resources :artists, only: [:show] do 
+      get "search", on: :collection
+    end
   end 
-
 end

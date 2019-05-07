@@ -6,10 +6,11 @@ export const fetchUserAlbums = (userId) => (
 );
 
 //todo: add search params
-export const fetchAlbums = () => (
+export const fetchAlbums = (query) => (
     $.ajax({
         method: 'GET',
-        url: '/api/albums'
+        url: '/api/search/albums',
+        data: { query }
     })
 );
 

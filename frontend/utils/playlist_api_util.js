@@ -6,10 +6,11 @@ export const fetchUserPlaylists = (userId) => (
 );
 
 // todo: add search filters 
-export const fetchPlaylists = () => (
+export const fetchPlaylists = (query) => (
     $.ajax({
         method: 'GET',
-        url: '/api/playlists'
+        url: '/api/search/playlists',
+        data: { query }
     })
 );
 

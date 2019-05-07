@@ -7,6 +7,7 @@ import * as SongAPIUtil from './utils/song_api_util';
 import * as PlaylistAPIUtil from './utils/playlist_api_util';
 import * as AlbumAPIUtil from './utils/album_api_util';
 import * as ArtistAPIUtil from './utils/artist_api_util';
+import { fetchArtists } from './actions/artist_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -27,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // // window.SongAPIUtil = SongAPIUtil;
     // window.PlaylistAPIUtil = PlaylistAPIUtil;
     // // window.AlbumAPIUtil = AlbumAPIUtil;
-    // // window.ArtistAPIUtil = ArtistAPIUtil;
+    window.ArtistAPIUtil = ArtistAPIUtil;
+    window.fetchArtists = fetchArtists;
     window.dispatch = store.dispatch;
     window.getState = store.getState;
     ReactDOM.render(<Root store={store} />, root);

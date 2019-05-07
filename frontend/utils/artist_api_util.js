@@ -5,12 +5,11 @@ export const fetchUserArtists = (userId) => (
     })
 );
 
-//todo: add search params
 export const fetchArtists = (query) => (
     $.ajax({
         method: 'GET',
-        url: '/api/artists',
-        query: { query }
+        url: '/api/artists/search',
+        data: { query }
     })
 );
 

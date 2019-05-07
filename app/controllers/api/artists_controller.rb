@@ -7,9 +7,16 @@ class Api::ArtistsController < ApplicationController
             else 
                 render json: ["You don't have permission to see this user's artists"], status: 422
             end
-        else
-            @artists = Artist.all 
         end
+    end
+
+    def search
+        if params[:query].present?
+            @artists = Artist.where("lower(name) LIKE ?", "%#{params[:query].downcase}%")
+        else
+            @artists = Artist.none
+        end
+        render 'api/artists/index.json'
     end
 
     def show 

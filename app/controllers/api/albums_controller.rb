@@ -12,6 +12,15 @@ class Api::AlbumsController < ApplicationController
         end
     end
 
+    def search
+        if params[:query].present?
+            @albums = Album.where("lower(title) LIKE ?", "%#{params[:query].downcase}%")
+        else
+            @albums = Album.none
+        end
+        render 'api/albums/index.json'
+    end
+
     def show 
         @album = Album.find_by(id: params[:id])
     end

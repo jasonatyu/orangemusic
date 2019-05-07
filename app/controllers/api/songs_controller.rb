@@ -57,6 +57,15 @@ class Api::SongsController < ApplicationController
         end
     end
 
+    def search
+        if params[:query].present?
+            @songs = Song.where("lower(title) LIKE ?", "%#{params[:query].downcase}%")
+        else
+            @songs = Song.none
+        end
+        render 'api/songs/index.json'
+    end
+
     private 
     def song_params 
         params.require(:song).permit(:title, :time, :artist_id, :album_id)

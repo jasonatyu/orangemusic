@@ -21,10 +21,11 @@ export const deleteUserSong = (userId, songId) => (
 );
 
 // todo: update to include search filters 
-export const fetchSongs = () => (
+export const fetchSongs = (query) => (
     $.ajax({
         method: 'GET',
-        url: '/api/songs'
+        url: '/api/songs',
+        data: { query }
     })
 );
 
