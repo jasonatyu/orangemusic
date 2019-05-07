@@ -1,6 +1,7 @@
 import React from 'react';
 import SongIndexItem from '../songs/SongIndexItem';
 import Loading from '../loading/Loading';
+import { Link } from 'react-router-dom';
 
 class AlbumShow extends React.Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class AlbumShow extends React.Component {
                     </section>
                     <section className='album-detail'>
                         <h1>{album.title}</h1>
-                        <h2>{album.artist}</h2>
+                        <Link className='react-link' to={`/artists/${album.artist_id}`}><h2>{album.artist}</h2></Link>
                         <h3>{album.category} • {this.props.album.year}</h3>
                         <table className='song-table'>
                             <thead className='song-table-header'>

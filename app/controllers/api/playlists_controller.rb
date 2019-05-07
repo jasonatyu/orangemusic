@@ -43,7 +43,7 @@ class Api::PlaylistsController < ApplicationController
         # todo: what to show users who aren't owners of the playlist?
         @playlist = Playlist.find_by(id: params[:id])
         if @playlist.user_id == current_user.id 
-            if @playlist.update_attributes(playlist_params)
+            if @playlist.update(playlist_params)
                 render 'api/playlists/show.json'
             else
                 render json: @playlist.errors.full_messages, status: 422
@@ -54,7 +54,7 @@ class Api::PlaylistsController < ApplicationController
     end
 
     def destroy 
-        @playlist = Playlist.find_by(id: params[:id])
+        @playlist = Playlist.find_by(id: params[:id].to_i)
         if @playlist.user_id == current_user.id 
             @playlist.destroy
             render json: {}, status: 200
@@ -65,7 +65,6 @@ class Api::PlaylistsController < ApplicationController
 
     private 
     def playlist_params 
-        params.require(:playlist).permit(:name, :description, song_ids: [])
+        params.require(:playlist).permit(:name, :description, :photo, song_ids: [])
     end
-
 end

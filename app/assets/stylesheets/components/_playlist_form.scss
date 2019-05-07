@@ -77,3 +77,30 @@ img {
     border-radius: 3px;
 }
 
+#upload-photo {
+   opacity: 0;
+   position: absolute;
+   z-index: -1;
+}
+
+.playlist-form label:hover {
+    cursor: pointer;
+}
+
+.upload-photo-label {
+    position: relative;
+}
+
+.fa-camera {
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white;
+
+}
+
+.photo-hover {
+    opacity: .4;
+}
+

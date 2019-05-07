@@ -25,17 +25,21 @@ export const createPlaylist = (playlist) => (
     $.ajax({
         method: 'POST',
         url: `/api/playlists`,
-        data: { playlist }
+        data: playlist,
+        contentType: false,
+        processData: false
     })
 );
 
-export const updatePlaylist = (playlist) => (
-    $.ajax({
+export const updatePlaylist = (playlist, playlistId) => {
+    return $.ajax({
         method: 'PATCH',
-        url: `/api/playlists/${playlist.id}`,
-        data: { playlist }
-    })
-);
+        url: `/api/playlists/${playlistId}`,
+        data: playlist,
+        contentType: false,
+        processData: false
+    });
+};
 
 export const deletePlaylist = (playlistId) => (
     $.ajax({

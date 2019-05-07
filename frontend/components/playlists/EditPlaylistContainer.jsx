@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        submitAction: (playlist) => dispatch(updatePlaylist(playlist)),
+        submitAction: (playlist, playlistId) => dispatch(updatePlaylist(playlist, playlistId)),
         fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId))
     };
 };
