@@ -9,7 +9,6 @@ require 'open-uri'
 
 
 User.create(email: "tswift89@gmail.com", firstname: "Taylor", lastname: "Swift", password:"testing");
-User.create(email: "jason@jasonyu.co", firstname: "Jason", lastname: "Yu", password:"testing");
 
 Artist.create(name: "Taylor Swift")
 Artist.last.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/taylorswift.png"), filename: "taylorswift.png")
@@ -80,5 +79,5 @@ User.first.song_ids = [1,2,4,5,6,11,14,15,16,20,23,24];
 
 Playlist.create(name: "Gym tunes", description: "Songs to get swoll to", user_id: 1)
 Playlist.first.song_ids = [1,2,4,5,6,11,14,15,16,20];
-Playlist.create(name: "Vacation songs", description: "Songs for my next vacation", user_id: 2)
+Playlist.create(name: "Vacation songs", description: "Songs for my next vacation", user_id: 1)
 Playlist.second.song_ids = [2,4,5,6,11,12,16];
