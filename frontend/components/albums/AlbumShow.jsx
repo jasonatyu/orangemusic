@@ -7,7 +7,6 @@ class AlbumShow extends React.Component {
     }
 
     componentDidMount() {
-        console.log('mounting...');
         this.props.fetchAlbum(this.props.match.params.albumId);
     }
 
@@ -19,7 +18,6 @@ class AlbumShow extends React.Component {
     // }
 
     componentWillUnmount() {
-        console.log('unmounting...');
     }
 
     render() {

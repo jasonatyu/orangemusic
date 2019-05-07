@@ -4,7 +4,6 @@ import ArtistDetailItemContainer from './ArtistDetailItemContainer';
 class ArtistDetail extends React.Component {
 
     componentDidMount() {
-        console.log('mounting')
         this.props.fetchArtist(this.props.match.params.artistId);
     }
 
