@@ -1,0 +1,44 @@
+.artist-show {
+    background-color: #1B1C1E;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-hero {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    height: 40%;
+    background-image: radial-gradient(#1D1E21, #1B1C1D ,#151617);
+}
+
+.artist-hero img {
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    margin: 50px 0 50px 0;
+}
+
+.artist-hero h1 {
+    position: absolute;
+    color: white; 
+    left: 40px;
+    bottom: 10px;
+    font-size: 32px;
+}
+
+.artist-show h3 {
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.artist-show .user-library {
+    background-color: #1F2022;
+    padding-top: 24px;
+}

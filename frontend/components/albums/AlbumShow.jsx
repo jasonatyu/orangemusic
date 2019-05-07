@@ -11,12 +11,11 @@ class AlbumShow extends React.Component {
         this.props.fetchAlbum(this.props.match.params.albumId);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     console.log('component updated...');
-    //     if (prevProps.album.id != this.props.match.params.albumId) {
-    //         this.props.fetchAlbum(this.props.match.params.albumId);
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        if (prevProps.album === undefined || prevProps.album.id != this.props.match.params.albumId) {
+            this.props.fetchAlbum(this.props.match.params.albumId);
+        }
+    }
 
     componentWillUnmount() {
     }

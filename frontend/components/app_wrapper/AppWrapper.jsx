@@ -14,13 +14,15 @@ import EditPlaylistContainer from '../playlists/EditPlaylistContainer';
 import PlaylistIndexDetailContainer from '../playlists/PlaylistIndexDetailContainer';
 import AlbumShowContainer from '../albums/AlbumShowContainer';
 import ExploreIndexContainer from '../explore/ExploreIndexContainer';
+import SearchResultsContainer from '../search_results/SearchResultsContainer';
+import ArtistShowContainer from '../artists/ArtistShowContainer';
 
 const AppWrapper = ({ loggedIn }) => {
     if (loggedIn) {
         return (
             <div id ='authenticated'>
                 <AuthMainNavBar />
-                <AuthSubNavContainer /> 
+                <AuthSubNavContainer />  
                 <section id="main-app">
                     <Route path={["/library","/"]} component={LibraryMenuContainer} /> 
                     <ProtectedRoute path="/library/playlists" component={PlaylistIndexDetailContainer} />
@@ -29,6 +31,9 @@ const AppWrapper = ({ loggedIn }) => {
                     <ProtectedRoute path="/library/albums" component={AlbumIndexContainer} />
                     <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
                     <ProtectedRoute path="/browse" component={ExploreIndexContainer} />
+                    <ProtectedRoute path="/search" component={SearchResultsContainer} />
+                    <ProtectedRoute path="/artists/:artistId" component={ArtistShowContainer} />
+
                     <Switch>
                         <ProtectedRoute path="/playlists/new" component={CreatePlaylistContainer} />
                         <ProtectedRoute path="/playlists/:playlistId" component={EditPlaylistContainer} />
