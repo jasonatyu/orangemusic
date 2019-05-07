@@ -35,7 +35,7 @@ class SongMenu extends React.Component {
 
     handleAddSongToNewPlaylist(e) {
         const playlist = { name: "Untitled Playlist", description: "" };
-        this.props.createPlaylist(playlist).then((res) => this.props.createPlaylistSong(res.playlist.id, this.props.song.id));
+        this.props.createPlaylist(playlist).then((res) => this.props.createPlaylistSong(res.payload.playlist.id, this.props.song.id));
     }
 
     render() {
