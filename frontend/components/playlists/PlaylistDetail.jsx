@@ -7,19 +7,20 @@ class PlaylistDetail extends React.Component {
     }
 
     render() {
-        let songs; 
-        if (this.props.playlistSongs) {
-            songs = this.props.playlistSongs.map((song) => <SongIndexItem key={song.id} song={song} display='playlist'/>)
+        if (this.props.playlistSongs === undefined || this.props.playlistSongs.some((song) => song === undefined)) {
+            return null;
+        } else {
+            const songs = this.props.playlistSongs.map((song) => <SongIndexItem key={song.id} song={song} display='playlist' />)
+            return (
+                <div className='songs-display'>
+                    <table className='song-table'>
+                        <tbody className='song-table-body'>
+                            {songs}
+                        </tbody>
+                    </table>
+                </div>
+            );
         }
-        return (
-            <div className='songs-display'>
-                <table className='song-table'>
-                    <tbody className='song-table-body'>
-                        {songs}
-                    </tbody>
-                </table>
-            </div>
-        );
     }
 }
 

@@ -11,6 +11,10 @@
     color: white;
 }
 
+.playlist-menu-list {
+    z-index: 100;
+}
+
 .playlist-menu-list li {
     border-bottom: 1px solid rgba(255,255,255,.25);
     text-align: center;

@@ -7,11 +7,25 @@ class AlbumShow extends React.Component {
     }
 
     componentDidMount() {
+        console.log('mounting...');
         this.props.fetchAlbum(this.props.match.params.albumId);
     }
 
+    // componentDidUpdate(prevProps) {
+    //     console.log('component updated...');
+    //     if (prevProps.album.id != this.props.match.params.albumId) {
+    //         this.props.fetchAlbum(this.props.match.params.albumId);
+    //     }
+    // }
+
+    componentWillUnmount() {
+        console.log('unmounting...');
+    }
+
     render() {
-        if (this.props.album) {
+        if (this.props.albumSongs === undefined || this.props.albumSongs.some((song) => song === undefined)) {
+            return null;
+        } else {
             const songs = this.props.albumSongs.map((song, idx) => <SongIndexItem key={song.id} idx={idx} song={song} display='album' />);
             const { album } = this.props;
             return (
@@ -39,9 +53,7 @@ class AlbumShow extends React.Component {
                     </section>
                 </div>
             );
-        } else {
-            return null;
-        }
+        } 
     }
 }
 

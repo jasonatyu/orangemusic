@@ -16,6 +16,7 @@ class LibraryMenu extends React.Component {
 
     handleContextMenuClick(e) {
         e.preventDefault();
+        console.log(this.state.menuVisible);
         this.setState({menuVisible: !this.state.menuVisible});
     }
 

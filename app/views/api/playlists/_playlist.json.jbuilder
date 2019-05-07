@@ -5,3 +5,5 @@ end
 json.song_ids do 
     json.array! playlist.songs.pluck(:id)
 end
+
+

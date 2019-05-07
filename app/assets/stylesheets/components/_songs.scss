@@ -26,6 +26,10 @@ td {
     vertical-align: middle;
 }
 
+td p {
+    vertical-align: middle;
+}
+
 td img {
     padding: 5px 0 5px 0;
 }
@@ -56,9 +60,7 @@ th:last-child {
 }
 
 .song-table-body tr:hover {
-    color: lightgray;
     cursor: pointer;
-    opacity: .8;
 }
 
 .song-album {
@@ -109,6 +111,7 @@ td:hover .show-hover {
     color: rgb(0,112,201);
     font-size: 14px;
     visibility: visible;
+    text-align: left;
 }
 
 td:hover .hide-hover {
@@ -118,4 +121,12 @@ td:hover .hide-hover {
 #song-menu #settings-menu {
     right: 60px;
     top: 12px;
+}
+
+.last-item {
+    position: relative;
+}
+
+.no-hover {
+    pointer-events: none !important;
 }

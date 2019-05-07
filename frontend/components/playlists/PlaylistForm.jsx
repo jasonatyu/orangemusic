@@ -9,10 +9,6 @@ class PlaylistForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        //todo: need to make sure the user's songs are loaded??
-    }
-
     handleSubmit(e) {
         e.preventDefault();
         let playlist = this.state; 

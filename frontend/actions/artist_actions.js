@@ -3,10 +3,10 @@ import * as ArtistAPIUtil from '../utils/artist_api_util';
 export const RECEIVE_ARTIST = 'RECEIVE_ARTIST';
 export const RECEIVE_ARTISTS = 'RECEIVE_ARTISTS';
 
-export const receiveArtist = (artist) => {
+export const receiveArtist = (payload) => {
     return {
         type: RECEIVE_ARTIST,
-        artist
+        payload
     };
 };
 

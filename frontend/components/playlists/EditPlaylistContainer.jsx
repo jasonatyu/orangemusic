@@ -20,9 +20,9 @@ const mapDispatchToProps = dispatch => {
 
 class EditPlaylistForm extends React.Component {
     componentDidMount() {
-        this.props.fetchPlaylist(parseInt(this.props.match.params.playlistId));
+        this.props.fetchPlaylist(this.props.match.params.playlistId);
     }
-
+    
     componentDidUpdate(prevProps) {
         if (prevProps.playlist.id != this.props.match.params.playlistId) {
             this.props.fetchPlaylist(this.props.match.params.playlistId);

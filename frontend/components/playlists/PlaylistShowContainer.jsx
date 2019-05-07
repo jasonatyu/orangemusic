@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PlaylistShow from './PlaylistForm';
-import { deletePlaylist, updatePlaylist } from '../../actions/playlist_actions';
+import { deletePlaylist, updatePlaylist, fetchPlaylist } from '../../actions/playlist_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         deletePlaylist: (playlistId) => dispatch(deletePlaylist(playlistId)),
-        updatePlaylist: (playlist) => dispatch(updatePlaylist(playlist))
+        updatePlaylist: (playlist) => dispatch(updatePlaylist(playlist)),
+        fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId))
     };
 };
 

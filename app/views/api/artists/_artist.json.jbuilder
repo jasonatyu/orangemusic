@@ -8,9 +8,3 @@ end
 json.album_ids do 
     json.array! artist.albums.pluck(:id)
 end
-
-json.albums do 
-    json.array! artist.albums do |album|
-        json.partial! 'api/albums/album', album: album
-    end
-end

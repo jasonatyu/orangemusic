@@ -11,10 +11,6 @@ class SongMenu extends React.Component {
         this.handleAddSongToNewPlaylist = this.handleAddSongToNewPlaylist.bind(this);
     }
 
-    componentDidMount() {
-        
-    }
-
     handleClick(type) {
         return (e) => {
             if (type === 'add') {

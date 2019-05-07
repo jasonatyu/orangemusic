@@ -1,4 +1,6 @@
 import { RECEIVE_ALBUM, RECEIVE_ALBUMS } from '../actions/album_actions';
+import { RECEIVE_ARTIST } from '../actions/artist_actions';
+
 
 export default (state={}, action) => {
     Object.freeze(state);
@@ -6,7 +8,9 @@ export default (state={}, action) => {
         case RECEIVE_ALBUMS:
             return action.albums; 
         case RECEIVE_ALBUM:  
-            return Object.assign({}, state, {[action.album.id] : action.album });         
+            return Object.assign({}, state, { [action.payload.album.id]: action.payload.album });    
+        case RECEIVE_ARTIST:
+            return Object.assign({}, state, action.payload.albums );    
         default:
             return state;
     }
