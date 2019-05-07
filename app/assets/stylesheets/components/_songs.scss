@@ -121,7 +121,6 @@ td:hover .show-hover {
     color: rgb(0,112,201);
     font-size: 14px;
     visibility: visible;
-    text-align: left;
     position: absolute;
 }
 
@@ -146,10 +145,10 @@ td:hover .hide-hover {
 .hide-hover, .show-hover {
     position: absolute;
     top: 11px;
-    left: -8px;
+    left: -1px;
 }
 
 .display-other .hide-hover, .display-other .show-hover {
     top: 19px;
-    left: -8px;
+    left: 0px;
 }
