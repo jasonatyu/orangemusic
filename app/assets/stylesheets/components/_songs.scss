@@ -30,6 +30,15 @@ td p {
     vertical-align: middle;
 }
 
+td:nth-last-child(2) {
+    width: 200px;
+}
+
+td:last-child {
+    text-align: right;
+    width: 30px;
+}
+
 td img {
     padding: 5px 0 5px 0;
 }
@@ -99,12 +108,13 @@ th:last-child {
     width: 25px;
 }
 
-.songs-body td:last-child {
-    position: relative;
-}
-
 .show-hover {
     visibility: hidden;
+    position: absolute;
+}
+
+.hide-hover {
+    position: absolute;
 }
 
 td:hover .show-hover {
@@ -112,10 +122,12 @@ td:hover .show-hover {
     font-size: 14px;
     visibility: visible;
     text-align: left;
+    position: absolute;
 }
 
 td:hover .hide-hover {
     display: none;
+    position: absolute;
 }
 
 #song-menu #settings-menu {
@@ -123,10 +135,16 @@ td:hover .hide-hover {
     top: 12px;
 }
 
+.no-hover {
+    pointer-events: none;
+}
+
 .last-item {
     position: relative;
 }
 
-.no-hover {
-    pointer-events: none !important;
+.hide-hover, .show-hover {
+    position: absolute;
+    top: 11px;
+    left: -8px;
 }

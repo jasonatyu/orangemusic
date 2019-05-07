@@ -35,8 +35,8 @@ class SongIndexItem extends React.Component {
                 <td className='content'><p>{title}</p>{display === 'album' ? "":<p className='song-album'>{song.album}</p>}</td>
                 <td className='content'>{song.artist}</td> 
                 {display === 'album' ? "" : <td className='content'>{song.year}</td> }          
-                <td className='content' onClick={this.handleClick}>
-                    <span id='last-item'><span className='hide-hover'>{this.secondsToMinutes(song.time)}</span><span className='show-hover'>•••</span></span>
+                <td className='content last-item' onClick={this.handleClick}>
+                    <span className='hide-hover'>{this.secondsToMinutes(song.time)}</span><span className='show-hover'>•••</span>
                     {this.state.menuVisible ? < SongMenuContainer optionClicked={this.handleClick} song={song} display={this.props.display} /> : ""}
                 </td>
             </tr>
