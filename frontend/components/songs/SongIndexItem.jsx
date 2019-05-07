@@ -1,5 +1,7 @@
 import React from 'react';
 import SongMenuContainer from '../song_menu/SongMenuContainer';
+import { selectSong } from '../../actions/song_selection_actions';
+import { connect } from 'react-redux';
 
 class SongIndexItem extends React.Component {
     
@@ -9,6 +11,11 @@ class SongIndexItem extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
+        this.handleSelection = this.handleSelection.bind(this);
+    }
+
+    handleSelection(e) {
+        this.props.selectSong(this.props.song.id);
     }
 
     handleClick(e) {
@@ -39,7 +46,7 @@ class SongIndexItem extends React.Component {
             title = `${song.title}`;
         }
         return (
-            <tr onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} key={song.id} className={"songs-body" + (this.props.display === "album" ? " display-album" : " display-other") }>
+            <tr onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleSelection} key={song.id} className={"songs-body" + (this.props.display === "album" ? " display-album" : " display-other") + (this.props.songId === song.id ? " selected" : "")}>
                 {display === 'album' ? "" : <td><img src={song.photoUrl} width="40"/></td>}
                 {display === 'album' ? <td className='content'>{idx+1}</td> : ""}
                 <td className='content'><p>{title}</p>{display === 'album' ? "":<p className='song-album'>{song.album}</p>}</td>
@@ -47,7 +54,6 @@ class SongIndexItem extends React.Component {
                 {display === 'album' ? "" : <td className='content'>{song.year}</td> }          
                 <td className='content last-item' onClick={this.handleClick}>
                     {this.state.hoverSong ? <span id='show-hover'>•••</span> : <span>{this.secondsToMinutes(song.time)}</span>}
-                    {/* <span className={this.state.hoverSong ? 'hide-hover' : ''}>{this.secondsToMinutes(song.time)}</span><span className={this.state.hoverSong ? 'show-hover' : ''}>•••</span> */}
                     {this.state.menuVisible ? < SongMenuContainer optionClicked={this.handleClick} song={song} display={this.props.display} /> : ""}
                 </td>
             </tr>
@@ -55,4 +61,16 @@ class SongIndexItem extends React.Component {
     }
 }
 
-export default SongIndexItem;
+const mapStateToProps = state => {
+    return {
+        songId: state.ui.song
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        selectSong: (id) => dispatch(selectSong(id))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SongIndexItem);

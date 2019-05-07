@@ -25,9 +25,9 @@ class PlaylistMenu extends React.Component {
             <div>
                 <nav id='settings-menu' onContextMenu={(e) => e.preventDefault()}>
                     <ul className='playlist-menu-list'>
-                        <li onClick={this.handleClick('create')}>New Playlist</li>
-                        {this.props.display === 'new' ? "" : <li onClick={this.handleClick('edit')}>Edit Playlist</li>}
-                        {this.props.display === 'new' ? "" : <li onClick={this.handleClick('delete')}>Delete Playlist</li>}
+                        <li onClick={this.handleClick('create')}><p>&nbsp;&nbsp;&nbsp;New Playlist</p></li>
+                        {this.props.display === 'new' ? "" : <li onClick={this.handleClick('edit')}><p>&nbsp;&nbsp;&nbsp;Edit Playlist</p></li>}
+                        {this.props.display === 'new' ? "" : <li onClick={this.handleClick('delete')}><p>&nbsp;&nbsp;&nbsp;Delete Playlist</p></li>}
                     </ul>
                 </nav> 
             <Dismisser onClick={(e) => this.props.optionClicked(e)} />

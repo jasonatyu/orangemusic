@@ -13,7 +13,7 @@ class PlaylistForm extends React.Component {
         e.preventDefault();
         let playlist = this.state; 
         if (playlist.name === "") {
-            playlist.name = "Untitled Playlist";
+            playlist.nsame = "Untitled Playlist";
         }
         this.props.submitAction(playlist).then((res)=>this.props.history.push(`/playlists/${res.playlist.id}`));
     }
@@ -23,15 +23,15 @@ class PlaylistForm extends React.Component {
     }
 
     render() {
+        const { formType } = this.props;
         return (
             <div className='playlist-display'>
                 <form className='playlist-form' onSubmit={this.handleSubmit}>
-                        <img src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://images.unsplash.com/photo-1485170536212-67180b105ff6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"} width="60" height="60" />
+                    <img src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/headphones.png"} width="60" height="60" />
                         <section id='playlist-info'>
-                            <input className='playlist-name' type="text" onChange={this.handleChange("name")} value={this.state.name} placeholder="Untitled Playlist" />
-                            <input className='playlist-description' type="text" onChange={this.handleChange("description")} value={this.state.description} placeholder="Description" />
+                        <input className='playlist-name' type="text" onChange={this.handleChange("name")} onBlur={this.handleSubmit} value={this.state.name} placeholder="Untitled Playlist" autoFocus={formType==='Create Playlist'} />
+                        <input className='playlist-description' type="text" onChange={this.handleChange("description")} onBlur={this.handleSubmit} value={this.state.description} placeholder="Description" />
                         </section>
-                        <input type="submit" value="Done"/>
                 </form>
                 <PlaylistDetailContainer />
             </div>
