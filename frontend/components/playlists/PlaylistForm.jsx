@@ -10,13 +10,13 @@ class PlaylistForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
         this.handleHover = this.handleHover.bind(this);
     }
-
     handleHover(e) {
         this.setState({ hover: !this.state.hover });
     }
     handleSubmit(e) {
         e.preventDefault();
         let playlist = this.state;
+        console.log(playlist);
         if (playlist.name === "") {
             playlist.name = "Untitled Playlist";
         }
@@ -36,7 +36,24 @@ class PlaylistForm extends React.Component {
     }
 
     handleFile(e) {
-        this.setState({photoFile: e.currentTarget.files[0]});
+        this.setState({ photoFile: e.currentTarget.files[0] }, () => {
+            let playlist = this.state;
+            console.log(playlist);
+            if (playlist.name === "") {
+                playlist.name = "Untitled Playlist";
+            }
+            const formData = new FormData();
+            formData.append('playlist[name]', playlist.name);
+            formData.append('playlist[description]', playlist.description);
+            formData.append('playlist[photo]', this.state.photoFile);
+            if (this.props.formType === "Edit Playlist") {
+                this.props.submitAction(formData, playlist.id).then(
+                    (res) => this.props.history.push(`/playlists/${res.payload.playlist.id}`));
+            } else {
+                this.props.submitAction(formData).then(
+                    (res) => this.props.history.push(`/playlists/${res.payload.playlist.id}`));
+            }
+        } );
     }
 
     handleChange(type) {
@@ -49,7 +66,7 @@ class PlaylistForm extends React.Component {
             <div className='playlist-display'>
                 <form className='playlist-form' onSubmit={this.handleSubmit}>
                     <label className="upload-photo-label" for="upload-photo" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-                        {this.state.hover? <i class="fa fa-camera"></i> : ""}
+                        {this.state.hover? <i className="fa fa-camera"></i> : ""}
                         <img className={this.state.hover ? "photo-hover" : ""}src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/headphones.png"} width="60" height="60" />
                     </label>
                     <input type="file" onChange={this.handleFile} id="upload-photo" />
