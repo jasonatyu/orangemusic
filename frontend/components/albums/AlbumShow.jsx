@@ -1,5 +1,6 @@
 import React from 'react';
 import SongIndexItem from '../songs/SongIndexItem';
+import Loading from '../loading/Loading';
 
 class AlbumShow extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class AlbumShow extends React.Component {
 
     render() {
         if (this.props.albumSongs === undefined || this.props.albumSongs.some((song) => song === undefined)) {
-            return null;
+            return <Loading />;
         } else {
             const songs = this.props.albumSongs.map((song, idx) => <SongIndexItem key={song.id} idx={idx} song={song} display='album' />);
             const { album } = this.props;

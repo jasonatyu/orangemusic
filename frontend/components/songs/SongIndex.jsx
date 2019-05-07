@@ -1,5 +1,6 @@
 import React from 'react';
 import SongIndexItem from './SongIndexItem';
+import Loading from '../loading/Loading';
 
 class SongIndex extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class SongIndex extends React.Component {
 
     render() {
         if (this.props.songs === undefined || this.props.songs.some((song) => song === undefined)) {
-            return null;
+            return <Loading />
         } else {
             const songs = this.props.songs.map((song) => <SongIndexItem songClicked={this.handleSongClicked} key={song.id} song={song} deleteUserSong={this.deleteUserSong} />)
             return (

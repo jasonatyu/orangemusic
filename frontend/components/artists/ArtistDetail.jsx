@@ -1,5 +1,6 @@
 import React from 'react';
 import ArtistDetailItemContainer from './ArtistDetailItemContainer';
+import Loading from '../loading/Loading';
 
 class ArtistDetail extends React.Component {
 
@@ -15,7 +16,7 @@ class ArtistDetail extends React.Component {
 
     render() {
         if (this.props.artistAlbums === undefined || this.props.artistAlbums.some((song) => song === undefined)) {
-            return null;
+            return <Loading />;
         } else {
             const albums = this.props.artistAlbums.map((album) => <ArtistDetailItemContainer key={album.id} album={album} />)
             return (
