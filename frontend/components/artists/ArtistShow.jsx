@@ -1,5 +1,6 @@
 import React from 'react';
 import AlbumIndexItem from '../albums/AlbumIndexItem';
+import Loading from '../loading/Loading';
 
 class ArtistShow extends React.Component {
     
@@ -16,7 +17,7 @@ class ArtistShow extends React.Component {
     render() {
         const { artist, artistAlbums } = this.props;
         if (artistAlbums === undefined || artistAlbums.some((album) => album === undefined)) {
-            return null;
+            return <Loading />
         } else {
             const albums = artistAlbums.map((album) => <AlbumIndexItem key={album.id} album={album} />)
             return (

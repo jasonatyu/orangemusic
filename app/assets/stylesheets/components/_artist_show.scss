@@ -17,9 +17,10 @@
 }
 
 .artist-hero img {
-    width: 180px;
+    max-width: 160px;
+    width: 20%;
     border-radius: 100%;
-    margin: 50px 0 50px 0;
+    margin: 40px 0 40px 0;
 }
 
 .artist-hero h1 {
@@ -40,5 +41,5 @@
 
 .artist-show .user-library {
     background-color: #1F2022;
-    padding-top: 24px;
+    padding-top: 10px;
 }
