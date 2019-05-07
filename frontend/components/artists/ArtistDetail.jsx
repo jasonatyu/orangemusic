@@ -9,7 +9,7 @@ class ArtistDetail extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.artist.id != this.props.match.params.artistId) {
+        if (prevProps.artist === undefined || prevProps.artist.id != this.props.match.params.artistId) {
             this.props.fetchArtist(this.props.match.params.artistId);
         }
     }
