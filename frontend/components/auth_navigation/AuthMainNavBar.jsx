@@ -1,4 +1,5 @@
 import React from 'react';
+import AudioPlayer from '../audio_player/AudioPlayer';
 
 const AuthMainNavBar = () => (
     <nav id='auth-main-nav-bar'>
@@ -8,6 +9,9 @@ const AuthMainNavBar = () => (
             <div id='play' className='big-play-right'></div>
             <div className='small-forward-right'></div>
             <div className='small-forward-right'></div>
+        </section>
+        <section id='audio-player'>
+            <AudioPlayer />
         </section>
     </nav>
 )
