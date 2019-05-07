@@ -31,7 +31,7 @@ td p {
 }
 
 td:nth-last-child(2) {
-    width: 200px;
+    min-width: 100px;
 }
 
 td:last-child {
