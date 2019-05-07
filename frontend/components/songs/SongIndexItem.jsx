@@ -29,7 +29,7 @@ class SongIndexItem extends React.Component {
             title = `${song.title}`;
         }
         return (
-            <tr key={song.id} className={"songs-body" + (this.props.display === "album" ? " display-album" : "") }>
+            <tr key={song.id} className={"songs-body" + (this.props.display === "album" ? " display-album" : " display-other") }>
                 {display === 'album' ? "" : <td><img src={song.photoUrl} width="40"/></td>}
                 {display === 'album' ? <td className='content'>{idx+1}</td> : ""}
                 <td className='content'><p>{title}</p>{display === 'album' ? "":<p className='song-album'>{song.album}</p>}</td>
