@@ -11,8 +11,8 @@ class AudioPlayer extends React.Component {
         this.changeVolume = this.changeVolume.bind(this);
         this.handlePlayLocation = this.handlePlayLocation.bind(this);
 
-        this.handleButtonPress = this.handleButtonPress.bind(this)
-        this.handleButtonRelease = this.handleButtonRelease.bind(this)
+        this.handleButtonPress = this.handleButtonPress.bind(this);
+        this.handleButtonRelease = this.handleButtonRelease.bind(this);
     }
 
     componentDidMount() {
@@ -28,7 +28,7 @@ class AudioPlayer extends React.Component {
         if (this.props.currentSong !== undefined) {
             if (prevProps.currentSong === undefined || prevProps.currentSong.id !== this.props.currentSong.id) {
                 this.props.playSong(this.props.currentSong.id);
-                this.setState({ duration: this.player.duration, currentPlayLocation: 0 }, () => this.changeLocation(0));
+                this.player.src = this.props.currentSong.fileUrl;
             }
             if (!this.props.isPaused) {
                 this.player.play();
@@ -36,6 +36,10 @@ class AudioPlayer extends React.Component {
                 this.player.pause();
             }
         }
+        //check if song metadata is loaded before setting duration and resetting song location
+        this.player.addEventListener('loadedmetadata', () => {
+            this.setState({ duration: this.player.duration, currentPlayLocation: 0 }, () => this.changeLocation(0));
+        });
     }
 
     handleButtonPress(e) {
@@ -43,7 +47,7 @@ class AudioPlayer extends React.Component {
         this.buttonPressTimer = setTimeout(() => {
             if (action === 'rewind') {
                 const currentTime = this.player.currentTime;
-                this.player.currentTime = (currentTime >= 3.0) ? currentTime - 3.0 : 0;
+                this.player.currentTime = (currentTime >= 5.0) ? currentTime - 5.0 : 0;
             } else if (action === 'fast-forward') {
                 this.player.playbackRate = 2.0;
             }
@@ -125,7 +129,7 @@ class AudioPlayer extends React.Component {
                 </section>
                 <img src={currentSong ? currentSong.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/blank_album.png"} />
                 <section className='main-player'>
-                    <audio ref={ref => this.player = ref} src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/taylor-swift-sample.m4a"/>
+                    <audio ref={ref => this.player = ref} />
                     <section className='current-song-detail'>
                         <p id='time-played' className='time'>{this.secondsToMinutes(this.state.currentPlayLocation)}</p>
                         <section className='current-song-info'>
@@ -134,7 +138,7 @@ class AudioPlayer extends React.Component {
                         </section>
                         <p id='time-remaining' className='time'>{currentSong ? `-${this.calcTimeRemaining(this.state.currentPlayLocation)}` : "-0:00"}</p>
                     </section>
-                    <input type="range" min="0" max="100" onClick={this.handleRangeClick} onChange={this.handlePlayLocation} value={currentSong ? (this.state.currentPlayLocation / this.state.duration)*100 : ""} className="audio-location-range" />
+                    <input type="range" min="0" max="100" onClick={this.handleRangeClick} onChange={this.handlePlayLocation} value={currentSong ? (this.state.currentPlayLocation / this.state.duration)*100 : "0"} className="audio-location-range" />
                 </section>
             </div>
       

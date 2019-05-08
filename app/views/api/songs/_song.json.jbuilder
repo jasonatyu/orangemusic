@@ -5,3 +5,6 @@ json.year song.album.year
 if song.album.artwork.attached?
     json.photoUrl url_for(song.album.artwork)
 end
+if song.file.attached?
+    json.fileUrl url_for(song.file)
+end
