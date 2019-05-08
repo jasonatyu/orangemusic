@@ -3,9 +3,7 @@ import AudioPlayerContainer from '../audio_player/AudioPlayerContainer';
 
 const AuthMainNavBar = () => (
     <nav id='auth-main-nav-bar'>
-        <section id='audio-player'>
-            <AudioPlayerContainer />
-        </section>
+        <AudioPlayerContainer />
     </nav>
 )
 

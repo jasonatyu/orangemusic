@@ -1,9 +1,11 @@
 #session-form-div {
      background-color: #1E1F22;
      color: #eee;
-     height: 100vh;
-     width: auto;
- }
+     width: 100%;
+     height: 100%;
+     overflow-y: scroll;
+     padding-bottom: 30px;
+}
 
  #session-form-div h1  {
      font-size: 24px;

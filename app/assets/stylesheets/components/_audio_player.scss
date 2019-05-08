@@ -1,6 +1,7 @@
 .audio-player {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .main-player {
@@ -10,34 +11,37 @@
     align-items: center;
     height: 100%;
     background-color: #1B1B1C;
+    // padding: 0 3px 0 3px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .audio-player img {
    width: 50px;
    height: 50px;
-   border-radius: 0;
-   margin-right: 5px;
+   border-radius: 2px;
 }
 
 .current-song-detail {
     display: flex;
     align-items: flex-end;
     margin: 3px 3px 3px 3px;
+    width: 100%;
 }
 
 .main-player h4 {
     color: gray;
     font-size: 13px;
     font-weight: 500;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 7px;
 
 }
-
 .main-player p {
     font-size: 11px;
     color: rgb(105, 104, 104);
-    margin: 0 3px 0 3px;
+    margin: 0 4px 1px 4px;
 }
 
 .current-song-info {
@@ -45,6 +49,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 
@@ -53,6 +58,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-left: 5px;
 }
 
 .small-rewind-left {
