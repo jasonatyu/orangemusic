@@ -99,8 +99,6 @@ class AudioPlayer extends React.Component {
     }
 
     render() {
-        // console.log(this.state.currentPlayLocation);
-        // console.log(this.state.duration);
         const { currentSong, isPaused } = this.props;
         return ( 
             <div className='audio-player'>
