@@ -76,9 +76,7 @@ class AudioPlayer extends React.Component {
                         <div className='small-forward-right'></div>
                         <div className='small-forward-right'></div>
                     </section>
-                    <div className="volume-slider">
-                        <input type="range" min="0" max="100" onChange={this.handleVolume} value={this.state.volume} className="volume-range" />
-                    </div>
+                    <input type="range" min="0" max="100" onChange={this.handleVolume} value={this.state.volume} className="volume-range" />
                 </section>
                 <img src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/SOS.png" />
                 <section className='main-player'>

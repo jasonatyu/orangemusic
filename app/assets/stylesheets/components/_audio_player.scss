@@ -111,8 +111,8 @@ width: 0;
     appearance: none;
 }
 
-.play-slider {
-    width: 100%;
+.volume-range::-webkit-slider-thumb {
+  cursor: pointer; 
 }
 
 .audio-location-range {
@@ -136,4 +136,24 @@ width: 0;
   border-radius: 3px;
 
   cursor: pointer; 
+}
+
+.rewind:hover {
+    opacity: .7;
+    cursor: pointer; 
+}
+
+.forward:hover {
+    opacity: .7;
+    cursor: pointer; 
+}
+
+.big-play-right:hover {
+    opacity: .7;
+    cursor: pointer; 
+}
+
+.fa-pause:hover {
+    opacity: .7;
+    cursor: pointer; 
 }
