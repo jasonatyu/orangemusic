@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    width: 200px;
+    width: 250px;
     background-color: #1B1B1C;
     // padding: 0 3px 0 3px;
     text-overflow: ellipsis;
@@ -23,6 +23,7 @@
    width: 50px;
    height: 50px;
    border-radius: 2px;
+   margin-left: 20px;
 }
 
 .current-song-detail {
@@ -108,7 +109,7 @@
 
 .forward {
     position: absolute;
-    left: 112px;
+    left: 110px;
 }
 
 .rewind, .forward {

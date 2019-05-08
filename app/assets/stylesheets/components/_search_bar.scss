@@ -1,0 +1,28 @@
+#search-bar-div {
+    margin-right: 10px;
+    background-color: #6D6D70;
+    padding: 0 5px 0 5px;
+    border-radius: 4px;
+}
+
+#search-bar {
+    min-width: 200px;
+    border: none;
+    color: #eee;
+    background-color: #6D6D70;
+    border-radius: 5px;
+    height: 28px;
+    font-size: 13px;
+    padding: 0 5px 0 5px;
+    vertical-align: middle;
+}
+
+#search-bar::placeholder {
+    color:  lightgray;
+}
+
+.fa-search {
+    color: #eee;
+    font-size: 14px;
+    vertical-align: middle;
+}

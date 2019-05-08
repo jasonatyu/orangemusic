@@ -5,9 +5,8 @@
     border-left: none; 
     border-right: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 #logout {
@@ -29,7 +28,7 @@
 }
 
 #auth-sub-nav-list {
-    vertical-align: center;
+    vertical-align: middle;
     margin-bottom: 3px;
 }
 
@@ -52,8 +51,13 @@
 
 #auth-main-nav-bar {
     background-color: #404143;
+    margin: 0 auto;
     height: 50px;
-    display: flex; 
+}
+
+#auth-main-nav-div {
+    background-color: #404143;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
