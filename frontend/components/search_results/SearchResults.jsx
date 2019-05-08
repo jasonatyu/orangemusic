@@ -24,7 +24,7 @@ class SearchResults extends React.Component {
             if (this.props.songs.length > 0) {
                 topResults.push(["song",this.props.songs[0]]);
             }
-            const top = topResults.map((result) => <TopResultsItem key={result.id} type={result[0]} data={result[1]} />)
+            const top = topResults.map((result, idx) => <TopResultsItem key={idx} type={result[0]} data={result[1]} />)
             const artists = this.props.artists.map((artist) => <ExploreIndexItem key={artist.id} artist={artist} />)
             const albums = this.props.albums.map((album) => <ExploreIndexItem key={album.id} album={album} />)
             const songs = this.props.songs.map((song) => <SongResultsItem key={song.id} song={song} />)
