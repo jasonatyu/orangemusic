@@ -110,60 +110,31 @@ th:last-child {
     width: 25px;
 }
 
-.show-hover {
-    visibility: hidden;
-    position: absolute;
-}
-
-.hide-hover {
-    position: absolute;
-}
-
 td:hover .show-hover {
-    color: rgb(0,112,201);
-    font-size: 14px;
-    visibility: visible;
-    position: absolute;
-}
+     position: relative;
+ }
 
-td:hover .hide-hover {
-    display: none;
-    position: absolute;
-}
 
 #song-menu #settings-menu {
     right: 60px;
     top: 12px;
 }
 
-.no-hover {
-    pointer-events: none;
-}
-
-.last-item {
-    position: relative;
-}
-
-.hide-hover, .show-hover {
-    position: absolute;
-    top: 11px;
-    left: -1px;
-}
-
-.display-other .hide-hover, .display-other .show-hover {
-    top: 19px;
-    left: 0px;
-}
-
 .show-hover {
     color: rgb(0,112,201);
+    text-align: right;
 }
 
 .show-hover-selected {
     color: white;
+    text-align: right;
 }
 
 .selected {
     background-color: rgb(0,112,201);
     border-radius: 5px;
+}
+
+.last-item {
+    position: relative;
 }
