@@ -25,6 +25,6 @@ class Song < ApplicationRecord
     through: :user_songs,
     source: :user
 
-    has_one_attached :song
+    has_one_attached :file
     
 end
