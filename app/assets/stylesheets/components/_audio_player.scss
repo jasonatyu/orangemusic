@@ -80,6 +80,8 @@
     border-bottom: 11px solid transparent;
     margin: 0 18px 0 18px;
     border-radius: 2px;
+    position: absolute;
+    left: 50px;
 }
 
 .small-forward-right {
@@ -95,6 +97,18 @@
     color: #A8A9AA;
     font-size: 24px;
     margin: 0 18px 0 18px;
+    position: absolute;
+    left: 50px;
+}
+
+.rewind {
+    position: absolute;
+    left: 20px;
+}
+
+.forward {
+    position: absolute;
+    left: 110px;
 }
 
 .rewind, .forward {
@@ -111,6 +125,9 @@
     opacity: 0.8;
      -webkit-appearance: none;  
     appearance: none;
+     position: absolute;
+     left: 150px;
+     top: -5px;
 }
 
 .volume-range::-webkit-slider-thumb {

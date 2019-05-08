@@ -95,7 +95,7 @@ class AudioPlayer extends React.Component {
                     </section>
                     <input type="range" min="0" max="100" onChange={this.handleVolume} value={this.state.volume} className="volume-range" />
                 </section>
-                <img src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/SOS.png" />
+                <img src={currentSong ? currentSong.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/blank_album.png"} />
                 <section className='main-player'>
                     <audio ref={ref => this.player = ref} src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/taylor-swift-sample.m4a"/>
                     <section className='current-song-detail'>
@@ -104,7 +104,7 @@ class AudioPlayer extends React.Component {
                             <h4 >{currentSong ? currentSong.title : ""}</h4>
                             <p>{currentSong ? currentSong.artist: ""}</p>
                         </section>
-                        <p id='time-remaining' className='time'>{currentSong ? `${this.calcTimeRemaining(this.state.currentPlayLocation)}` : "-0:00"}</p>
+                        <p id='time-remaining' className='time'>{currentSong ? `-${this.calcTimeRemaining(this.state.currentPlayLocation)}` : "-0:00"}</p>
                     </section>
                     <input type="range" min="0" max="100" onClick={this.handleRangeClick} onChange={this.handlePlayLocation} value={currentSong ? (this.state.currentPlayLocation / this.state.duration)*100 : ""} className="audio-location-range" />
                 </section>
