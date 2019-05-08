@@ -1,14 +1,18 @@
 .audio-player {
     display: flex;
+    align-items: center;
 }
 
 .main-player {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     background-color: #1B1B1C;
 }
 
-.main-player img {
+.audio-player img {
    width: 50px;
    height: 50px;
    border-radius: 0;
@@ -25,13 +29,15 @@
     color: gray;
     font-size: 13px;
     font-weight: 500;
-    margin-bottom: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
 }
 
 .main-player p {
     font-size: 11px;
     color: rgb(105, 104, 104);
-    margin-bottom: 10px;
+    margin: 0 3px 0 3px;
 }
 
 .current-song-info {
@@ -91,4 +97,43 @@ width: 0;
 
 .rewind, .forward {
     display: flex;
+}
+
+.volume-range {
+    width: 90px;
+    height: 5px;
+    border-radius: 3px;
+    outline: none;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.8;
+     -webkit-appearance: none;  
+    appearance: none;
+}
+
+.play-slider {
+    width: 100%;
+}
+
+.audio-location-range {
+    margin-top: 4px;
+    width: 100%;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.8;
+    -webkit-appearance: none;  
+    appearance: none;
+}
+
+.audio-location-range::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 8px; 
+  height: 16px; 
+  background: #d3d3d3;
+  border: 1px solid #1F2022;
+  border-radius: 3px;
+
+  cursor: pointer; 
 }

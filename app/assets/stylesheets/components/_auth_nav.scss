@@ -58,39 +58,3 @@
     justify-content: center;
     align-items: center;
 }
-
-#play-buttons {
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.small-rewind-left {
-width: 0;
-	height: 0;
-	border-top: 7px solid transparent;
-	border-right: 12px solid #A8A9AA;
-    border-bottom: 7px solid transparent;
-    border-radius: 2px;
-}
-
-.big-play-right {
-    width: 0;
-	height: 0;
-	border-top: 11px solid transparent;
-	border-left: 20px solid #A8A9AA;
-    border-bottom: 11px solid transparent;
-    margin: 0 18px 0 18px;
-    border-radius: 2px;
-}
-
-.small-forward-right {
-    width: 0;
-	height: 0;
-	border-top: 7px solid transparent;
-	border-left: 12px solid #A8A9AA;
-    border-bottom: 7px solid transparent;
-    border-radius: 2px;
-}
-

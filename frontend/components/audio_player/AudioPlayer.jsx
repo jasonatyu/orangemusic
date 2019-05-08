@@ -3,11 +3,23 @@ import React from 'react';
 class AudioPlayer extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {volume: 50, currentPlayLocation: 0, duration: 100};
         this.handlePlay = this.handlePlay.bind(this);
+        this.handleVolume = this.handleVolume.bind(this);
+        this.changeVolume = this.changeVolume.bind(this);
+        this.handlePlayLocation = this.handlePlayLocation.bind(this);
+        this.handleRangeClick = this.handleRangeClick.bind(this);
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(() => this.setState({ currentPlayLocation: this.player.currentTime }), 800);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     componentDidUpdate() {
-        console.log("in here");
         if (this.props.currentSongId && !this.props.isPaused) {
             this.player.play();
         } else if (this.props.currentSongId && this.props.isPaused) {
@@ -15,9 +27,17 @@ class AudioPlayer extends React.Component {
         }
     }
 
+    handleRangeClick(e) {
+    }
+
+    handleVolume(e){
+        this.setState({ volume: e.currentTarget.value }, () => this.changeVolume(this.state.volume));
+    }
+
     handlePlay(e) {
         if (!this.props.currentSongId) {
             this.props.playSong(1);
+            this.setState({duration: this.player.duration});
         } else if (this.props.currentSongId && !this.props.isPaused) {
             this.props.pauseSong();
         } else if (this.props.currentSongId && this.props.isPaused) {
@@ -25,7 +45,24 @@ class AudioPlayer extends React.Component {
         }
     }
 
+    handlePlayLocation(e) {
+        const newLocation = parseFloat(e.target.value/100) * parseFloat(this.player.duration);
+        console.log(newLocation);
+        console.log((this.state.currentPlayLocation / this.state.duration) * 100);
+        this.setState({ currentPlayLocation: newLocation }, () => this.changeLocation(newLocation) );
+    }
+
+    changeVolume(volume) {
+        const vol = parseFloat((volume/100).toFixed(1));
+        this.player.volume = vol;
+    }
+
+    changeLocation(location) {
+        this.player.currentTime = location;
+    }
+
     render() {
+        console.log(this.state.currentPlayLocation / this.state.duration );
         return ( 
             <div className='audio-player'>
                 <section className='play-buttons'>
@@ -39,10 +76,13 @@ class AudioPlayer extends React.Component {
                         <div className='small-forward-right'></div>
                         <div className='small-forward-right'></div>
                     </section>
+                    <div className="volume-slider">
+                        <input type="range" min="0" max="100" onChange={this.handleVolume} value={this.state.volume} className="volume-range" />
+                    </div>
                 </section>
+                <img src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/SOS.png" />
                 <section className='main-player'>
                     <audio ref={ref => this.player = ref} src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/taylor-swift-sample.m4a"/>
-                    <img src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/SOS.png"/>
                     <section className='current-song-detail'>
                         <p>Time</p>
                         <section className='current-song-info'>
@@ -51,6 +91,7 @@ class AudioPlayer extends React.Component {
                         </section>
                     <p>Time Left</p>
                     </section>
+                  <input type="range" min="0" max="100" onClick={this.handleRangeClick} onChange={this.handlePlayLocation} value={ (this.state.currentPlayLocation / this.state.duration)*100 } className="audio-location-range" />
                 </section>
             </div>
       
