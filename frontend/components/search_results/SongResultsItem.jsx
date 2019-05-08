@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SongResultsItem = () => (
+const SongResultsItem = ({song}) => (
     <li className='song-result'>
         <div className='divider'></div>
-        <Link><img src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/taylorswift.png"></img></Link>
-        <section className='song-result-info'>
-            <h4>Taylor Swift</h4>
-            <p>Artist</p>
-        </section>
+        <Link to={`/albums/${song.album_id}`}>
+            <img src={song.photoUrl}></img>
+            <section className='song-result-info'>
+                <h4>{song.title}</h4>
+                <p>{song.artist}</p>
+            </section>
+        </Link>
     </li>
 );
 

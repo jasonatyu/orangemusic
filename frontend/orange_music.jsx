@@ -8,6 +8,8 @@ import * as PlaylistAPIUtil from './utils/playlist_api_util';
 import * as AlbumAPIUtil from './utils/album_api_util';
 import * as ArtistAPIUtil from './utils/artist_api_util';
 import { fetchArtists } from './actions/artist_actions';
+import { fetchSongs } from './actions/song_actions';
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -25,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     // // window.UserAPIUtil = UserAPIUtil;
-    // // window.SongAPIUtil = SongAPIUtil;
+    window.SongAPIUtil = SongAPIUtil;
+    window.fetchSongs = fetchSongs;
     // window.PlaylistAPIUtil = PlaylistAPIUtil;
     // // window.AlbumAPIUtil = AlbumAPIUtil;
     window.ArtistAPIUtil = ArtistAPIUtil;

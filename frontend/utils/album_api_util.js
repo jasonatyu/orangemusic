@@ -9,7 +9,7 @@ export const fetchUserAlbums = (userId) => (
 export const fetchAlbums = (query) => (
     $.ajax({
         method: 'GET',
-        url: '/api/search/albums',
+        url: '/api/albums/search',
         data: { query }
     })
 );

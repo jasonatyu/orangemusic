@@ -9,7 +9,7 @@ export const fetchUserPlaylists = (userId) => (
 export const fetchPlaylists = (query) => (
     $.ajax({
         method: 'GET',
-        url: '/api/search/playlists',
+        url: '/api/playlists/search',
         data: { query }
     })
 );

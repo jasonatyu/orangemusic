@@ -57,8 +57,8 @@ export const deleteUserSong = (userId, songId) => dispatch => (
     SongAPIUtil.deleteUserSong(userId, songId).then((song) => dispatch(removeUserSong(userId, songId)))
 );
 
-export const fetchSongs = () => dispatch => (
-    SongAPIUtil.fetchSongs().then((songs) => dispatch(receiveSongs(songs)))
+export const fetchSongs = (query) => dispatch => (
+    SongAPIUtil.fetchSongs(query).then((songs) => dispatch(receiveSongs(songs)))
 );
 
 export const fetchSong = songId => dispatch => (

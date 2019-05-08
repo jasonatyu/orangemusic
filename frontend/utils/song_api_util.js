@@ -24,7 +24,7 @@ export const deleteUserSong = (userId, songId) => (
 export const fetchSongs = (query) => (
     $.ajax({
         method: 'GET',
-        url: '/api/songs',
+        url: '/api/songs/search',
         data: { query }
     })
 );
