@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-
 User.create(email: "tswift89@gmail.com", firstname: "Taylor", lastname: "Swift", password:"testing");
 
 Artist.create(name: "Taylor Swift")

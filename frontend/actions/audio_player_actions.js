@@ -6,10 +6,10 @@ export const CHANGE_VOLUME = 'CHANGE_VOLUME';
 export const QUEUE_SONG = 'QUEUE_SONG';
 export const CONTINUE_SONG = 'CONTINUE_SONG';
 
-export const playSong = (id) => {
+export const playSong = (song) => {
     return {
         type: 'PLAY_SONG',
-        id
+        song
     };
 };
 
@@ -25,10 +25,10 @@ export const continueSong = () => {
     };
 };
 
-export const queueSong = (id) => {
+export const queueSong = (song) => {
     return {
         type: 'QUEUE_SONG',
-        id
+        song
     };
 };
 

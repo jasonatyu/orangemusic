@@ -2,7 +2,7 @@ import { RECEIVE_SONG, RECEIVE_SONGS, REMOVE_USER_SONG } from '../actions/song_a
 import { RECEIVE_PLAYLIST } from '../actions/playlist_actions';
 import { RECEIVE_ALBUM } from '../actions/album_actions';
 import { RECEIVE_ARTIST } from '../actions/artist_actions';
-
+import { CLEAR_RESULTS } from '../actions/search_actions';
 
 export default (state={}, action) => {
     Object.freeze(state);
@@ -21,6 +21,8 @@ export default (state={}, action) => {
             return Object.assign({}, state, action.payload.songs);
         case RECEIVE_ARTIST:
             return Object.assign({}, state, action.payload.songs);
+        case CLEAR_RESULTS:
+            return {};
         default:
             return state;
     }

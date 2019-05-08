@@ -5,6 +5,7 @@ import { fetchArtists } from '../../actions/artist_actions';
 import { fetchSongs } from '../../actions/song_actions';
 import { fetchAlbums } from '../../actions/album_actions';
 import { fetchPlaylists } from '../../actions/playlist_actions';
+import { clearResults } from '../../actions/search_actions';
 
 const mapStateToProps = state => {
     return {
@@ -17,7 +18,8 @@ const mapDispatchToProps = dispatch => {
         fetchArtists: (query) => dispatch(fetchArtists(query)),
         fetchSongs: (query) => dispatch(fetchSongs(query)),
         fetchAlbums: (query) => dispatch(fetchAlbums(query)),
-        fetchPlaylists: (query) => dispatch(fetchPlaylists(query))
+        fetchPlaylists: (query) => dispatch(fetchPlaylists(query)),
+        clearResults: () => dispatch(clearResults())
     };
 };
 

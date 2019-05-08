@@ -4,7 +4,7 @@ import { playSong, pauseSong, continueSong } from '../../actions/audio_player_ac
 
 const mapStateToProps = state => {
     return {
-        currentSong: state.entities.songs[state.ui.player.currentSongId],
+        currentSong: state.ui.player.currentSong,
         isPaused: state.ui.player.isPaused
     };
 };

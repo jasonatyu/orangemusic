@@ -2,27 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TopResultsItem = (props) => {
-    if (props.artist) {
-        return (<li className='top-result-item'>
-            <Link to={`/artists/${props.artist.id}`}><img src={props.artist.photoUrl}></img></Link>
+    if (props.type === "artist") {
+        return (<li className='top-result-item top-result-item-artist'>
+            <Link to={`/artists/${props.data.id}`}><img src={props.data.photoUrl}></img></Link>
             <section className='result-info'>
-                <h4>{props.artist.name}</h4>
+                <h4>{props.data.name}</h4>
                 <p>Artist</p>
             </section>
         </li>)
-    } else if (props.album) {
+    } else if (props.type === "album") {
         return (<li className='top-result-item'>
-            <Link to={`/albums/${props.album.id}`}><img src={props.album.photoUrl}></img></Link>
+            <Link to={`/albums/${props.data.id}`}><img src={props.data.photoUrl}></img></Link>
             <section className='result-info'>
-                <h4>{props.album.title}</h4>
+                <h4>{props.data.title}</h4>
                 <p>Album</p>
             </section>
         </li>)
-    } else if (props.song) {
+    } else if (props.type === "song") {
         return (<li className='top-result-item'>
-            <Link to={`/albums/${props.song.album_id}`}><img src={props.song.photoUrl}></img></Link>
+            <Link to={`/albums/${props.data.album_id}`}><img src={props.data.photoUrl}></img></Link>
             <section className='result-info'>
-                <h4>{props.album.title}</h4>
+                <h4>{props.data.title}</h4>
                 <p>Song</p>
             </section>
         </li>)

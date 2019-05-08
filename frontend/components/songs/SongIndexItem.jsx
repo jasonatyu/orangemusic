@@ -17,7 +17,7 @@ class SongIndexItem extends React.Component {
     }
 
     handleSongPlay(e) {
-        this.props.playSong(this.props.song.id);
+        this.props.playSong(this.props.song);
     }
 
     handleSelection(e) {

@@ -16,7 +16,6 @@ class PlaylistForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let playlist = this.state;
-        console.log(playlist);
         if (playlist.name === "") {
             playlist.name = "Untitled Playlist";
         }
@@ -38,7 +37,6 @@ class PlaylistForm extends React.Component {
     handleFile(e) {
         this.setState({ photoFile: e.currentTarget.files[0] }, () => {
             let playlist = this.state;
-            console.log(playlist);
             if (playlist.name === "") {
                 playlist.name = "Untitled Playlist";
             }

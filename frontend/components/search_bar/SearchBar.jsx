@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
 
     handleEnter(e) {
         if (e.key === 'Enter') {
+            this.props.clearResults();
             this.props.fetchArtists(e.target.value);
             this.props.fetchAlbums(e.target.value);
             this.props.fetchSongs(e.target.value);

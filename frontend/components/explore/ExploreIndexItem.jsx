@@ -5,7 +5,7 @@ const ExploreIndexItem = (props) => {
 
     if (props.artist) {
         return (
-        <li className='explore-index-item'>
+            <li className='explore-index-item explore-index-item-artist'>
             <Link to={`/artists/${props.artist.id}`}><img src={props.artist.photoUrl}/></Link>
             <h4>{props.artist.name}</h4>
             <p>Artist</p>
