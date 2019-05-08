@@ -22,8 +22,8 @@ const ExploreIndexItem = (props) => {
     } else {
         return (
             <li className='explore-index-item'>
-                    <Link to="/playlists/1"><img src="https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1960&q=80" /></Link>
-                    <h4>Top 100: Global</h4>
+                <Link to={`/playlists/${props.playlist.id}`}><img src={props.playlist.photoUrl ? props.playlist.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/headphones.png"} /></Link>
+                    <h4>{props.playlist.name}</h4>
                     <p>Orange Music</p>
                 </li>
         )

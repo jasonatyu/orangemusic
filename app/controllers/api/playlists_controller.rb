@@ -13,12 +13,18 @@ class Api::PlaylistsController < ApplicationController
     end
 
     def search
-        if params[:query].present?
-            @playlists = Playlist.where("lower(name) LIKE ?", "%#{params[:query].downcase}%")
-        else
-            @playlists = Playlist.none
+
+        if params[:query] == 'explore'
+            @playlists = Playlist.where("category in (?)", ["featured", "top", "hits"])
+            render 'api/playlists/index.json'
+        else 
+            if params[:query].present?
+                @playlists = Playlist.where("lower(name) LIKE ?", "%#{params[:query].downcase}%")
+            else
+                @playlists = Playlist.none
+            end
+            render 'api/playlists/index.json'
         end
-        render 'api/playlists/index.json'
     end
 
     def show 

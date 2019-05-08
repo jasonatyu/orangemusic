@@ -1,4 +1,4 @@
-json.extract! playlist, :id, :name, :description, :user_id
+json.extract! playlist, :id, :name, :description, :user_id, :category, :headline, :subheadline
 if playlist.photo.attached?
     json.photoUrl url_for(playlist.photo)
 end

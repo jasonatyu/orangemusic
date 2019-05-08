@@ -8,6 +8,9 @@
 #  user_id     :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  type        :string
+#  headline    :string
+#  subheadline :string
 #
 
 require 'test_helper'

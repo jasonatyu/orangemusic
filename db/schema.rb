@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_180048) do
+ActiveRecord::Schema.define(version: 2019_05_08_231610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,9 @@ ActiveRecord::Schema.define(version: 2019_05_01_180048) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
+    t.string "headline"
+    t.string "subheadline"
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
