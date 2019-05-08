@@ -1,6 +1,6 @@
 import { PLAY_SONG, PAUSE_SONG, QUEUE_SONG, CONTINUE_SONG } from '../actions/audio_player_actions';
 
-const _nullState = {currentSongId: null, isPaused: null, queuedSongs: []};
+const _nullState = {currentSongId: null, isPaused: true, queuedSongs: []};
 
 export default (state = _nullState, action) => {
     Object.freeze(state);

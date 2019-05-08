@@ -33,7 +33,7 @@ class AudioPlayer extends React.Component {
                         <div className='small-rewind-left'></div>
                         <div className='small-rewind-left'></div>
                     </section>
-                    { !this.props.isPaused ? <div id='play' onClick={this.handlePlay} className='big-play-right'></div> :
+                    { !this.props.currentSongId || this.props.currentSongId && this.props.isPaused ? <div id='play' onClick={this.handlePlay} className='big-play-right'></div> :
                         <i onClick={this.handlePlay} className="fas fa-pause"></i> }
                     <section className='forward'>
                         <div className='small-forward-right'></div>
