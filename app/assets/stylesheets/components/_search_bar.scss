@@ -3,6 +3,10 @@
     background-color: #6D6D70;
     padding: 0 5px 0 5px;
     border-radius: 4px;
+    height: 28px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 5px;
 }
 
 #search-bar {
@@ -15,6 +19,9 @@
     font-size: 13px;
     padding: 0 5px 0 5px;
     vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+
 }
 
 #search-bar::placeholder {
