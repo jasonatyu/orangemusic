@@ -3,7 +3,7 @@ import React from 'react';
 class AudioPlayer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {volume: 50, currentPlayLocation: 0, duration: 100};
+        this.state = {volume: 50, currentPlayLocation: 0, duration: 0};
         this.handlePlay = this.handlePlay.bind(this);
         this.handleVolume = this.handleVolume.bind(this);
         this.changeVolume = this.changeVolume.bind(this);
@@ -61,6 +61,19 @@ class AudioPlayer extends React.Component {
         this.player.currentTime = location;
     }
 
+    secondsToMinutes(time) {
+        let seconds = Math.round(time);
+        let minutes = Math.floor(time / 60);
+        seconds = (seconds - minutes * 60).toString().padStart(2, '0');
+        return `${minutes}:${seconds}`;
+    }
+
+    calcTimeRemaining(time) {
+        let seconds = Math.round(time);
+        let timeRemaining = Math.round(this.state.duration) - seconds;
+        return this.secondsToMinutes(timeRemaining);
+    }
+
     render() {
         console.log(this.state.currentPlayLocation / this.state.duration );
         return ( 
@@ -82,12 +95,12 @@ class AudioPlayer extends React.Component {
                 <section className='main-player'>
                     <audio ref={ref => this.player = ref} src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/taylor-swift-sample.m4a"/>
                     <section className='current-song-detail'>
-                        <p>Time</p>
+                        <p className='time'>{this.secondsToMinutes(this.state.currentPlayLocation)}</p>
                         <section className='current-song-info'>
                             <h4>I Don't Dance (Without You)</h4>
                             <p>Matoma</p>
                         </section>
-                    <p>Time Left</p>
+                        <p className='time'>{`-${this.calcTimeRemaining(this.state.currentPlayLocation)}`}</p>
                     </section>
                   <input type="range" min="0" max="100" onClick={this.handleRangeClick} onChange={this.handlePlayLocation} value={ (this.state.currentPlayLocation / this.state.duration)*100 } className="audio-location-range" />
                 </section>

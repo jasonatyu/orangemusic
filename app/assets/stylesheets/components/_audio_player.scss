@@ -10,11 +10,13 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    min-width: 100px;
     background-color: #1B1B1C;
     // padding: 0 3px 0 3px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    position: relative;
 }
 
 .audio-player img {
@@ -26,7 +28,7 @@
 .current-song-detail {
     display: flex;
     align-items: flex-end;
-    margin: 3px 3px 3px 3px;
+    margin: 3px;
     width: 100%;
 }
 
@@ -41,7 +43,7 @@
 .main-player p {
     font-size: 11px;
     color: rgb(105, 104, 104);
-    margin: 0 4px 1px 4px;
+    margin: 0 3px 0px 3px;
 }
 
 .current-song-info {
@@ -49,9 +51,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
-
 
 .play-buttons {
     width: 250px;
@@ -162,4 +162,8 @@ width: 0;
 .fa-pause:hover {
     opacity: .7;
     cursor: pointer; 
+}
+
+.time {
+    width: 30px;
 }
