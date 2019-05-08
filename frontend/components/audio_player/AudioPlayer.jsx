@@ -1,3 +1,5 @@
+// long press detection: https://stackoverflow.com/questions/48048957/react-long-press-event
+
 import React from 'react';
 
 class AudioPlayer extends React.Component {
@@ -8,7 +10,9 @@ class AudioPlayer extends React.Component {
         this.handleVolume = this.handleVolume.bind(this);
         this.changeVolume = this.changeVolume.bind(this);
         this.handlePlayLocation = this.handlePlayLocation.bind(this);
-        this.handleRangeClick = this.handleRangeClick.bind(this);
+
+        this.handleButtonPress = this.handleButtonPress.bind(this)
+        this.handleButtonRelease = this.handleButtonRelease.bind(this)
     }
 
     componentDidMount() {
@@ -34,7 +38,21 @@ class AudioPlayer extends React.Component {
         }
     }
 
-    handleRangeClick(e) {
+    handleButtonPress(e) {
+        const action = e.currentTarget.value;
+        this.buttonPressTimer = setTimeout(() => {
+            if (action === 'rewind') {
+                const currentTime = this.player.currentTime;
+                this.player.currentTime = (currentTime >= 3.0) ? currentTime - 3.0 : 0;
+            } else if (action === 'fast-forward') {
+                this.player.playbackRate = 2.0;
+            }
+        }, 1000);
+    }
+
+    handleButtonRelease() {
+        clearTimeout(this.buttonPressTimer);
+        this.player.playbackRate = 1.0;
     }
 
     handleVolume(e){
@@ -83,16 +101,26 @@ class AudioPlayer extends React.Component {
         return ( 
             <div className='audio-player'>
                 <section className='play-buttons'>
-                    <section className='rewind'>
+                    <button className='rewind' value='rewind'
+                        onTouchStart={this.handleButtonPress}
+                        onTouchEnd={this.handleButtonRelease}
+                        onMouseDown={this.handleButtonPress}
+                        onMouseUp={this.handleButtonRelease}
+                        onMouseLeave={this.handleButtonRelease}>
                         <div className='small-rewind-left'></div>
                         <div className='small-rewind-left'></div>
-                    </section>
+                    </button>
                     { !currentSong || currentSong.id && isPaused ? <div id='play' onClick={this.handlePlay} className='big-play-right'></div> :
                         <i onClick={this.handlePlay} className="fas fa-pause"></i> }
-                    <section className='forward'>
+                    <button className='forward' value='fast-forward'
+                        onTouchStart={this.handleButtonPress}
+                        onTouchEnd={this.handleButtonRelease}
+                        onMouseDown={this.handleButtonPress}
+                        onMouseUp={this.handleButtonRelease}
+                        onMouseLeave={this.handleButtonRelease}>
                         <div className='small-forward-right'></div>
                         <div className='small-forward-right'></div>
-                    </section>
+                    </button>
                     <input type="range" min="0" max="100" onChange={this.handleVolume} value={this.state.volume} className="volume-range" />
                 </section>
                 <img src={currentSong ? currentSong.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/blank_album.png"} />
