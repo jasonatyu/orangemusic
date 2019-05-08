@@ -16,7 +16,7 @@ const ExploreIndexItem = (props) => {
             <li className='explore-index-item'>
                 <Link to={`/albums/${props.album.id}`}><img src={props.album.photoUrl}/></Link>
                 <h4>{props.album.title}</h4>
-                <p>Album</p>
+                <p>{props.album.artist}</p>
             </li>
         )
     } else {
