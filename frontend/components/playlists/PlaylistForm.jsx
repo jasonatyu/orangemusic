@@ -28,10 +28,10 @@ class PlaylistForm extends React.Component {
         }
         if (this.props.formType === "Edit Playlist") {
             this.props.submitAction(formData, playlist.id).then(
-                (res) => this.props.history.push(`/playlists/${res.payload.playlist.id}`));
+                (res) => this.forceUpdate());
         } else {
             this.props.submitAction(formData).then(
-            (res) => this.props.history.push(`/playlists/${res.payload.playlist.id}`));
+                (res) => this.forceUpdate());
         }
     }
 
@@ -48,10 +48,10 @@ class PlaylistForm extends React.Component {
             formData.append('playlist[photo]', this.state.photoFile);
             if (this.props.formType === "Edit Playlist") {
                 this.props.submitAction(formData, playlist.id).then(
-                    (res) => this.props.history.push(`/playlists/${res.payload.playlist.id}`));
+                    (res) => this.forceUpdate());
             } else {
                 this.props.submitAction(formData).then(
-                    (res) => this.props.history.push(`/playlists/${res.payload.playlist.id}`));
+                    (res) => this.forceUpdate());
             }
         } );
     }
@@ -65,7 +65,7 @@ class PlaylistForm extends React.Component {
         return (
             <div className='playlist-display'>
                 <form className='playlist-form' onSubmit={this.handleSubmit}>
-                    <label className="upload-photo-label" for="upload-photo" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+                    <label className="upload-photo-label" htmlFor="upload-photo" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
                         {this.state.hover? <i className="fa fa-camera"></i> : ""}
                         <img className={this.state.hover ? "photo-hover" : ""}src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/headphones.png"} width="60" height="60" />
                     </label>
