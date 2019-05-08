@@ -1,5 +1,6 @@
 import * as SongAPIUtil from '../utils/song_api_util';
 
+export const RECEIVE_USER_SONG = 'RECEIVE_USER_SONG';
 export const RECEIVE_SONG = 'RECEIVE_SONG';
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
 export const REMOVE_USER_SONG = 'REMOVE_CURRENT_USER_SONG';
@@ -18,6 +19,14 @@ export const receiveSongs = (songs) => {
     return {
         type: RECEIVE_SONGS,
         songs
+    };
+};
+
+export const receiveUserSong = (userId, songId) => {
+    return {
+        type: RECEIVE_USER_SONG,
+        userId,
+        songId
     };
 };
 

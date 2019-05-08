@@ -5,9 +5,10 @@ import { createPlaylistSong, deletePlaylistSong, createUserSong, deleteUserSong 
 import { createPlaylist } from '../../actions/playlist_actions';
 import { fetchUserPlaylists } from '../../actions/playlist_actions';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
         currentUserId: state.session.id,
+        currentUserSongs: state.entities.users[state.session.id].song_ids,
         userPlaylists: Object.values(state.entities.playlists).filter((playlist) => playlist.user_id === state.session.id)
     };
 };

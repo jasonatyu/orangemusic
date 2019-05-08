@@ -20,6 +20,8 @@ class SongMenu extends React.Component {
                 this.props.deleteUserSong(this.props.currentUserId, this.props.song.id);
             } else if (type === 'delete-from-playlist') {
                 this.props.deletePlaylistSong(this.props.match.params.playlistId, this.props.song.id);
+            } else if (type === 'add-to-library') {
+                this.props.createUserSong(this.props.currentUserId, this.props.song.id);
             }
             this.props.optionClicked(e);
         };
@@ -52,7 +54,10 @@ class SongMenu extends React.Component {
                         </li>
                         <li onClick={this.handleClick('show')}>Show Album in Library</li>
                        { this.props.display === 'playlist' ? 
-                       <li onClick={this.handleClick('delete-from-playlist')}>Delete From Playlist</li> : <li onClick={this.handleClick('delete')}>Delete From Library</li> }
+                       <li onClick={this.handleClick('delete-from-playlist')}>Delete From Playlist</li> : null }
+                        {this.props.display !== 'playlist' && this.props.currentUserSongs.includes(this.props.song.id) ?
+                            <li onClick={this.handleClick('delete')}>Delete From Library</li> 
+                            : <li onClick={this.handleClick('add-to-library')}>Add to Library</li>}
                     </ul>
                 </nav>
                 <Dismisser onClick={(e) => this.props.optionClicked(e)} />
