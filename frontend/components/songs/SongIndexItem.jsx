@@ -1,6 +1,7 @@
 import React from 'react';
 import SongMenuContainer from '../song_menu/SongMenuContainer';
 import { selectSong } from '../../actions/song_selection_actions';
+import { playSong } from '../../actions/audio_player_actions';
 import { connect } from 'react-redux';
 
 class SongIndexItem extends React.Component {
@@ -12,6 +13,12 @@ class SongIndexItem extends React.Component {
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
         this.handleSelection = this.handleSelection.bind(this);
+        this.handleSongPlay = this.handleSongPlay.bind(this);
+    }
+
+    handleSongPlay(e) {
+        console.log('double click');
+        this.props.playSong(this.props.song.id);
     }
 
     handleSelection(e) {
@@ -46,7 +53,7 @@ class SongIndexItem extends React.Component {
             title = `${song.title}`;
         }
         return (
-            <tr onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleSelection} key={song.id} className={"songs-body" + (this.props.display === "album" ? " display-album" : " display-other") + (this.props.songId === song.id ? " selected" : "")}>
+            <tr onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleSelection} onDoubleClick={this.handleSongPlay} key={song.id} className={"songs-body" + (this.props.display === "album" ? " display-album" : " display-other") + (this.props.songId === song.id ? " selected" : "")}>
                 {display === 'album' ? "" : <td><img src={song.photoUrl} width="40"/></td>}
                 {display === 'album' ? <td className='content'>{idx+1}</td> : ""}
                 <td className='content'><p>{title}</p>{display === 'album' ? "":<p className='song-album'>{song.album}</p>}</td>
@@ -69,7 +76,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        selectSong: (id) => dispatch(selectSong(id))
+        selectSong: (id) => dispatch(selectSong(id)),
+        playSong: (id) => dispatch(playSong(id))
     };
 };
 

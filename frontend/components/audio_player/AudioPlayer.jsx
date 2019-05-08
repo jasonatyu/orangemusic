@@ -12,18 +12,25 @@ class AudioPlayer extends React.Component {
     }
 
     componentDidMount() {
-        this.interval = setInterval(() => this.setState({ currentPlayLocation: this.player.currentTime }), 800);
+        this.interval = setInterval(() => 
+            this.setState({ currentPlayLocation: this.player.currentTime }), 1000);
     }
 
     componentWillUnmount() {
         clearInterval(this.interval);
     }
 
-    componentDidUpdate() {
-        if (this.props.currentSongId && !this.props.isPaused) {
-            this.player.play();
-        } else if (this.props.currentSongId && this.props.isPaused) {
-            this.player.pause();
+    componentDidUpdate(prevProps) {
+        if (this.props.currentSong !== undefined) {
+            if (prevProps.currentSong === undefined || prevProps.currentSong.id !== this.props.currentSong.id) {
+                this.props.playSong(this.props.currentSong.id);
+                this.setState({ duration: this.player.duration, currentPlayLocation: 0 }, () => this.changeLocation(0));
+            }
+            if (!this.props.isPaused) {
+                this.player.play();
+            } else {
+                this.player.pause();
+            }
         }
     }
 
@@ -35,20 +42,15 @@ class AudioPlayer extends React.Component {
     }
 
     handlePlay(e) {
-        if (!this.props.currentSongId) {
-            this.props.playSong(1);
-            this.setState({duration: this.player.duration});
-        } else if (this.props.currentSongId && !this.props.isPaused) {
+        if (this.props.currentSong.id && !this.props.isPaused) {
             this.props.pauseSong();
-        } else if (this.props.currentSongId && this.props.isPaused) {
+        } else if (this.props.currentSong.id && this.props.isPaused) {
             this.props.continueSong();
         }
     }
 
     handlePlayLocation(e) {
         const newLocation = parseFloat(e.target.value/100) * parseFloat(this.player.duration);
-        console.log(newLocation);
-        console.log((this.state.currentPlayLocation / this.state.duration) * 100);
         this.setState({ currentPlayLocation: newLocation }, () => this.changeLocation(newLocation) );
     }
 
@@ -75,7 +77,9 @@ class AudioPlayer extends React.Component {
     }
 
     render() {
-        console.log(this.state.currentPlayLocation / this.state.duration );
+        // console.log(this.state.currentPlayLocation);
+        // console.log(this.state.duration);
+        const { currentSong, isPaused } = this.props;
         return ( 
             <div className='audio-player'>
                 <section className='play-buttons'>
@@ -83,7 +87,7 @@ class AudioPlayer extends React.Component {
                         <div className='small-rewind-left'></div>
                         <div className='small-rewind-left'></div>
                     </section>
-                    { !this.props.currentSongId || this.props.currentSongId && this.props.isPaused ? <div id='play' onClick={this.handlePlay} className='big-play-right'></div> :
+                    { !currentSong || currentSong.id && isPaused ? <div id='play' onClick={this.handlePlay} className='big-play-right'></div> :
                         <i onClick={this.handlePlay} className="fas fa-pause"></i> }
                     <section className='forward'>
                         <div className='small-forward-right'></div>
@@ -95,14 +99,14 @@ class AudioPlayer extends React.Component {
                 <section className='main-player'>
                     <audio ref={ref => this.player = ref} src="https://s3-us-west-1.amazonaws.com/orange-music-dev/seed/taylor-swift-sample.m4a"/>
                     <section className='current-song-detail'>
-                        <p className='time'>{this.secondsToMinutes(this.state.currentPlayLocation)}</p>
+                        <p id='time-played' className='time'>{this.secondsToMinutes(this.state.currentPlayLocation)}</p>
                         <section className='current-song-info'>
-                            <h4>I Don't Dance (Without You)</h4>
-                            <p>Matoma</p>
+                            <h4 >{currentSong ? currentSong.title : ""}</h4>
+                            <p>{currentSong ? currentSong.artist: ""}</p>
                         </section>
-                        <p className='time'>{`-${this.calcTimeRemaining(this.state.currentPlayLocation)}`}</p>
+                        <p id='time-remaining' className='time'>{currentSong ? `${this.calcTimeRemaining(this.state.currentPlayLocation)}` : "-0:00"}</p>
                     </section>
-                  <input type="range" min="0" max="100" onClick={this.handleRangeClick} onChange={this.handlePlayLocation} value={ (this.state.currentPlayLocation / this.state.duration)*100 } className="audio-location-range" />
+                    <input type="range" min="0" max="100" onClick={this.handleRangeClick} onChange={this.handlePlayLocation} value={currentSong ? (this.state.currentPlayLocation / this.state.duration)*100 : ""} className="audio-location-range" />
                 </section>
             </div>
       
