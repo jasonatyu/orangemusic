@@ -17,7 +17,6 @@ class SongIndexItem extends React.Component {
     }
 
     handleSongPlay(e) {
-        console.log('double click');
         this.props.playSong(this.props.song.id);
     }
 
