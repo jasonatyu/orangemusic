@@ -1,6 +1,6 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import ArtistDetailItem from './ArtistDetailItem';
+import { queueSongs } from '../../actions/audio_player_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -8,4 +8,10 @@ const mapStateToProps = (state, ownProps) => {
     };
 };
 
-export default connect(mapStateToProps, null)(ArtistDetailItem);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        queueSongs: (songs) => dispatch(queueSongs(songs))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArtistDetailItem);

@@ -26,6 +26,9 @@
 
 .album-info {
     border-bottom:  1px solid rgba(255,255,255,.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .album-sub-info h2 {
