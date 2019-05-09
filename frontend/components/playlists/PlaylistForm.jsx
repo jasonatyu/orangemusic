@@ -64,7 +64,7 @@ class PlaylistForm extends React.Component {
     }
 
     render() {
-        const { formType, currentUserId } = this.props;
+        const { formType, currentUserId, playlist } = this.props;
         return (
             <div className='playlist-display'>
                 <form className='playlist-form' onSubmit={this.handleSubmit}>
@@ -74,8 +74,10 @@ class PlaylistForm extends React.Component {
                     </label>
                     <input type="file" onChange={this.handleFile} id="upload-photo" />
                     <section id='playlist-info'>
-                        <input className='playlist-name' type="text" onChange={this.handleChange("name")} onBlur={this.handleSubmit} value={this.state.name} placeholder="Untitled Playlist" autoFocus={formType === 'Create Playlist'} />
-                        <input className='playlist-description' type="text" onChange={this.handleChange("description")} onBlur={this.handleSubmit} value={this.state.description} placeholder="Description" />
+                        <input className='playlist-name' type="text" onChange={this.handleChange("name")} onBlur={this.handleSubmit} value={this.state.name} placeholder="Untitled Playlist" autoFocus={formType === 'Create Playlist'} 
+                            readOnly={formType === 'Edit Playlist' && currentUserId !== playlist.user_id ? true : false } />
+                        <input className='playlist-description' type="text" onChange={this.handleChange("description")} onBlur={this.handleSubmit} value={this.state.description} placeholder="Description" 
+                            readOnly={formType === 'Edit Playlist' && currentUserId !== playlist.user_id ? true : false } />
                         { currentUserId === 1 ?
                             (<>
                             <input className='playlist-description' type="text" onChange={this.handleChange("category")} onBlur={this.handleSubmit} value={this.state.category} placeholder="Category" />
