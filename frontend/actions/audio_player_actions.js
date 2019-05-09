@@ -9,6 +9,7 @@ export const REMOVE_QUEUED_SONG = 'REMOVE_QUEUED_SONG';
 export const QUEUE_SONGS = 'QUEUE_SONGS';
 export const SHUFFLE_PLAY = 'SHUFFLE_PLAY';
 
+
 export const playSong = (song) => {
     return {
         type: 'PLAY_SONG',

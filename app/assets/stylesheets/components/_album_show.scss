@@ -62,3 +62,10 @@
 .album-detail-information .fa-random {
     margin-right: 30px;
 }
+
+.album-index-item-info {
+    width: 200px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

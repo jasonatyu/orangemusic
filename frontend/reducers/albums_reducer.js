@@ -2,7 +2,6 @@ import { RECEIVE_ALBUM, RECEIVE_ALBUMS } from '../actions/album_actions';
 import { RECEIVE_ARTIST } from '../actions/artist_actions';
 import { CLEAR_RESULTS } from '../actions/search_actions';
 
-
 export default (state={}, action) => {
     Object.freeze(state);
     switch (action.type) {
