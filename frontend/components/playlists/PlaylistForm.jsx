@@ -30,8 +30,9 @@ class PlaylistForm extends React.Component {
             this.props.submitAction(formData, playlist.id).then(
                 (res) => this.forceUpdate());
         } else {
+            // new
             this.props.submitAction(formData).then(
-                (res) => this.forceUpdate());
+                (res) => this.props.history.push(`/playlists/${res.payload.playlist.id}`));
         }
     }
 
