@@ -24,13 +24,13 @@ const AppWrapper = ({ loggedIn }) => {
                 <AuthMainNavBar />
                 <AuthSubNavContainer />  
                 <section id="main-app">
-                    <Route path={["/library","/"]} component={LibraryMenuContainer} /> 
+                    <Route path={["/library"]} component={LibraryMenuContainer} /> 
                     <ProtectedRoute path="/library/playlists" component={PlaylistIndexDetailContainer} />
                     <ProtectedRoute path="/library/songs" component={SongIndexContainer} />
                     <ProtectedRoute path="/library/artists" component={ArtistIndexContainer} />
                     <ProtectedRoute path="/library/albums" component={AlbumIndexContainer} />
                     <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
-                    <ProtectedRoute path="/browse" component={ExploreIndexContainer} />
+                    <ProtectedRoute exact path={["/", "/browse"]} component={ExploreIndexContainer} />
                     <ProtectedRoute path="/search" component={SearchResultsContainer} />
                     <ProtectedRoute path="/artists/:artistId" component={ArtistShowContainer} />
 
