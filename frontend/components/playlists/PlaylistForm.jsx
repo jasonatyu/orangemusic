@@ -26,11 +26,14 @@ class PlaylistForm extends React.Component {
         if (this.state.photoFile) {
             formData.append('playlist[photo]', this.state.photoFile);
         }
+        formData.append('playlist[category]', playlist.category === null ? "" : playlist.category);
+        formData.append('playlist[headline]', playlist.headline === null ? "" : playlist.headline);
+        formData.append('playlist[subheadline]', playlist.subheadline === null ? "" : playlist.subheadline);
+
         if (this.props.formType === "Edit Playlist") {
             this.props.submitAction(formData, playlist.id).then(
                 (res) => this.forceUpdate());
         } else {
-            // new
             this.props.submitAction(formData).then(
                 (res) => this.props.history.push(`/playlists/${res.payload.playlist.id}`));
         }
