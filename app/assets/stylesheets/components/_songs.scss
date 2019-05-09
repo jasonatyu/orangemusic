@@ -66,10 +66,6 @@ th:last-child {
     border-bottom: 1px solid rgba(255,255,255,.25);
 }
 
-.selected {
-    background-color: rgb(0,112,201);
-}
-
 .song-table-body tr:hover {
     cursor: pointer;
 }
@@ -144,7 +140,7 @@ td:hover .show-hover {
 }
 
 .selected {
-    background-color: rgb(0,112,201);
+    background-color: #2687FA;
     border-radius: 5px;
 }
 
