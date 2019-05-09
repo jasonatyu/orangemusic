@@ -10,6 +10,7 @@ class PlaylistForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
         this.handleHover = this.handleHover.bind(this);
     }
+
     handleHover(e) {
         this.setState({ hover: !this.state.hover });
     }
@@ -59,7 +60,7 @@ class PlaylistForm extends React.Component {
     }
 
     render() {
-        const { formType } = this.props;
+        const { formType, currentUserId } = this.props;
         return (
             <div className='playlist-display'>
                 <form className='playlist-form' onSubmit={this.handleSubmit}>
@@ -71,6 +72,12 @@ class PlaylistForm extends React.Component {
                     <section id='playlist-info'>
                         <input className='playlist-name' type="text" onChange={this.handleChange("name")} onBlur={this.handleSubmit} value={this.state.name} placeholder="Untitled Playlist" autoFocus={formType === 'Create Playlist'} />
                         <input className='playlist-description' type="text" onChange={this.handleChange("description")} onBlur={this.handleSubmit} value={this.state.description} placeholder="Description" />
+                        { currentUserId === 1 ?
+                            (<>
+                            <input className='playlist-description' type="text" onChange={this.handleChange("category")} onBlur={this.handleSubmit} value={this.state.category} placeholder="Category" />
+                            <input className='playlist-description' type="text" onChange={this.handleChange("headline")} onBlur={this.handleSubmit} value={this.state.headline} placeholder="Headline" />
+                            <input className='playlist-description' type="text" onChange={this.handleChange("subheadline")} onBlur={this.handleSubmit} value={this.state.subheadline} placeholder="Subheadline" />
+                            </>) : null }
                     </section>
                 </form>
                 <PlaylistDetailContainer />

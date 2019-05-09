@@ -6,7 +6,8 @@ import { createPlaylist } from '../../actions/playlist_actions';
 const mapStateToProps = state => {
     const playlist = {name: "", description: ""};
     const formType = "Create Playlist";
-    return { playlist, formType };
+    const currentUserId = state.session.id;
+    return { playlist, formType, currentUserId };
 };
 
 const mapDispatchToProps = dispatch => {

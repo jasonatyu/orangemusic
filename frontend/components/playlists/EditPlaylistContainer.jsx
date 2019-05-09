@@ -3,12 +3,12 @@ import React from 'react';
 import PlaylistForm from './PlaylistForm';
 import { updatePlaylist, fetchPlaylist } from '../../actions/playlist_actions';
 
-
 const mapStateToProps = (state, ownProps) => {
     const defaultPlaylist = { name: "", description: "" };
     const playlist = state.entities.playlists[ownProps.match.params.playlistId] || defaultPlaylist;
     const formType = "Edit Playlist";
-    return { playlist, formType };
+    const currentUserId = state.session.id;
+    return { playlist, formType, currentUserId };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -30,13 +30,15 @@ class EditPlaylistForm extends React.Component {
     }
 
     render() {
-        const { submitAction, formType, playlist } = this.props;
+        const { submitAction, formType, playlist, currentUserId } = this.props;
         return (
             <PlaylistForm
                 key={playlist.id}
                 submitAction={submitAction}
                 formType={formType}
-                playlist={playlist} />
+                playlist={playlist}
+                currentUserId={currentUserId ? currentUserId : ""} 
+                />
         );
     }
 }
