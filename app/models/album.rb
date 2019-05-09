@@ -16,7 +16,7 @@ class Album < ApplicationRecord
     validates :title, :year, :artist_id, presence: true 
 
     belongs_to :artist 
-    has_many :songs 
+    has_many :songs, -> { order(id: :asc) }
 
     has_one_attached :artwork
 end
