@@ -39,7 +39,7 @@ class ExploreIndex extends React.Component {
                         <h2>Nothing But Hits</h2>
                         <section className='daily-top-100'>
                             <ul className='daily-top-100-list'>
-                                {categoryPlaylists}
+                                { categoryPlaylists }
                             </ul>
                         </section>
                         </>) : null }

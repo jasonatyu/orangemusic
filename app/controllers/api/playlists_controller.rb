@@ -15,7 +15,7 @@ class Api::PlaylistsController < ApplicationController
     def search
 
         if params[:query] == 'explore'
-            @playlists = Playlist.where("category in (?)", ["featured", "top", "hits"])
+            @playlists = Playlist.where("category in (?)", ["featured", "top", "category"])
             render 'api/playlists/index.json'
         else 
             if params[:query].present?
