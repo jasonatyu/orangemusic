@@ -1,6 +1,7 @@
-import { PLAY_SONG, PAUSE_SONG, QUEUE_SONG, CONTINUE_SONG, REMOVE_QUEUED_SONG } from '../actions/audio_player_actions';
+import { PLAY_SONG, PAUSE_SONG, QUEUE_SONG, CONTINUE_SONG, REMOVE_QUEUED_SONG, QUEUE_SONGS, SHUFFLE_PLAY } from '../actions/audio_player_actions';
+import { shuffleSongs } from './selectors'
 
-const _nullState = {currentSong: null, isPaused: true, queuedSongs: []};
+const _nullState = {currentSong: null, isPaused: true, queuedSongs: [], shufflePlay: false};
 
 export default (state = _nullState, action) => {
     Object.freeze(state);
@@ -18,6 +19,14 @@ export default (state = _nullState, action) => {
         case REMOVE_QUEUED_SONG:
             newState.queuedSongs.shift();
             return newState;
+        case QUEUE_SONGS:
+            const shuffled = shuffleSongs(action.songs);
+            for (let i = 0; i < shuffled.length; i++) {
+                newState.queuedSongs.push(shuffled[i]);
+            }
+            return newState;
+        case SHUFFLE_PLAY:
+            return Object.assign({}, state, { shufflePlay: true });
         default:
             return state;
     }

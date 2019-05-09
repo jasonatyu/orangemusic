@@ -144,7 +144,7 @@ class AudioPlayer extends React.Component {
                     <section className='current-song-detail'>
                         <p id='time-played' className='time'>{this.secondsToMinutes(this.state.currentPlayLocation)}</p>
                         <section className='current-song-info'>
-                            <h4 className='marquee'><span>{currentSong ? currentSong.title : ""}</span></h4>
+                            <h4 className={this.props.isPaused ? "" : 'marquee'}><span>{currentSong ? currentSong.title : ""}</span></h4>
                             <p>{currentSong ? currentSong.artist: ""}</p>
                         </section>
                         <p id='time-remaining' className='time'>{currentSong ? `-${this.calcTimeRemaining(this.state.currentPlayLocation)}` : "-0:00"}</p>

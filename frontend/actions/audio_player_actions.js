@@ -7,6 +7,7 @@ export const QUEUE_SONG = 'QUEUE_SONG';
 export const CONTINUE_SONG = 'CONTINUE_SONG';
 export const REMOVE_QUEUED_SONG = 'REMOVE_QUEUED_SONG';
 export const QUEUE_SONGS = 'QUEUE_SONGS';
+export const SHUFFLE_PLAY = 'SHUFFLE_PLAY';
 
 export const playSong = (song) => {
     return {
@@ -51,5 +52,11 @@ export const changeVolume = (value) => {
     return {
         type: 'CHANGE_VOLUME',
         value
+    };
+};
+
+export const shufflePlay = () => {
+    return {
+        type: 'SHUFFLE_PLAY',
     };
 };

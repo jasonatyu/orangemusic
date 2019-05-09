@@ -7,7 +7,8 @@ const mapStateToProps = state => {
     const playlist = {name: "", description: ""};
     const formType = "Create Playlist";
     const currentUserId = state.session.id;
-    return { playlist, formType, currentUserId };
+    const playlistSongs = [];
+    return { playlist, formType, currentUserId, playlistSongs };
 };
 
 const mapDispatchToProps = dispatch => {

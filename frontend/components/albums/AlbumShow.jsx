@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 class AlbumShow extends React.Component {
     constructor(props) {
         super(props);
+        this.handleShufflePlay = this.handleShufflePlay.bind(this);
     }
 
     componentDidMount() {
@@ -18,7 +19,8 @@ class AlbumShow extends React.Component {
         }
     }
 
-    componentWillUnmount() {
+    handleShufflePlay(e) {
+        this.props.queueSongs(this.props.albumSongs);
     }
 
     render() {
@@ -33,9 +35,14 @@ class AlbumShow extends React.Component {
                         <img src={album.photoUrl} />
                     </section>
                     <section className='album-detail'>
-                        <h1>{album.title}</h1>
-                        <Link className='react-link' to={`/artists/${album.artist_id}`}><h2>{album.artist}</h2></Link>
-                        <h3>{album.category} • {this.props.album.year}</h3>
+                        <section className='album-detail-information'>
+                            <section>
+                                <h1>{album.title}</h1>
+                                <Link className='react-link' to={`/artists/${album.artist_id}`}><h2>{album.artist}</h2></Link>
+                                <h3>{album.category} • {this.props.album.year}</h3>
+                            </section>
+                            <i className="fas fa-random" onClick={this.handleShufflePlay}></i>
+                        </section>
                         <table className='song-table'>
                             <thead className='song-table-header'>
                                 <tr className='song-row'>

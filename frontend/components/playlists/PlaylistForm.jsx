@@ -9,11 +9,17 @@ class PlaylistForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleHover = this.handleHover.bind(this);
+        this.handleShufflePlay = this.handleShufflePlay.bind(this);
+    }
+
+    handleShufflePlay(e) {
+        this.props.queueSongs(this.props.playlistSongs);
     }
 
     handleHover(e) {
         this.setState({ hover: !this.state.hover });
     }
+
     handleSubmit(e) {
         e.preventDefault();
         let playlist = this.state;
@@ -68,23 +74,26 @@ class PlaylistForm extends React.Component {
         return (
             <div className='playlist-display'>
                 <form className='playlist-form' onSubmit={this.handleSubmit}>
-                    <label className="upload-photo-label" htmlFor="upload-photo" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-                        {this.state.hover? <i className="fa fa-camera"></i> : ""}
-                        <img className={this.state.hover ? "photo-hover" : ""}src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/headphones.png"} width="60" height="60" />
-                    </label>
-                    <input type="file" onChange={this.handleFile} id="upload-photo" />
-                    <section id='playlist-info'>
-                        <input className='playlist-name' type="text" onChange={this.handleChange("name")} onBlur={this.handleSubmit} value={this.state.name} placeholder="Untitled Playlist" autoFocus={formType === 'Create Playlist'} 
-                            readOnly={formType === 'Edit Playlist' && currentUserId !== playlist.user_id ? true : false } />
-                        <input className='playlist-description' type="text" onChange={this.handleChange("description")} onBlur={this.handleSubmit} value={this.state.description} placeholder="Description" 
-                            readOnly={formType === 'Edit Playlist' && currentUserId !== playlist.user_id ? true : false } />
-                        { currentUserId === 1 ?
-                            (<>
-                            <input className='playlist-description' type="text" onChange={this.handleChange("category")} onBlur={this.handleSubmit} value={this.state.category} placeholder="Category" />
-                            <input className='playlist-description' type="text" onChange={this.handleChange("headline")} onBlur={this.handleSubmit} value={this.state.headline} placeholder="Headline" />
-                            <input className='playlist-description' type="text" onChange={this.handleChange("subheadline")} onBlur={this.handleSubmit} value={this.state.subheadline} placeholder="Subheadline" />
-                            </>) : null }
+                    <section>
+                        <label className="upload-photo-label" htmlFor="upload-photo" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+                            {this.state.hover? <i className="fa fa-camera"></i> : ""}
+                            <img className={this.state.hover ? "photo-hover" : ""}src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/headphones.png"} width="60" height="60" />
+                        </label>
+                        <input type="file" onChange={this.handleFile} id="upload-photo" />
+                        <section id='playlist-info'>
+                            <input className='playlist-name' type="text" onChange={this.handleChange("name")} onBlur={this.handleSubmit} value={this.state.name} placeholder="Untitled Playlist" autoFocus={formType === 'Create Playlist'}
+                                readOnly={formType === 'Edit Playlist' && currentUserId !== playlist.user_id ? true : false} />
+                            <input className='playlist-description' type="text" onChange={this.handleChange("description")} onBlur={this.handleSubmit} value={this.state.description} placeholder="Description"
+                                readOnly={formType === 'Edit Playlist' && currentUserId !== playlist.user_id ? true : false} />
+                            {currentUserId === 1 ?
+                                (<>
+                                    <input className='playlist-description' type="text" onChange={this.handleChange("category")} onBlur={this.handleSubmit} value={this.state.category} placeholder="Category" />
+                                    <input className='playlist-description' type="text" onChange={this.handleChange("headline")} onBlur={this.handleSubmit} value={this.state.headline} placeholder="Headline" />
+                                    <input className='playlist-description' type="text" onChange={this.handleChange("subheadline")} onBlur={this.handleSubmit} value={this.state.subheadline} placeholder="Subheadline" />
+                                </>) : null}
+                        </section>
                     </section>
+                    { formType === 'Edit Playlist' ? <i className="fas fa-random" onClick={this.handleShufflePlay}></i> : null }
                 </form>
                 <PlaylistDetailContainer />
             </div>
