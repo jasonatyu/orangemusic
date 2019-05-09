@@ -15,8 +15,7 @@
 
 .song-table-body img {
     border-radius: 3px;
-    margin: 5px;
-    margin-right: 8px;
+    margin: 8px 20px 5px 5px;
 }
 
 tr {
@@ -109,6 +108,19 @@ th:last-child {
 
 .songs-body td:first-child {
     width: 25px;
+}
+
+.content:first-child {
+    padding-left: 100px;
+}
+
+.display-other .content {
+    text-align: left;
+}
+
+.display-other .content:nth-last-child(2) {
+    min-width: 0px;
+    text-align: left;
 }
 
 td:hover .show-hover {
