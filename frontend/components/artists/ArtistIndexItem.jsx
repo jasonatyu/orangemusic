@@ -6,6 +6,7 @@ const ArtistIndexItem = ({artist}) => (
         <li>
             <img src={artist.photoUrl} />
             <p>{artist.name}</p>
+            <div className='artist-divider'></div>
         </li>
     </Link>
 );
