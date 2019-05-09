@@ -18,6 +18,24 @@ class AudioPlayer extends React.Component {
     componentDidMount() {
         this.interval = setInterval(() => 
             this.setState({ currentPlayLocation: this.player.currentTime }), 1000);
+
+        //check if song metadata is loaded before setting duration and resetting song location
+        this.player.addEventListener('loadedmetadata', () => {
+            this.setState({ duration: this.player.duration, currentPlayLocation: 0 }, () => this.changeLocation(0));
+        });
+
+        //check is song has finished playing
+        this.player.addEventListener("ended", () => {
+            const that = this;
+            if (this.props.queuedSongs.length > 0) {
+                const song = that.props.queuedSongs[0];
+                that.props.playSong(song);
+                that.props.removeQueuedSong();
+            } else {
+                this.props.pauseSong();
+                this.setState({ currentPlayLocation: 0 }, () => this.changeLocation(0));
+            }
+        });
     }
 
     componentWillUnmount() {
@@ -36,10 +54,6 @@ class AudioPlayer extends React.Component {
                 this.player.pause();
             }
         }
-        //check if song metadata is loaded before setting duration and resetting song location
-        this.player.addEventListener('loadedmetadata', () => {
-            this.setState({ duration: this.player.duration, currentPlayLocation: 0 }, () => this.changeLocation(0));
-        });
     }
 
     handleButtonPress(e) {

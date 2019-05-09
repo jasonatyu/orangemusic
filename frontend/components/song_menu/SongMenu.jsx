@@ -22,6 +22,8 @@ class SongMenu extends React.Component {
                 this.props.deletePlaylistSong(this.props.match.params.playlistId, this.props.song.id);
             } else if (type === 'add-to-library') {
                 this.props.createUserSong(this.props.currentUserId, this.props.song.id);
+            } else if (type === 'play-next') {
+                this.props.queueSong(this.props.song);
             }
             this.props.optionClicked(e);
         };
@@ -52,6 +54,7 @@ class SongMenu extends React.Component {
                                     { userPlaylists }
                             </ul>) : ""}
                         </li>
+                        <li onClick={this.handleClick('play-next')}>Play Next</li> 
                         <li onClick={this.handleClick('show')}>Show Album in Library</li>
                        { this.props.display === 'playlist' ? 
                        <li onClick={this.handleClick('delete-from-playlist')}>Delete From Playlist</li> : null }

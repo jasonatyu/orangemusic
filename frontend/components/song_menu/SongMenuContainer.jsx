@@ -4,6 +4,7 @@ import SongMenu from './SongMenu';
 import { createPlaylistSong, deletePlaylistSong, createUserSong, deleteUserSong } from '../../actions/song_actions';
 import { createPlaylist } from '../../actions/playlist_actions';
 import { fetchUserPlaylists } from '../../actions/playlist_actions';
+import { queueSong } from '../../actions/audio_player_actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -20,7 +21,8 @@ const mapDispatchToProps = (dispatch) => {
         fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
         createUserSong: (userId, songId) => dispatch(createUserSong(userId, songId)),
         deleteUserSong: (userId, songId) => dispatch(deleteUserSong(userId, songId)),
-        createPlaylist: (playlist) => dispatch(createPlaylist(playlist))
+        createPlaylist: (playlist) => dispatch(createPlaylist(playlist)),
+        queueSong: (song) => dispatch(queueSong(song))
     };
 };
 

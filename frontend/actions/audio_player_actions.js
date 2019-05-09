@@ -5,11 +5,18 @@ export const REWIND_SONG = 'REWIND_SONG';
 export const CHANGE_VOLUME = 'CHANGE_VOLUME';
 export const QUEUE_SONG = 'QUEUE_SONG';
 export const CONTINUE_SONG = 'CONTINUE_SONG';
+export const REMOVE_QUEUED_SONG = 'REMOVE_QUEUED_SONG';
 
 export const playSong = (song) => {
     return {
         type: 'PLAY_SONG',
         song
+    };
+};
+
+export const removeQueuedSong = () => {
+    return {
+        type: 'REMOVE_QUEUED_SONG',
     };
 };
 
