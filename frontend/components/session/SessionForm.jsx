@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
     handleGuestLogin(e) {
         e.preventDefault();
         const guest = { email: "tswift89@gmail.com", password: "testing" };
-        this.props.loginGuest(guest).then(() => this.props.history.push("/library/playlists"))
+        this.props.loginGuest(guest).then(() => this.props.history.push("/browse"))
             .fail((errors) => this.props.receiveErrors(errors.responseJSON));
     }
 
