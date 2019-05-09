@@ -74,7 +74,7 @@ class PlaylistForm extends React.Component {
         return (
             <div className='playlist-display'>
                 <form className='playlist-form' onSubmit={this.handleSubmit}>
-                    <section>
+                    <section className='playlist-form-info'>
                         <label className="upload-photo-label" htmlFor="upload-photo" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
                             {this.state.hover? <i className="fa fa-camera"></i> : ""}
                             <img className={this.state.hover ? "photo-hover" : ""}src={this.props.playlist.photoUrl ? this.props.playlist.photoUrl : "https://s3-us-west-1.amazonaws.com/orange-music-dev/headphones.png"} width="60" height="60" />

@@ -21,6 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 50%;
 }
 
 .playlist-form img {
@@ -111,5 +112,10 @@ img {
 .fa-random:hover {
     opacity: .8;
     cursor: pointer;
+}
+
+.playlist-form-info {
+    width: 100%;
+    display: flex;
 }
 
