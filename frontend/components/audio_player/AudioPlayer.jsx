@@ -150,7 +150,8 @@ class AudioPlayer extends React.Component {
                         </section>
                         <p id='time-remaining' className='time'>{currentSong ? `-${this.calcTimeRemaining(this.state.currentPlayLocation)}` : "-0:00"}</p>
                     </section>
-                    <input type="range" min="0" max="100" onClick={this.handleRangeClick} onChange={this.handlePlayLocation} value={currentSong ? (this.state.currentPlayLocation / this.state.duration)*100 : "0"} className="audio-location-range" />
+                    <input type="range" min="0" max="100" onClick={this.handleRangeClick} onChange={this.handlePlayLocation} value={100} 
+                        className="audio-location-range" style={{ width: `${currentSong ? (this.state.currentPlayLocation / this.state.duration)*100 + '%' : "0"}`}} />
                 </section>
             </div>
       

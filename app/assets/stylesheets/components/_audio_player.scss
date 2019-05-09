@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    min-width: 260px;
+    min-width: 280px;
     background-color: #1B1B1C;
     // padding: 0 3px 0 3px;
     text-overflow: ellipsis;
@@ -24,7 +24,7 @@
    width: 50px;
    height: 50px;
    border-radius: 2px;
-   margin-left: 150px;
+   margin-left: 115px;
 }
 
 .current-song-detail {
@@ -83,7 +83,7 @@
     margin: 0 18px 0 18px;
     border-radius: 2px;
     position: absolute;
-    left: 60px;
+    left: 30px;
 }
 
 .small-forward-right {
@@ -100,17 +100,17 @@
     font-size: 24px;
     margin: 0 18px 0 18px;
     position: absolute;
-    left: 60px;
+    left: 30px;
 }
 
 .rewind {
     position: absolute;
-    left: 20px;
+    left: 0px;
 }
 
 .forward {
     position: absolute;
-    left: 110px;
+    left: 80px;
 }
 
 .rewind, .forward {
@@ -127,9 +127,9 @@
     opacity: 0.8;
      -webkit-appearance: none;  
     appearance: none;
-     position: absolute;
-     left: 155px;
-     top: -5px;
+    position: absolute;
+    left: 120px;
+    top: -5px;
 }
 
 .volume-range::-webkit-slider-thumb {
