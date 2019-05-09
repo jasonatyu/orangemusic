@@ -6,6 +6,7 @@ export const CHANGE_VOLUME = 'CHANGE_VOLUME';
 export const QUEUE_SONG = 'QUEUE_SONG';
 export const CONTINUE_SONG = 'CONTINUE_SONG';
 export const REMOVE_QUEUED_SONG = 'REMOVE_QUEUED_SONG';
+export const QUEUE_SONGS = 'QUEUE_SONGS';
 
 export const playSong = (song) => {
     return {
@@ -36,6 +37,13 @@ export const queueSong = (song) => {
     return {
         type: 'QUEUE_SONG',
         song
+    };
+};
+
+export const queueSongs = (songs) => {
+    return {
+        type: 'QUEUE_SONGS',
+        songs
     };
 };
 
