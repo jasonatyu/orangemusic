@@ -59,7 +59,7 @@ class Api::SongsController < ApplicationController
 
     def search
         if params[:query].present?
-            @songs = Song.where("lower(title) LIKE ?", "%#{params[:query].downcase}%")
+            @songs = Song.where("lower(title) LIKE ?", "%#{params[:query].downcase}%").limit(20)
         else
             @songs = Song.none
         end
