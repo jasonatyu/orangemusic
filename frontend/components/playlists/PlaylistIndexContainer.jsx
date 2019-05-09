@@ -4,7 +4,7 @@ import { fetchUserPlaylists, fetchPlaylists, deletePlaylist } from '../../action
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        playlists: Object.values(state.entities.playlists),
+        playlists: Object.values(state.entities.playlists).filter((playlist) => playlist.user_id === state.session.id),
         currentUserId: state.session.id
     };
 };

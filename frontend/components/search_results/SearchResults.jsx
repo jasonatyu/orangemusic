@@ -8,8 +8,8 @@ class SearchResults extends React.Component {
     componentDidMount() {
     }
 
-    componentDidUpdate(prevProps) {
-
+    componentWillUnmount() {
+        this.props.clearResults();
     }
 
     render() {

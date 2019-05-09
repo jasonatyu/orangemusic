@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import SearchResults from './SearchResults';
+import { clearResults } from '../../actions/search_actions';
 
 const mapStateToProps = state => {
     return {
@@ -11,6 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        clearResults: () => dispatch(clearResults())
     };
 };
 
