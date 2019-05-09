@@ -26,7 +26,7 @@ class ExploreIndex extends React.Component {
                         { topPlaylists.length > 0 ?
                         (<>
                         <div className='divider'></div>
-                        <h2>Daily Top 100</h2>
+                        <h2>Daily Top 10</h2>
                         <section className='daily-top-100'>
                             <ul className='daily-top-100-list'>
                                 {topPlaylists}
