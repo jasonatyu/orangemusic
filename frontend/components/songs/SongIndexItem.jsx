@@ -55,7 +55,7 @@ class SongIndexItem extends React.Component {
             <tr onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleSelection} onDoubleClick={this.handleSongPlay} key={song.id} className={"songs-body" + (this.props.display === "album" ? " display-album" : " display-other") + (this.props.songId === song.id ? " selected" : "")}>
                 {display === 'album' ? null : <td><img src={song.photoUrl} width="40"/></td>}
                 {display === 'album' ? <td className='content'>{idx+1}</td>: null}
-                <td className='content'><p>{title}</p>{display === 'album' ? "":<p className='song-album'>{song.album}</p>}</td>
+                <td className='content'><p className={this.props.songId === song.id ? 'song-title-selected' : 'song-title'}>{title}</p>{display === 'album' ? "" : <p className={this.props.songId === song.id ? 'song-album-selected' : 'song-album'}>{song.album}</p>}</td>
                 <td className='content'>{song.artist}</td> 
                 {display === 'album' ? null :<td className='content'>{song.year}</td>}          
                 <td className='content last-item' onClick={this.handleClick}>
