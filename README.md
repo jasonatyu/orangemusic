@@ -18,7 +18,7 @@ Orange Music is a music streaming application inspired by Apple Music/iTunes. It
 
 The music player lets users play, pause, change volume, fast-forward, and rewind songs. Songs can be played by double-clicking on a specific song or pressing the "shuffle play" icon to queue an entire playlist or album in random order for continuous play. 
 
-The player was built in React leveraging the HTML5 `<audio>` element, which was used to process audio files stored in the main S3 bucket with custom components handling user interaction with the player. The music player UI state, such as the current song played, whether the user paused the player, and any queued songs, was managed primary with Redux with a React `AudioPlayer` component managing some local state. 
+The player was built in React leveraging the HTML5 `<audio>` element, which was used to process audio files stored in the main S3 bucket with custom components handling user interaction with the player. The music player UI state, such as the current song played, whether the user paused the player, and any queued songs, was managed primary with Redux with a React `AudioPlayer` component managing some local state, such as the current track time and volume. 
 
 ![Music player](https://s3-us-west-1.amazonaws.com/orange-music-pro/om_player.png)
 
