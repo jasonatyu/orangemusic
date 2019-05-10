@@ -24,12 +24,17 @@ The player was built in React leveraging the HTML5 `<audio>` element, which was 
 
 ### Creating and updating playlists 
 
-Users can view, create, edit, and delete playlists, including attaching a custom image and adding songs from their personal library or from Orange Music's library. 
+Users can view, create, edit, and delete playlists, including adding a name, an optional description, attaching an optional custom image, and adding songs from their personal library or from Orange Music's library. 
 
-
+One of the design goals of this feature was to make the application feel as native as possible, including developing a `SongMenu` component that becomes visible when a user clicks on the `...` that appears when hovering over a specific song. A submenu of user-created playlists then appears when hovering over the `Add to Playlist` option in the main menu. 
 
 ![Playlist](https://s3-us-west-1.amazonaws.com/orange-music-pro/playlist.png)
 
+### Explore curated playlists
+
+Once authenticated, users are first redirected to the main explore page at the `/browse` route. Here, users can discover what's new on Orange Music, including exclusive curated playlists, daily top hits playlists, and playlists by genre/category. Content visible on the explore page is created with a special admin account, which has access to additional fields in the `EditPlaylistForm` component that allows them to additionally add a tag (which are used to determine where the content will sit in the explore page), a headline, and a subheadline. 
+
+![Explore](https://s3-us-west-1.amazonaws.com/orange-music-pro/explore.png)
 
 ## Project Design
 
