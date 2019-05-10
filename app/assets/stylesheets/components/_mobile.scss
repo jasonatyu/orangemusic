@@ -1,6 +1,9 @@
 @media only screen and (max-width: 720px) {
     .audio-player img {
         display: none;
+        width: 0;
+        height: 0;
+        margin: 0;
     }
 
     .audio-player {
@@ -71,8 +74,9 @@
 
     .forward {
         position: absolute;
-        left: 70px;
+        left: 65px;
         margin-right: 10px;
+        margin-left: 10px;
     }
 
     td:nth-last-child(2) {
