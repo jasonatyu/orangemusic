@@ -46,6 +46,8 @@ Rails/PostgreSQL was used for the backend, with Active Storage/AWS S3 used for h
 
 React and Redux were used on the frontend. Redux was used to manage application state, specifically users, songs, albums, artists, and playlists, as well as UI state, such as the current played song, a queue of songs to play, errors, and loading states. 
 
+React Router was used for frontend routing.
+
 ### Additional Resources
   * [Design Docs][designDocs]
 
