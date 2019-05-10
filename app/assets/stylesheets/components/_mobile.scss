@@ -6,14 +6,14 @@
      .audio-player {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
         width: 100%;
     }
 
     .play-buttons{
         min-width: 100px;
         margin: 0px;
-        margin-right: 20px;
+        margin-left: 10px;
+        width: 100%;
     }
 
     .volume-range {
@@ -23,11 +23,22 @@
     .main-player {
         min-width: 150px;
         margin: 0px;
+        width: 100%;
     }
 
     #auth-main-nav-div {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #auth-main-nav-bar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .search-bar-div {
@@ -39,10 +50,20 @@
     }
 
     #library-menu {
-        min-width: 100px;
+        min-width: 90px;
     }
 
     .last-item {
         padding-left: 3px;
+    }
+
+    .artist-index {
+        font-size: 13px;
+        min-width: 20vw;
+        margin-right: 10px;
+    }
+
+    .artist-index-item img {
+        display: none;
     }
 }
