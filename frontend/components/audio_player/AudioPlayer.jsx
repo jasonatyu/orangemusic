@@ -6,7 +6,7 @@ import SongMenuContainer from '../song_menu/SongMenuContainer';
 class AudioPlayer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {volume: 50, currentPlayLocation: 0, duration: 0};
+        this.state = {volume: 50, currentPlayLocation: 0, duration: 0, hovered: false};
         this.handlePlay = this.handlePlay.bind(this);
         this.handleVolume = this.handleVolume.bind(this);
         this.changeVolume = this.changeVolume.bind(this);
