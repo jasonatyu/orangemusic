@@ -99,6 +99,10 @@ th:last-child {
     text-align: left;
 }
 
+.display-album td:nth-last-child(2) {
+    text-align: left;
+}
+
 .album-detail .song-row th:nth-child(2){
     text-align: left;
 }
