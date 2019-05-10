@@ -25,6 +25,23 @@
 .library-list li img {
     margin: 5px 0 5px 0;
     border-radius: 3px;
+    width: auto;
+    height: auto;
+    max-height: 200px;
+}
+
+.crop-playlist-img {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.crop {
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .library-list h2 {
