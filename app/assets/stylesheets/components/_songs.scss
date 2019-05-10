@@ -87,7 +87,7 @@ th:last-child {
     padding-top: 5px;
 }
 
-.display-album td:first-child {
+.display-album .content:first-child {
     text-align: left;
 }
 
@@ -113,6 +113,10 @@ th:last-child {
 
 .content:first-child {
     padding-left: 100px;
+}
+
+.display-album .content:first-child {
+    padding-left: 20px;
 }
 
 .display-other .content {
