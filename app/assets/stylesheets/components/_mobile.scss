@@ -1,0 +1,48 @@
+@media only screen and (max-width: 720px) {
+    .audio-player img {
+        display: none;
+    }
+
+     .audio-player {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .play-buttons{
+        min-width: 100px;
+        margin: 0px;
+        margin-right: 20px;
+    }
+
+    .volume-range {
+        display: none;
+    }
+
+    .main-player {
+        min-width: 150px;
+        margin: 0px;
+    }
+
+    #auth-main-nav-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-bar-div {
+        width: 100%;
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    #library-menu {
+        min-width: 100px;
+    }
+
+    .last-item {
+        padding-left: 3px;
+    }
+}
