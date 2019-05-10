@@ -72,6 +72,7 @@
 	border-right: 12px solid #A8A9AA;
     border-bottom: 7px solid transparent;
     border-radius: 2px;
+
 }
 
 .big-play-right {
@@ -84,6 +85,8 @@
     border-radius: 2px;
     position: absolute;
     left: 30px;
+    transition: all .2s ease-in-out;
+
 }
 
 .small-forward-right {
@@ -101,16 +104,26 @@
     margin: 0 18px 0 18px;
     position: absolute;
     left: 30px;
+    transition: all .2s ease-in-out;
+
 }
 
 .rewind {
     position: absolute;
     left: 0px;
+     transition: all .2s ease-in-out;
+
 }
 
 .forward {
     position: absolute;
     left: 80px;
+     transition: all .2s ease-in-out;
+
+}
+
+.fa-pause:hover, .forward:hover, .rewind:hover, .big-play-right:hover {
+    transform: scale(1.1);
 }
 
 .rewind, .forward {

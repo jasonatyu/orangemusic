@@ -107,10 +107,12 @@ img {
 
 .fa-random {
     color: #2687FA;
+    transition: all .2s ease-in-out;
 }
 
 .fa-random:hover {
     opacity: .8;
+    transform: scale(1.1); 
     cursor: pointer;
 }
 
