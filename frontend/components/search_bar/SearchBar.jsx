@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div id='search-bar-div'>
-                <span><i className="fas fa-search"></i></span><input type="text" id='search-bar' placeholder="Search" onKeyDown={this.handleEnter}/>
+                <span><i className="fas fa-search"></i></span><input type="text" id='search-bar' autocomplete="off" placeholder="Search" onKeyDown={this.handleEnter}/>
             </div>
         )
     }
