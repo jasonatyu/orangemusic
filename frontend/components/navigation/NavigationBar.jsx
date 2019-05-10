@@ -1,5 +1,5 @@
 import React from 'react';
-import orangeIcon from 'assets/images/orange-32.png'; 
+import orangeIcon from 'assets/images/favicon-32x32.png'; 
 import { Link } from 'react-router-dom';
 
 const NavigationBar = () => (
