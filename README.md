@@ -49,7 +49,7 @@ React and Redux were used on the frontend. Redux was used to manage application 
 ### Additional Resources
   * [Design Docs][designDocs]
 
-[Design Docs]: https://github.com/jasonatyu/orangemusic/wiki
+[designDocs]: https://github.com/jasonatyu/orangemusic/wiki
 
 ## Possible future features
 
