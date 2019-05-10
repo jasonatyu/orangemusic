@@ -65,7 +65,7 @@
     }
 
     .last-item {
-        padding-left: 3px;
+        padding-left: 5px;
     }
 
     .artist-index {
@@ -81,5 +81,9 @@
     .forward {
         position: absolute;
         left: 65px;
+    }
+
+    td:nth-last-child(2) {
+        min-width: 0px;
     }
 }
