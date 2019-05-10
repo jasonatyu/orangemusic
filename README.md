@@ -26,7 +26,7 @@ The player was built in React leveraging the HTML5 `<audio>` element, which was 
 
 Users can view, create, edit, and delete playlists, including adding a name, an optional description, attaching an optional custom image, and adding songs from their personal library or from Orange Music's library. 
 
-One of the design goals of this feature was to make the application feel as native as possible, including developing a `SongMenu` component that becomes visible when a user clicks on the `...` that appears when hovering over a specific song. A submenu of user-created playlists then appears when hovering over the `Add to Playlist` option in the main menu. 
+One of the design goals of the application was to make it feel as native as possible, including developing a `SongMenu` component that becomes visible when a user clicks on the `...` that appears when hovering over a specific song. A submenu of user-created playlists then appears when hovering over the `Add to Playlist` option in the main menu. 
 
 ![Playlist](https://s3-us-west-1.amazonaws.com/orange-music-pro/playlist.png)
 
