@@ -58,8 +58,8 @@ class SongMenu extends React.Component {
                         </li>
                         <li onClick={this.handleClick('play-next')}>Play Next</li> 
                         <li onClick={this.handleClick('show')}>Show Album in Library</li>
-                       { this.props.display === 'playlist' ? 
-                       <li onClick={this.handleClick('delete-from-playlist')}>Delete From Playlist</li> : null }
+                       { this.props.display === 'playlist' && this.props.currentPlaylist.user_id === this.props.currentUserId  ? 
+                        <li onClick={this.handleClick('delete-from-playlist')}>Delete From Playlist</li> : null }
                         {this.props.display !== 'playlist' && this.props.currentUserSongs.includes(this.props.song.id) ?
                             <li onClick={this.handleClick('delete')}>Delete From Library</li> 
                             : <li onClick={this.handleClick('add-to-library')}>Add to Library</li>}

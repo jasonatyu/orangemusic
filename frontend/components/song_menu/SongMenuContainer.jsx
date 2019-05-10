@@ -6,11 +6,12 @@ import { createPlaylist } from '../../actions/playlist_actions';
 import { fetchUserPlaylists } from '../../actions/playlist_actions';
 import { queueSong } from '../../actions/audio_player_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         currentUserId: state.session.id,
         currentUserSongs: state.entities.users[state.session.id].song_ids,
-        userPlaylists: Object.values(state.entities.playlists).filter((playlist) => playlist.user_id === state.session.id)
+        userPlaylists: Object.values(state.entities.playlists).filter((playlist) => playlist.user_id === state.session.id),
+        currentPlaylist: state.entities.playlists[ownProps.match.params.playlistId]
     };
 };
 

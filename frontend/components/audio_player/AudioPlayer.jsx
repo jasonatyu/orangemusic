@@ -46,7 +46,7 @@ class AudioPlayer extends React.Component {
         if (this.props.currentSong !== null) {
             if (prevProps.currentSong === null || prevProps.currentSong.id !== this.props.currentSong.id) {
                 this.player.src = this.props.currentSong.fileUrl;
-            }
+            } 
             if (!this.props.isPaused) {
                 this.player.play();
             } else {
