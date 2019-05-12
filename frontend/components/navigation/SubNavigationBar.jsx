@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const SubNavigationBar = () => (
     <nav id="sub-nav-bar">
@@ -9,8 +10,9 @@ const SubNavigationBar = () => (
             </ul>
             <section id="center-sub-nav"></section>
             <ul className="right-sub-nav">
-                <li><a className="nav-link" href="#">Overview</a></li>
-                <li><a className="nav-link" href="#">Features</a></li>
+                <li><a className="nav-link" href="#" disabled>Overview</a></li>
+                <li><HashLink className="nav-link" to="/#features">Features</HashLink></li>
+                <li><HashLink className="nav-link" to="/#about">About</HashLink></li>
                 <li><Link className="signup-link" to="/signup"><button className="nav-button">Try it free*</button></Link></li>
             </ul>
         </ul>

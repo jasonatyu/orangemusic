@@ -15,7 +15,7 @@ const Splash = () => (
         </section>
         <section className="hero parallax">
         </section>
-        <section className="features features-parallax">
+        <section id="features" className="features features-parallax">
             <h1>It hits all the right notes.</h1>
             <h2>Stream 50 million songs ad‑free.</h2>
             <h2>Download your favorite tracks. Play them offline.</h2>

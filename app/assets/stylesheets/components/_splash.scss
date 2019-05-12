@@ -117,3 +117,26 @@
      transform: translateZ(-1px) scale(2.2);
      z-index: -1;
  }
+
+ .links-list {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .links-list li:first-child {
+     font-weight: 600;
+ }
+
+ .links-list a {
+     text-decoration: none;
+     color: #888;
+ }
+
+ .links-list a:hover {
+     color: #ff2f56;
+ }
+
+ .fa-github, .fa-linkedin {
+     margin-right: 3px;
+ }
+

@@ -3,7 +3,7 @@ class Api::ArtistsController < ApplicationController
     def index 
         if params[:user_id] 
             if params[:user_id].to_i == current_user.id
-                @artists = current_user.artists.includes(:albums)
+                @artists = current_user.artists.order(:name)
             else 
                 render json: ["You don't have permission to see this user's artists"], status: 422
             end
