@@ -18,7 +18,7 @@ Orange Music is a music streaming application inspired by Apple Music/iTunes. It
 
 The music player lets users play, pause, change volume, fast-forward, and rewind songs. Songs can be played by double-clicking on a specific song or pressing the "shuffle play" icon to queue an entire playlist or album in random order for continuous play. 
 
-The player was built in React leveraging the HTML5 `<audio>` element, which was used to process audio files stored in the main S3 bucket. The music player UI state, such as the current song played, whether the user paused the player, and any queued songs, was managed primary with Redux with a React `AudioPlayer` component managing some local state. 
+The player was built in React leveraging the HTML5 `<audio>` element, which was used to process audio files stored in the main S3 bucket with custom components handling user interaction with the player. The music player UI state, such as the current song played, whether the user paused the player, and any queued songs, was managed primary with Redux with a React `AudioPlayer` component managing some local state, such as the current track time and volume. 
 
 ![Music player](https://s3-us-west-1.amazonaws.com/orange-music-pro/om_player.png)
 
@@ -26,7 +26,7 @@ The player was built in React leveraging the HTML5 `<audio>` element, which was 
 
 Users can view, create, edit, and delete playlists, including adding a name, an optional description, attaching an optional custom image, and adding songs from their personal library or from Orange Music's library. 
 
-One of the design goals of this feature was to make the application feel as native as possible, including developing a `SongMenu` component that becomes visible when a user clicks on the `...` that appears when hovering over a specific song. A submenu of user-created playlists then appears when hovering over the `Add to Playlist` option in the main menu. 
+One of the design goals of the application was to make it feel as native as possible, including developing a `SongMenu` component that becomes visible when a user clicks on the `...` that appears when hovering over a specific song. A submenu of user-created playlists then appears when hovering over the `Add to Playlist` option in the main menu. 
 
 ![Playlist](https://s3-us-west-1.amazonaws.com/orange-music-pro/playlist.png)
 
@@ -45,6 +45,8 @@ Orange Music was designed to be a sleek and easy-to-use music player alternative
 Rails/PostgreSQL was used for the backend, with Active Storage/AWS S3 used for hosting and retrieving image (e.g. custom playlist images, album artwork, artist photos) and audio file assets. 
 
 React and Redux were used on the frontend. Redux was used to manage application state, specifically users, songs, albums, artists, and playlists, as well as UI state, such as the current played song, a queue of songs to play, errors, and loading states. 
+
+React Router was used for frontend routing.
 
 ### Additional Resources
   * [Design Docs][designDocs]
