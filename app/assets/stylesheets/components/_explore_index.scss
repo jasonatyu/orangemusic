@@ -67,6 +67,10 @@
     overflow-x: scroll;
 }
 
+.features-playlists-list li:hover {
+    opacity: .8;
+}
+
 .daily-top-100 {
     display: flex;
     flex-shrink: 0;
