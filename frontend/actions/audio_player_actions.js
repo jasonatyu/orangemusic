@@ -12,52 +12,52 @@ export const SHUFFLE_PLAY = 'SHUFFLE_PLAY';
 
 export const playSong = (song) => {
     return {
-        type: 'PLAY_SONG',
+        type: PLAY_SONG,
         song
     };
 };
 
 export const removeQueuedSong = () => {
     return {
-        type: 'REMOVE_QUEUED_SONG',
+        type: REMOVE_QUEUED_SONG,
     };
 };
 
 export const pauseSong = () => {
     return {
-        type: 'PAUSE_SONG',
+        type: PAUSE_SONG,
     };
 };
 
 export const continueSong = () => {
     return {
-        type: 'CONTINUE_SONG',
+        type: CONTINUE_SONG,
     };
 };
 
 export const queueSong = (song) => {
     return {
-        type: 'QUEUE_SONG',
+        type: QUEUE_SONG,
         song
     };
 };
 
 export const queueSongs = (songs) => {
     return {
-        type: 'QUEUE_SONGS',
+        type: QUEUE_SONGS,
         songs
     };
 };
 
 export const changeVolume = (value) => {
     return {
-        type: 'CHANGE_VOLUME',
+        type: CHANGE_VOLUME,
         value
     };
 };
 
 export const shufflePlay = () => {
     return {
-        type: 'SHUFFLE_PLAY',
+        type: SHUFFLE_PLAY,
     };
 };

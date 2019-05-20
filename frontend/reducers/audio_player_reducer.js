@@ -1,4 +1,5 @@
 import { PLAY_SONG, PAUSE_SONG, QUEUE_SONG, CONTINUE_SONG, REMOVE_QUEUED_SONG, QUEUE_SONGS, SHUFFLE_PLAY } from '../actions/audio_player_actions';
+import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 import { shuffleSongs } from './selectors'
 
 const _nullState = {currentSong: null, isPaused: true, queuedSongs: [], shufflePlay: false};
@@ -27,6 +28,8 @@ export default (state = _nullState, action) => {
             return newState;
         case SHUFFLE_PLAY:
             return Object.assign({}, state, { shufflePlay: true });
+        case LOGOUT_CURRENT_USER:
+            return _nullState;
         default:
             return state;
     }
