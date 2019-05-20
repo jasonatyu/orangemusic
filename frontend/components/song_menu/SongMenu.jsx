@@ -6,6 +6,7 @@ class SongMenu extends React.Component {
         super(props);
         this.state = {displayPlaylists: false}
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
+        this.handleMouseLeave = this.handleMouseLeave.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleAddSongToPlaylist = this.handleAddSongToPlaylist.bind(this);
         this.handleAddSongToNewPlaylist = this.handleAddSongToNewPlaylist.bind(this);
@@ -34,7 +35,11 @@ class SongMenu extends React.Component {
     }
 
     handleMouseEnter(e) {
-        this.setState({displayPlaylists: !this.state.displayPlaylists});
+        this.setState({ displayPlaylists: !this.state.displayPlaylists });
+    }
+
+    handleMouseLeave(e) {
+        this.setState({ displayPlaylists: !this.state.displayPlaylists });
     }
 
     handleAddSongToPlaylist(playlistId) {
@@ -54,7 +59,7 @@ class SongMenu extends React.Component {
             <div>
                 <nav className='song-settings-menu' onContextMenu={(e) => e.preventDefault()}>
                     <ul className='song-menu-list'>
-                        <li className='add-playlist-item' onMouseEnter={this.handleMouseEnter}>Add to Playlist <span className='triangle'>&#9658;</span>
+                        <li className='add-playlist-item' onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>Add to Playlist <span className='triangle'>&#9658;</span>
                          {this.state.displayPlaylists ? (<ul className='add-playlist-list'>
                                 <li onClick={this.handleAddSongToNewPlaylist}>New Playlist</li>
                                     { userPlaylists }
