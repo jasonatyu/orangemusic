@@ -4,7 +4,7 @@
 
 [orange]: http://www.orangemusic.xyz
 
-Orange Music is a music streaming application inspired by Apple Music/iTunes. It was built using a Rails/PostgreSQL backend with React and Redux on the frontend. AWS S3 was used to host image and audio file assets. 
+Orange Music is a music streaming application inspired by Apple Music/iTunes. 
 
 ## Technologies
 
