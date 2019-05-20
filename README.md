@@ -6,6 +6,14 @@
 
 Orange Music is a music streaming application inspired by Apple Music/iTunes. It was built using a Rails/PostgreSQL backend with React and Redux on the frontend. AWS S3 was used to host image and audio file assets. 
 
+## Technologies
+
+Rails/PostgreSQL was used for the backend, with Active Storage/AWS S3 used for hosting and retrieving image (e.g. custom playlist images, album artwork, artist photos) and audio file assets. 
+
+React and Redux were used on the frontend. Redux was used to manage application state, specifically users, songs, albums, artists, and playlists, as well as UI state, such as the current played song, a queue of songs to play, errors, and loading states. 
+
+React Router was used for frontend routing.
+
 ## Features
   * Secure user authentication.
   * View, create, and edit playlists. Add songs you've saved to your personal library or songs available in the Orange Music library.
@@ -39,14 +47,6 @@ Once authenticated, users are first redirected to the main explore page at the `
 ## Project Design
 
 Orange Music was designed to be a sleek and easy-to-use music player alternative to Apple Music or Spotify. Given the short time frame, I focused on getting the user experience of the core feature set (e.g. creating and editing playlists, navigating through one's library, search, and playing music) right. In the future, I'd like to add social features such as following friends to see their playlists and building a curated "For You" section to let users explore recommended songs based on their personal library and play history. 
-
-## Technologies
-
-Rails/PostgreSQL was used for the backend, with Active Storage/AWS S3 used for hosting and retrieving image (e.g. custom playlist images, album artwork, artist photos) and audio file assets. 
-
-React and Redux were used on the frontend. Redux was used to manage application state, specifically users, songs, albums, artists, and playlists, as well as UI state, such as the current played song, a queue of songs to play, errors, and loading states. 
-
-React Router was used for frontend routing.
 
 ### Additional Resources
   * [Design Docs][designDocs]
