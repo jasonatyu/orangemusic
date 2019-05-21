@@ -30,11 +30,34 @@ The player was built in React leveraging the HTML5 `<audio>` element, which was 
 
 ![Music player](https://s3-us-west-1.amazonaws.com/orange-music-pro/om_player.png)
 
+To implement rewind and fast-forwarding, for example, I set the song `currentTime` back 5 seconds (to simulate rewinding due to known limitations with negative `playbackRate` in WebKit-based browsers) and doubled the `playbackRate` to fast-forward after a long press is detected.
+
+```javascript 
+
+handleButtonPress(e) {
+   const action = e.currentTarget.value;
+   this.buttonPressTimer = setTimeout(() => {
+       if (action === 'rewind') {
+           const currentTime = this.player.currentTime;
+           this.player.currentTime = (currentTime >= 5.0) ? currentTime - 5.0 : 0;
+       } else if (action === 'fast-forward') {
+           this.player.playbackRate = 2.0;
+       }
+   }, 1000);
+ }
+ ```
+
 ### Creating and updating playlists 
 
 Users can view, create, edit, and delete playlists, including adding a name, an optional description, attaching an optional custom image, and adding songs from their personal library or from Orange Music's library. 
 
 One of the design goals of the application was to make it feel as native as possible, including developing a `SongMenu` component that becomes visible when a user clicks on the `...` that appears when hovering over a specific song. A submenu of user-created playlists then appears when hovering over the `Add to Playlist` option in the main menu. 
+
+One of the technical challenges to creating the `SongMenu` was figuring out how to detect a click outside of the component to close the menu. The solution I implemented was to create an invisible screen-wide `Dismisser` component that was rendered within `SongMenu` component that included a click event handler to tell the parent component of `SongMenu` to hide the menu. 
+
+```javascript
+const Dismisser = ({ onClick }) => <div className='dismisser' onClick={onClick} />
+```
 
 ![Playlist](https://s3-us-west-1.amazonaws.com/orange-music-pro/playlist.png)
 
